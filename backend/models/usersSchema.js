@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const usersSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -7,10 +8,18 @@ const usersSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: mongoose.Schema.Types.ObjectId, ref: "Role" },
-  enrolledCourses: [{type: mongoose.Schema.Types.ObjectId, ref: "Course"}],
-  createdCourses: [{type: mongoose.Schema.Types.ObjectId, ref: "Course"}]
+  enrolledCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Course" }],
+  createdCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Course" }],
 });
 
-
+usersSchema.pre("save", async function () {
+  //save the email with lowercase letters
+  this.email = this.email.toLowerCase();
+  //hash the password
+  this.password = await bcrypt.hash(this.password, 5, (err, hash) => {
+    // console.log(err);
+    // console.log(hash);
+  });
+});
 
 module.exports = mongoose.model("User", usersSchema);
