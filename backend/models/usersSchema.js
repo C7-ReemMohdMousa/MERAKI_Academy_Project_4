@@ -16,10 +16,12 @@ usersSchema.pre("save", async function () {
   //save the email with lowercase letters
   this.email = this.email.toLowerCase();
   //hash the password
-  this.password = await bcrypt.hash(this.password, 5, (err, hash) => {
-    // console.log(err);
-    // console.log(hash);
-  });
+
+  try {
+    this.password = await bcrypt.hash(this.password, 5);
+  } catch (err) {
+    throw err;
+  }
 });
 
 module.exports = mongoose.model("User", usersSchema);
