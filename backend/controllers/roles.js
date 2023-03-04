@@ -1,5 +1,4 @@
 const rolesModel = require("../models/rolesSchema");
-
 const createRole = (req, res) => {
   //destructure the body
   const { role, permissions } = req.body;
