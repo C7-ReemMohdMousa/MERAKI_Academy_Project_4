@@ -4,6 +4,7 @@ const enrollmentModel = require("../models/enrollmentSchema");
 
 const courseEnrollment = (req, res) => {
   const { course, user } = req.body;
+  const userId = req.user;
 
   const newEnrollment = new enrollmentModel({
     course,

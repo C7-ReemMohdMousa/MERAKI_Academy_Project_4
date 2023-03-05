@@ -8,13 +8,13 @@ const {
   inProgressCourses,
 } = require("../controllers/enrollment");
 
-
+const { enrollOnce } = require("../middleware/enrollOnce");
 const { authentication } = require("../middleware/authentication");
 
 //instatiate router
 const enrollmentRouter = express.Router();
 
-enrollmentRouter.post("/", courseEnrollment);
+enrollmentRouter.post("/", enrollOnce, courseEnrollment);
 enrollmentRouter.delete("/:courseId", cancelEnrollment);
 enrollmentRouter.put("/:courseId", updateEnrollment);
 
