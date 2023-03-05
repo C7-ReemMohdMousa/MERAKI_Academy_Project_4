@@ -21,9 +21,11 @@ const enrollmentSchema = new mongoose.Schema({
   },
   status: {
     type: String,
+    default: "in progress",
   },
   progress: {
     type: Number,
+    default: 0,
   },
 });
 

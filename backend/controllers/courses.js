@@ -78,6 +78,7 @@ const uploadLectures = (req, res) => {
         },
         { $push: { lectures: results } }
       );
+      res.json("uploaded");
     })
     .catch((err) => {
       res.json(err);
@@ -85,6 +86,7 @@ const uploadLectures = (req, res) => {
 };
 
 //delete course by id
+//! should delete both the course with its lecture
 const deleteCourseById = (req, res) => {
   const id = req.params.courseId;
   coursesModel
@@ -95,6 +97,11 @@ const deleteCourseById = (req, res) => {
     .catch((err) => {
       throw err;
     });
+
+  lecturesModel
+    .deleteMany({ course: id })
+    .then((results) => {})
+    .catch((err) => {});
 };
 
 //update course informations
@@ -119,7 +126,7 @@ const updateCourseById = (req, res) => {
       res.json(results);
     })
     .catch((err) => {
-      throw err;
+      res.json(err);
     });
 };
 
