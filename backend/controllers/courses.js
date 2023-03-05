@@ -86,7 +86,6 @@ const uploadLectures = (req, res) => {
 };
 
 //delete course by id
-//! should delete both the course with its lecture
 const deleteCourseById = (req, res) => {
   const id = req.params.courseId;
   coursesModel
