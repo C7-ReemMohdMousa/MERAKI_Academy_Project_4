@@ -112,10 +112,52 @@ const updateCourseById = (req, res) => {
         instructor,
         category,
         level,
-      }
+      },
+      { new: true }
     )
     .then((results) => {
       res.json(results);
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+//update lecture informations
+const updateLecture = (req, res) => {
+  const courseId = req.params.courseId;
+  const lectureId = req.params.lectureId;
+
+  const { course, title, description, videoURL } = req.body;
+
+  lecturesModel
+    .findByIdAndUpdate(
+      { _id: lectureId },
+      {
+        course,
+        title,
+        description,
+        videoURL,
+      },
+      { new: true }
+    )
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+//delete lecture
+const deleteLecture = (req, res) => {
+  const courseId = req.params.courseId;
+  const lectureId = req.params.lectureId;
+
+  lecturesModel
+    .findByIdAndDelete({ _id: lectureId })
+    .then((results) => {
+      res.json("deleted");
     })
     .catch((err) => {
       throw err;
@@ -129,4 +171,6 @@ module.exports = {
   uploadLectures,
   deleteCourseById,
   updateCourseById,
+  updateLecture,
+  deleteLecture,
 };
