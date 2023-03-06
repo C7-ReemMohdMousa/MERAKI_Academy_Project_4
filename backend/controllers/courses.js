@@ -1,6 +1,7 @@
 const coursesModel = require("../models/coursesSchema");
 const lecturesModel = require("../models/lecturesSchema");
 const categoryModel = require("../models/categorySchema");
+const usersModel = require("../models/usersSchema");
 
 //get all courses
 const getAllCourses = (req, res) => {
@@ -9,6 +10,19 @@ const getAllCourses = (req, res) => {
     .populate("lectures")
     .populate("category")
     .exec()
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const getCourseById = (req, res) => {
+  const courseId = req.params.courseId;
+
+  coursesModel
+    .findOne({ _id: courseId })
     .then((results) => {
       res.json(results);
     })
@@ -39,6 +53,8 @@ const createCategory = (req, res) => {
 const uploadCourse = (req, res) => {
   const { title, description, instructor, category, level } = req.body;
 
+  console.log(req);
+
   const newCourse = new coursesModel({
     title,
     description,
@@ -49,7 +65,15 @@ const uploadCourse = (req, res) => {
 
   newCourse
     .save()
-    .then((results) => {
+    .then(async (results) => {
+      //save the created course to the createdCourses array in the user schema
+      await usersModel.updateOne(
+        {
+          _id: req.token.userId,
+        },
+        { $push: { createdCourses: results } }
+      );
+
       res.json(results);
     })
     .catch((err) => {
@@ -168,6 +192,25 @@ const deleteLecture = (req, res) => {
     .catch((err) => {
       throw err;
     });
+
+  coursesModel
+    .updateMany({ $pull: { lectures: { $in: [lectureId] } } })
+    .then((results) => {})
+    .catch((err) => {});
+};
+
+//show courses by category
+const getCoursesByCategory = (req, res) => {
+  const categoryId = req.params.categoryId;
+
+  coursesModel
+    .find({ category: categoryId })
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 };
 
 module.exports = {
@@ -179,4 +222,6 @@ module.exports = {
   updateCourseById,
   updateLecture,
   deleteLecture,
+  getCoursesByCategory,
+  getCourseById,
 };

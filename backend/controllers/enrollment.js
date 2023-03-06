@@ -1,5 +1,7 @@
 const enrollmentModel = require("../models/enrollmentSchema");
 
+const usersModel = require("../models/usersSchema");
+
 //enroll to the course
 
 //middleware to check if the user is enrolled
@@ -31,7 +33,14 @@ const courseEnrollment = (req, res) => {
 
   newEnrollment
     .save()
-    .then((results) => {
+    .then(async (results) => {
+      //save the enrolled course to the enrolledCourses array in the user schema
+      await usersModel.updateOne(
+        {
+          _id: req.token.userId,
+        },
+        { $push: { enrolledCourses: results.course } }
+      );
       res.json(results);
     })
     .catch((err) => {
@@ -44,7 +53,11 @@ const cancelEnrollment = (req, res) => {
 
   enrollmentModel
     .deleteOne({ course: courseId })
-    .then((results) => {
+    .then(async (results) => {
+      //delete the course enrollment in the enrolledCourses array
+      await usersModel.updateMany({
+        $pull: { enrolledCourses: { $in: [courseId] } },
+      });
       res.json(results);
     })
     .catch((err) => {

@@ -26,9 +26,9 @@ const authentication = (req, res, next) => {
       }
       // if it is valid, save it in the request, so it can be used in the next function
       if (result) {
-        console.log("RESULTS: ", result);
+        // console.log("RESULTS: ", result);
         req.token = result;
-        console.log("REQUEST: ", req.token);
+        // console.log("REQUEST: ", req.token);
         next();
       }
     });

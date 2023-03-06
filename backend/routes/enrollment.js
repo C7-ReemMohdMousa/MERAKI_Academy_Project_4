@@ -10,15 +10,41 @@ const {
 } = require("../controllers/enrollment");
 
 const { authentication } = require("../middleware/authentication");
+const { authorization } = require("../middleware/authorization");
 
 //instatiate router
 const enrollmentRouter = express.Router();
 
-enrollmentRouter.post("/:userId/:courseId", enrollOnce, courseEnrollment);
-enrollmentRouter.delete("/:courseId", cancelEnrollment);
-enrollmentRouter.put("/:courseId", updateEnrollment);
+enrollmentRouter.post(
+  "/:userId/:courseId",
+  enrollOnce,
+  authentication,
+  authorization("enroll_course"),
+  courseEnrollment
+);
+enrollmentRouter.delete(
+  "/:courseId",
+  authentication,
+  authorization("cancel_enrollment"),
+  cancelEnrollment
+);
 
-enrollmentRouter.get("/myCompletedCourses/:userId", completedCourses);
-enrollmentRouter.get("/myinProgressCourses/:userId", inProgressCourses);
+enrollmentRouter.put(
+  "/:courseId",
+  authentication,
+  authorization("update_enrollment"),
+  updateEnrollment
+);
+
+enrollmentRouter.get(
+  "/myCompletedCourses/:userId",
+  authentication,
+  completedCourses
+);
+enrollmentRouter.get(
+  "/myinProgressCourses/:userId",
+  authentication,
+  inProgressCourses
+);
 
 module.exports = enrollmentRouter;
