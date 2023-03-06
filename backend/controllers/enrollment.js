@@ -2,9 +2,27 @@ const enrollmentModel = require("../models/enrollmentSchema");
 
 //enroll to the course
 
+//middleware to check if the user is enrolled
+const enrollOnce = (req, res, next) => {
+  const userId = req.params.userId;
+  const courseId = req.params.courseId;
+
+  enrollmentModel
+    .find({ course: courseId, user: userId })
+    .then((results) => {
+      if (results.length === 0) {
+        next();
+      } else {
+        res.json("you're already enrolled");
+      }
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 const courseEnrollment = (req, res) => {
   const { course, user } = req.body;
-  const userId = req.user;
 
   const newEnrollment = new enrollmentModel({
     course,
@@ -55,7 +73,6 @@ const updateEnrollment = (req, res) => {
 
 //*get courses by status
 //1- completed courses
-
 const completedCourses = (req, res) => {
   const userId = req.params.userId;
 
@@ -70,7 +87,6 @@ const completedCourses = (req, res) => {
 };
 
 //2- in progress courses
-
 const inProgressCourses = (req, res) => {
   const userId = req.params.userId;
 
@@ -89,6 +105,7 @@ const inProgressCourses = (req, res) => {
 
 module.exports = {
   courseEnrollment,
+  enrollOnce,
   cancelEnrollment,
   updateEnrollment,
   completedCourses,

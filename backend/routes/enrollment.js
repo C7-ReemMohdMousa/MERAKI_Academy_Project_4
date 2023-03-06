@@ -6,15 +6,15 @@ const {
   updateEnrollment,
   completedCourses,
   inProgressCourses,
+  enrollOnce,
 } = require("../controllers/enrollment");
 
-const { enrollOnce } = require("../middleware/enrollOnce");
 const { authentication } = require("../middleware/authentication");
 
 //instatiate router
 const enrollmentRouter = express.Router();
 
-enrollmentRouter.post("/", enrollOnce, courseEnrollment);
+enrollmentRouter.post("/:userId/:courseId", enrollOnce, courseEnrollment);
 enrollmentRouter.delete("/:courseId", cancelEnrollment);
 enrollmentRouter.put("/:courseId", updateEnrollment);
 
