@@ -10,6 +10,7 @@ const {
   deleteLecture,
   getCoursesByCategory,
   getCourseById,
+  searchByCourseName,
 } = require("../controllers/courses");
 const { authentication } = require("../middleware/authentication");
 
@@ -19,6 +20,8 @@ const { authorization } = require("../middleware/authorization");
 const courseRouter = express.Router();
 
 courseRouter.get("/", getAllCourses);
+// courseRouter.get("/:search", searchByCourseName);
+
 courseRouter.get("/:courseId", getCourseById);
 
 courseRouter.delete(

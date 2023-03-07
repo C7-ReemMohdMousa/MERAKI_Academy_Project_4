@@ -213,6 +213,20 @@ const getCoursesByCategory = (req, res) => {
     });
 };
 
+// const searchByCourseName = (req, res) => {
+//   const search = req.params.search;
+//   console.log(search);
+
+//   coursesModel
+//     .find({ title: search })
+//     .then((results) => {
+//       res.json(results);
+//     })
+//     .catch((err) => {
+//       res.json(err);
+//     });
+// };
+
 module.exports = {
   getAllCourses,
   createCategory,

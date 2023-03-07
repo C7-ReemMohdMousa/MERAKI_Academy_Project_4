@@ -40,7 +40,9 @@ const register = (req, res) => {
 };
 
 const login = (req, res) => {
-  const { email, password } = req.body;
+  const password = req.body.password;
+  const email = req.body.email.toLowerCase();
+
   //search the database to find the email
   usersModel
     .findOne({ email })
