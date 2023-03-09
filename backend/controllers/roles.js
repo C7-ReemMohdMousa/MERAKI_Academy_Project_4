@@ -1,14 +1,22 @@
 const rolesModel = require("../models/rolesSchema");
 
 const getRoles = (req, res) => {
+  const roletype = req.params.role;
   rolesModel
-    .find({ role: ["teacher", "student"] })
-    .select("role -_id")
-    .then((response) => {
-      res.json(response);
+    .find({ role: roletype })
+    .select("_id")
+    .then((results) => {
+      res.status(200).json({
+        success: true,
+        role: results,
+      });
     })
     .catch((err) => {
-      res.json(err);
+      res.status(500).json({
+        success: false,
+        message: "Server Error",
+        err: err.message,
+      });
     });
 };
 

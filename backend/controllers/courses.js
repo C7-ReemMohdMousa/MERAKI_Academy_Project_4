@@ -2,6 +2,7 @@ const coursesModel = require("../models/coursesSchema");
 const lecturesModel = require("../models/lecturesSchema");
 const categoryModel = require("../models/categorySchema");
 const usersModel = require("../models/usersSchema");
+const enrollmentSchema = require("../models/enrollmentSchema");
 
 //get all courses
 const getAllCourses = (req, res) => {
@@ -11,10 +12,25 @@ const getAllCourses = (req, res) => {
     .populate("category")
     .exec()
     .then((results) => {
-      res.json(results);
+      if (results.length) {
+        res.status(200).json({
+          success: true,
+          message: `All courses`,
+          courses: results,
+        });
+      } else {
+        res.status(200).json({
+          success: false,
+          message: `No Courses Yet`,
+        });
+      }
     })
     .catch((err) => {
-      res.json(err);
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
     });
 };
 
@@ -23,6 +39,8 @@ const getCourseById = (req, res) => {
 
   coursesModel
     .findOne({ _id: courseId })
+    .populate("lectures")
+    .populate("category")
     .then((results) => {
       res.json(results);
     })

@@ -74,6 +74,7 @@ const login = (req, res) => {
             success: true,
             message: `Valid login credentials`,
             token: token,
+            user: results,
           });
         }
         //if not matched, throw error msg

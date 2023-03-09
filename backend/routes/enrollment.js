@@ -7,6 +7,7 @@ const {
   completedCourses,
   inProgressCourses,
   enrollOnce,
+  checkIfUserEnrolled,
 } = require("../controllers/enrollment");
 
 const { authentication } = require("../middleware/authentication");
@@ -16,7 +17,7 @@ const { authorization } = require("../middleware/authorization");
 const enrollmentRouter = express.Router();
 
 enrollmentRouter.post(
-  "/:userId/:courseId",
+  "/enrollCourse/:courseId",
   enrollOnce,
   authentication,
   authorization("enroll_course"),
@@ -46,5 +47,7 @@ enrollmentRouter.get(
   authentication,
   inProgressCourses
 );
+
+enrollmentRouter.get("/:courseId/:userId", checkIfUserEnrolled);
 
 module.exports = enrollmentRouter;

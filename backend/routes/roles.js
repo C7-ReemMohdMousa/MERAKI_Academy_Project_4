@@ -6,6 +6,6 @@ const { authentication } = require("../middleware/authentication");
 const rolesRouter = express.Router();
 
 rolesRouter.post("/:role", createRole);
-rolesRouter.get("/", getRoles);
+rolesRouter.get("/:role", getRoles);
 
 module.exports = rolesRouter;

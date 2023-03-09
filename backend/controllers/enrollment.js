@@ -116,6 +116,36 @@ const inProgressCourses = (req, res) => {
     });
 };
 
+const checkIfUserEnrolled = (req, res) => {
+  const courseId = req.params.courseId;
+  const userId = req.params.userId;
+
+  enrollmentModel
+    .find({ course: courseId, user: userId })
+    .then((results) => {
+      if (results.length !== 0) {
+        res.status(201).json({
+          success: true,
+          message: "yes, the user is enrolled",
+          author: results,
+        });
+      } else {
+        res.status(201).json({
+          success: false,
+          message: "no, the user did not enroll the course",
+          author: results,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
+
 module.exports = {
   courseEnrollment,
   enrollOnce,
@@ -123,4 +153,5 @@ module.exports = {
   updateEnrollment,
   completedCourses,
   inProgressCourses,
+  checkIfUserEnrolled,
 };
