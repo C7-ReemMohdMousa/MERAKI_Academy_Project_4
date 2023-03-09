@@ -9,7 +9,7 @@ import Home from "./components/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Explore from "./components/Explore/Explore";
 import CourseInfo from "./components/CourseInfo/CourseInfo";
-
+import CourseDashboard from "./components/CourseDashboard/CourseDashboard";
 
 export const LearningContext = createContext();
 
@@ -62,6 +62,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/coursedetail/:id" element={<CourseInfo />} />
+            <Route path="/coursedashboard/:id" element={<CourseDashboard />} />
 
             <Route path="/register" element={<Register />} />
 

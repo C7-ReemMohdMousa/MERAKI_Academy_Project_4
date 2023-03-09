@@ -33,8 +33,6 @@ const Explore = () => {
       .get("http://localhost:5000/courses")
       .then(function (response) {
         setCourses(response.data.courses);
-        console.log(courses);
-        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error.response.data.message);

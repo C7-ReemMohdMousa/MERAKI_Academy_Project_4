@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Btn from "../Btn/Btn";
 
 //the dashboard will change based on the user role
@@ -9,6 +9,9 @@ import Btn from "../Btn/Btn";
 
 import { LearningContext } from "../../App";
 const Dashboard = () => {
+  //useNavigate hook to navigate programmatically
+  const navigate = useNavigate();
+
   //context
   const {
     courses,
@@ -27,7 +30,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll//myinProgressCourses/${userId}`, {
+      .get(`http://localhost:5000/enroll/myinProgressCourses/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
@@ -39,9 +42,30 @@ const Dashboard = () => {
       });
   }, []);
 
-  const goToCourse = () =>{
-    
-  }
+  //go to course dashboard
+  const goToCourse = (e) => {
+    navigate(`/coursedashboard/${e.target.id}`);
+  };
+
+  //cancel enrollment
+  const cancelEnrollment = (e) => {
+    let courseId = e.target.id;
+    console.log(courseId);
+    axios
+      .delete(`http://localhost:5000/enroll/${courseId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        const newCoursesArr = userEnrolled.filter((element)=>{
+          return element.course._id !== courseId
+        })
+        setUserEnrolled(newCoursesArr)
+      })
+      .catch(function (error) {
+        console.log(error.response.data.message);
+      });
+  };
 
   return (
     <div>
@@ -51,12 +75,18 @@ const Dashboard = () => {
         {console.log(userEnrolled)}
         {userEnrolled.map((element) => {
           return (
-            <div key={element._id}>
+            <div key={element.course._id}>
               <h6>{element.course.title}</h6>
               <Btn
                 value="go to course"
                 id={element.course._id}
                 onClick={goToCourse}
+              />
+              <Btn
+                value="cancel enrollment"
+                variant="danger"
+                id={element.course._id}
+                onClick={cancelEnrollment}
               />
             </div>
           );

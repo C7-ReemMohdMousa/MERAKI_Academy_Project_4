@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import axios from "axios";
@@ -10,6 +10,8 @@ const CourseInfo = () => {
 
   //states
   const [isEnrolled, setIsEnrolled] = useState(false);
+  //useNavigate hook to navigate programmatically
+  const navigate = useNavigate();
 
   //context
   const {
@@ -36,14 +38,33 @@ const CourseInfo = () => {
         }
       )
       .then(function (response) {
-        setIsEnrolled(true);
-        setEnrolledCourses([...enrolledCourses, response.data]);
+        setEnrolledCourses(response.data);
+        setIsEnrolled(true)
       })
       .catch(function (error) {
-        console.log(error);
+        throw error;
       });
   };
-  
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/enroll/${id}/${userId}`)
+      .then((response) => {
+        if (response.data.success) {
+          setIsEnrolled(true);
+          console.log(isEnrolled);
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }, []);
+
+  const goToCourse = (e) => {
+    //go to course dashboard
+    navigate(`/coursedashboard/${e.target.id}`);
+  };
+
   return (
     <div>
       {course.map((element) => {
@@ -53,7 +74,12 @@ const CourseInfo = () => {
             <p>{element.description}</p>
 
             {isEnrolled ? (
-              "you're already enrolled"
+              <Btn
+                value="go to course"
+                variant="success"
+                id={element._id}
+                onClick={goToCourse}
+              />
             ) : (
               <Btn
                 value="enroll now"
