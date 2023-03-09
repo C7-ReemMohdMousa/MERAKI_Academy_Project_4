@@ -21,6 +21,7 @@ const Dashboard = () => {
     name,
     enrolledCourses,
     setEnrolledCourses,
+    role,
   } = useContext(LearningContext);
 
   //states
@@ -57,10 +58,10 @@ const Dashboard = () => {
       })
       .then(function (response) {
         console.log(response.data);
-        const newCoursesArr = userEnrolled.filter((element)=>{
-          return element.course._id !== courseId
-        })
-        setUserEnrolled(newCoursesArr)
+        const newCoursesArr = userEnrolled.filter((element) => {
+          return element.course._id !== courseId;
+        });
+        setUserEnrolled(newCoursesArr);
       })
       .catch(function (error) {
         console.log(error.response.data.message);
@@ -95,5 +96,15 @@ const Dashboard = () => {
     </div>
   );
 };
+
+//different dashboards for teachers and studens
+
+const StudentsDashboard = () =>{
+
+}
+
+const TeachersDashboard = () =>{
+  
+}
 
 export default Dashboard;
