@@ -1,0 +1,2071 @@
+{
+    "title": "Linear Algebra",
+    "description": "Lecture videos from Gilbert Strang's course on Linear Algebra at MIT",
+    "instructor": "",
+    "category": "6404c5b0c2fcd18a68a6c912",
+    "level": "Advance",
+    "lectures": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "NI0N9iMtiq3zPzIsdWX7hHxb6Iw",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjc0M0ZFMjQwQ0Y1OTlDNkI",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:05:26Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 1 | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 1: The Geometry of Linear Equations.\nView the complete course at: http://ocw.mit.edu/18-06S05 \n\nLicense: Creative Commons BY-NC-SA \nMore information at http://ocw.mit.edu/terms \nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ZK3O402wf1c/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ZK3O402wf1c/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ZK3O402wf1c/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 0,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ZK3O402wf1c"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "videoURL": "https://www.youtube.com/watch?v=QVKj3LADCnA&list=PL49CF3715CB9EF31D"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "iL7Etpd9kLMgvvz6P1kNW8ZsNAo",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjRFNkZDQUZDMUY1MTc2Qzc",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:05:38Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "2. Elimination with Matrices.",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list...\n\n2. Elimination with Matrices.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/QVKj3LADCnA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/QVKj3LADCnA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/QVKj3LADCnA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 1,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "QVKj3LADCnA",
+                    "videoURL": "https://www.youtube.com/watch?v="
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "W4ptAb_jQ6SkM3EqvA2A9zLDO90",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjIxNjNBQ0M1MzYyODYzNzQ",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:12:15Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "3. Multiplication and Inverse Matrices",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n3. Multiplication and Inverse Matrices\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/FX4C-JpTFgY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/FX4C-JpTFgY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/FX4C-JpTFgY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 2,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "FX4C-JpTFgY"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "ilX6YzzIw3W-t1HBejdLF3fTwcI",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjkwNEE4NzdENEJGNkFFNzk",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:12:43Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 4 | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 4: Factorization into A = LU\nThere is finally a better version of this lecture! https://www.youtube.com/watch?v=MsIvs_6vC38&index=4&list=PLE7DDD91010BC51F8\nView the complete course: http://ocw.mit.edu/18-06S05\n\nLicense: Creative Commons BY-NC-SA\nMore information at http://ocw.mit.edu/terms\nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/5hO3MrzPa0A/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/5hO3MrzPa0A/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/5hO3MrzPa0A/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 3,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "5hO3MrzPa0A"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "lfaqhVylcXKh4pXExZOyyK03aeA",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjEzNDRDN0YzNkYyOTBBODA",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:12:56Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "5. Transposes, Permutations, Spaces R^n",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n5. Transposes, Permutations, Spaces R^n\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/JibVXBElKL0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/JibVXBElKL0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/JibVXBElKL0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 4,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "JibVXBElKL0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "cxLLoasy7-RS5DZ6xQXVLguUGVs",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkM4MENCNTlCOUZGQjYzOEY",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:13:10Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "6. Column Space and Nullspace",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n6. Column Space and Nullspace\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/8o5Cmfpeo6g/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/8o5Cmfpeo6g/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/8o5Cmfpeo6g/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 5,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "8o5Cmfpeo6g"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "q7smizJJVVCRD2pAy8dhKyph2hU",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjI4RTNGQzU5NThFNUIxRUQ",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:13:22Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "7. Solving Ax = 0: Pivot Variables, Special Solutions",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n7. Solving Ax = 0: Pivot Variables, Special Solutions\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/VqP2tREMvt0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/VqP2tREMvt0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/VqP2tREMvt0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 6,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "VqP2tREMvt0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "KSenZDLRiCydHa-hqWRhJfS2el0",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjdEQ0ZEMUJBMDMxNDA0NkM",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:13:39Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "8. Solving Ax = b: Row Reduced Form R",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n8. Solving Ax = b: Row Reduced Form R\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/9Q1q7s1jTzU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/9Q1q7s1jTzU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/9Q1q7s1jTzU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 7,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "9Q1q7s1jTzU"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "a3iyBAGPV-GC8NsqQQxoBZH5lWY",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjEzMzlGRDA1RDUwMUIyRUU",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:13:51Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "9. Independence, Basis, and Dimension",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n9. Independence, Basis, and Dimension\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/yjBerM5jWsc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/yjBerM5jWsc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/yjBerM5jWsc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 8,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "yjBerM5jWsc"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "EsIeidzf5E-RP-YDHq08pDYnGzk",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjE3NTg5ODc0RjdCNTQ5QkE",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:03Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "10. The Four Fundamental Subspaces",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n10. The Four Fundamental Subspaces\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/nHlE7EgJFds/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/nHlE7EgJFds/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/nHlE7EgJFds/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 9,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "nHlE7EgJFds"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "OEnDGB95KKRGMrbO7npKToF2Scs",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjc2Qzc0QUM3MEIwQjMwQ0Q",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:17Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "11. Matrix Spaces; Rank 1; Small World Graphs",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n11. Matrix Spaces; Rank 1; Small World Graphs\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/2IdtqGM6KWU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/2IdtqGM6KWU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/2IdtqGM6KWU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 10,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "2IdtqGM6KWU"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "zVL-q-bZlLNnxRW3qvjGfLiK4pQ",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjE3MTk5ODU0NUMzQTE5QTY",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:28Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "12. Graphs, Networks, Incidence Matrices",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n12. Graphs, Networks, Incidence Matrices\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6-wh6yvk6uc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6-wh6yvk6uc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6-wh6yvk6uc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 11,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "6-wh6yvk6uc"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "NjgfJaCu3AGlhI7ESuzlvbvOa7o",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjU4NjZBRUUzMTg0NUVFN0U",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:39Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "13. Quiz 1 Review",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n13. Quiz 1 Review\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/l88D4r74gtM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/l88D4r74gtM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/l88D4r74gtM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 12,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "l88D4r74gtM"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "WCGqaaomHg9FXjRCHwYcdI4kESI",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkEyMkFFQkNGOTkzQkEzQTg",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:48Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "14. Orthogonal Vectors and Subspaces",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n14. Orthogonal Vectors and Subspaces\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/YzZUIYRCE38/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/YzZUIYRCE38/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/YzZUIYRCE38/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 13,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "YzZUIYRCE38"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "2RnuwgQBreC2stYsFpEN5xdKky0",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkJFNjU0NENGQTc1NTA0NTg",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:14:59Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "15. Projections onto Subspaces",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n15. Projections onto Subspaces\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Y_Ac6KiQ1t0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Y_Ac6KiQ1t0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Y_Ac6KiQ1t0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 14,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Y_Ac6KiQ1t0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Rpij3c5iTlpYknueT-sY9ghCPc8",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjQzNDdBQ0MyMDg5OTFBMDc",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:15:12Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "16. Projection Matrices and Least Squares",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n16. Projection Matrices and Least Squares\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/osh80YCg_GM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/osh80YCg_GM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/osh80YCg_GM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 15,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "osh80YCg_GM"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "s4wWF5q8ewczia0--jmkWIEduoA",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkNEQ0ZFOUUxNzIxQzY2RjI",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:15:21Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 17 | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 17: Orthogonal Matrices and Gram-Schmidt.\nView the complete course at: http://ocw.mit.edu/18-06S05 \n\nLicense: Creative Commons BY-NC-SA \nMore information at http://ocw.mit.edu/terms \nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/uNsCkP9mgRk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/uNsCkP9mgRk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/uNsCkP9mgRk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 16,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "uNsCkP9mgRk"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "qdNm1OCG7hymf4McX3GNIPcmrxQ",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjg1RkMxRUUyRDcxRkFCRDg",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:15:32Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "18. Properties of Determinants",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n18. Properties of Determinants\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/srxexLishgY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/srxexLishgY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/srxexLishgY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 17,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "srxexLishgY"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "afEfILAtnQAi73YL4tYmCjeW21c",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkVCMDEzNjYyNDU0M0RFNzQ",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:15:43Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "19. Determinant Formulas and Cofactors",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n19. Determinant Formulas and Cofactors\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/23LLB9mNJvc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/23LLB9mNJvc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/23LLB9mNJvc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 18,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "23LLB9mNJvc"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "BIudG7zrrYW-PoZdYKoGzT65MYk",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELkM4N0I0NjcwQTMyNUMwNEQ",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:15:52Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "20. Cramer's Rule, Inverse Matrix, and Volume",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n20. Cramer's Rule, Inverse Matrix, and Volume\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/QNpj-gOXW9M/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/QNpj-gOXW9M/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/QNpj-gOXW9M/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 19,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "QNpj-gOXW9M"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "mZbDw4EUW9dGAu1iQta7XZNoYjs",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjI4QUIxRTE1RUQ0NzUxNkI",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:16:03Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 21 | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 21: Eigenvalues and Eigenvectors.\nView the complete course at: http://ocw.mit.edu/18-06S05 \n\nLicense: Creative Commons BY-NC-SA \nMore information at http://ocw.mit.edu/terms \nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/lXNXrLcoerU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/lXNXrLcoerU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/lXNXrLcoerU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 20,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "lXNXrLcoerU"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "YgIG4VB5l-f4ZM-4snappVZxOUQ",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjI3RUIzREI4NUQwMjBBMUU",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:16:14Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "22. Diagonalization and Powers of A",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n22. Diagonalization and Powers of A\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/13r9QY6cmjc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/13r9QY6cmjc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/13r9QY6cmjc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 21,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "13r9QY6cmjc"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "w8FVhQ1jpy1CezKlBFcD7ElvKHo",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjEwQUIwQjg1Qzk2NTI1QzU",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:16:24Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "23. Differential Equations and exp(At)",
+                "description": "MIT 18.06 Linear Algebra, Spring 2005\nInstructor: Gilbert Strang\nView the complete course: http://ocw.mit.edu/18-06S05\nYouTube Playlist: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8\n\n23. Differential Equations and exp(At)\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/IZqwi0wJovM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/IZqwi0wJovM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/IZqwi0wJovM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 22,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "IZqwi0wJovM"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "N8YzmN79bPIE3Nf3hnnDMjjcfIc",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjk1M0Y4NTc5MDlGQ0E4MEU",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:16:33Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 24 | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 24: Markov Matrices; Fourier Series.*\n\n* NOTE: the audio is in the right channel only. If you hear no audio, you are listening only to the left channel.\n\nView the complete course at: http://ocw.mit.edu/18-06S05 \n\nLicense: Creative Commons BY-NC-SA \nMore information at http://ocw.mit.edu/terms \nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/8MF3pz-oYHo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/8MF3pz-oYHo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/8MF3pz-oYHo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 23,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "8MF3pz-oYHo"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "bDvSc3uGO7vImOZqgbMBBIWaBRQ",
+            "id": "UEw0OUNGMzcxNUNCOUVGMzFELjIyMDNFNTQ1Q0JGNjAxQjg",
+            "snippet": {
+                "publishedAt": "2010-01-07T19:16:42Z",
+                "channelId": "UCgtGprOym_V4oHmpE6_EYmQ",
+                "title": "Lec 24b  | MIT 18.06 Linear Algebra, Spring 2005",
+                "description": "Lecture 24b : Quiz 2 Review.*\n\n* NOTE: the audio is in the right channel only. If you hear no audio, you are listening only to the left channel.\n\nView the complete course at: http://ocw.mit.edu/18-06S05 \n\nLicense: Creative Commons BY-NC-SA \nMore information at http://ocw.mit.edu/terms \nMore courses at http://ocw.mit.edu",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/sFxA8eIS6tA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/sFxA8eIS6tA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/sFxA8eIS6tA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Robert Talbert",
+                "playlistId": "PL49CF3715CB9EF31D",
+                "position": 24,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "sFxA8eIS6tA"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        }
+    ]
+   
+}
+
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "CAIIorhLoowVSPgMpf516YBnqJg",
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "5-l2oEaMtOGM4mJNuVkhqz2Senk",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5DNzE1RjZEMUZCMjA0RDBB",
+            "snippet": {
+                "publishedAt": "2023-01-12T16:12:15Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 2: Morphology, Part 1",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video provides a quick introduction to what morphology is. [Note: No video is available for Lecture 1.]\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Mvy5hjAWeZw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Mvy5hjAWeZw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Mvy5hjAWeZw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Mvy5hjAWeZw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/Mvy5hjAWeZw/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 0,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Mvy5hjAWeZw"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "aoLDSH_36yXlxSAcSreVupzoe_0",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5GNjNDRDREMDQxOThCMDQ2",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 3: Morphology, Part 2",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses the forms morphemes can take, and how morphemes are combined to make words.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/NfD6QNY6Zzg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/NfD6QNY6Zzg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/NfD6QNY6Zzg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/NfD6QNY6Zzg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/NfD6QNY6Zzg/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 1,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "NfD6QNY6Zzg"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "AQzgr86NUhRAgrq0VJeWtdqKKjI",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5ENDU4Q0M4RDExNzM1Mjcy",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 4: Morphology, Part 3",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses how aspects of morphology vary from one language to another.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vxOO8cIn398/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vxOO8cIn398/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vxOO8cIn398/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/vxOO8cIn398/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/vxOO8cIn398/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 2,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "vxOO8cIn398"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "7P-Wu6ZOCo6zXxCk12zY06grr-U",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5GM0Q3M0MzMzY5NTJFNTdE",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 5: Phonetics, Part 1",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video introduces the basic vocabulary used in discussing the sounds of speech.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/xZ8mnJPu95Q/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/xZ8mnJPu95Q/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/xZ8mnJPu95Q/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/xZ8mnJPu95Q/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/xZ8mnJPu95Q/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 3,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "xZ8mnJPu95Q"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Uy2k3xprI0yovDtriayGDU0QAm4",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai45NDk1REZENzhEMzU5MDQz",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 6: Phonetics, Part 2",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video presents more information on speech sounds, especially vowels. [Note: No video is available for Lecture 7.]\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/NVQWWXhbUvs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/NVQWWXhbUvs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/NVQWWXhbUvs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/NVQWWXhbUvs/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/NVQWWXhbUvs/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 4,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "NVQWWXhbUvs"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "tn6Tws_U7RybBrjfo6ljS1ytyH8",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4zRjM0MkVCRTg0MkYyQTM0",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:54Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 8: Phonology, Part 1",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses rules by which morphemes are realized in pronunciation in various languages. [Note: No video is available for Lecture 7.]\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/SyM5j0SeDRQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/SyM5j0SeDRQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/SyM5j0SeDRQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/SyM5j0SeDRQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/SyM5j0SeDRQ/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 5,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "SyM5j0SeDRQ"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "30heiq06myLso8bKin2CUwH8pWE",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4yODlGNEE0NkRGMEEzMEQy",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 9: Phonology, Part 2",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses phonology and phonotactics in Japanese, English, and Arabic.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-Pg11JHzUTo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-Pg11JHzUTo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-Pg11JHzUTo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/-Pg11JHzUTo/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/-Pg11JHzUTo/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 6,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "-Pg11JHzUTo"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "vGtColoRPC9H8C9toGszK-MOUzQ",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai41QTY1Q0UxMTVCODczNThE",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 10: Phonology, Part 3",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses language-specific rules for accent placement and other phonological features.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/qb1U3_Q-7o8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/qb1U3_Q-7o8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/qb1U3_Q-7o8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/qb1U3_Q-7o8/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/qb1U3_Q-7o8/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 7,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "qb1U3_Q-7o8"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "OxMrQV_7T0svPX6f5UBlNjymaI0",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5EQUE1NTFDRjcwMDg0NEMz",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 11: Syntax, Part 1",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video introduces the fundamentals of how words are put together to form sentences.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/q7pPG7V2ack/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/q7pPG7V2ack/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/q7pPG7V2ack/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/q7pPG7V2ack/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/q7pPG7V2ack/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 8,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "q7pPG7V2ack"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "QumVLTrjOG5k9UWm3s13Pa0mvNI",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai41NkI0NEY2RDEwNTU3Q0M2",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 12: Syntax, Part 2",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video demonstrates how syntactic trees are used to show the structure of sentences.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-OeyjP2zri4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-OeyjP2zri4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-OeyjP2zri4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/-OeyjP2zri4/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/-OeyjP2zri4/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 9,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "-OeyjP2zri4"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "ikfWtXscXtG7W1VLXVQ9HLeWdL0",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai41MjE1MkI0OTQ2QzJGNzNG",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 13: Syntax, Part 3",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video explains the relations between verbs and other constituents in a sentence.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4ndEWbwbIrA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4ndEWbwbIrA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4ndEWbwbIrA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/4ndEWbwbIrA/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/4ndEWbwbIrA/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 10,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "4ndEWbwbIrA"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "McZCk2NkmuMP_DhUAIm9Vj6rlbc",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai40NzZCMERDMjVEN0RFRThB",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 14: Syntax, Part 4",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses how to use syntactic trees to analyze the grammar of sentences.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/TgwDg_svSnM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/TgwDg_svSnM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/TgwDg_svSnM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/TgwDg_svSnM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/TgwDg_svSnM/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 11,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "TgwDg_svSnM"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "WXN2Xu8zUmTGEXyUpFYp1BB5SQ0",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4yMDhBMkNBNjRDMjQxQTg1",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 15: Syntax, Part 5",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses the acquisition of wh-movement and the extended projection principle.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wrcQ5wUVxd0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wrcQ5wUVxd0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wrcQ5wUVxd0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/wrcQ5wUVxd0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/wrcQ5wUVxd0/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 12,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "wrcQ5wUVxd0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Au2v__1LUtPUx-ee46EU54K_lB8",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4yMUQyQTQzMjRDNzMyQTMy",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 16: Syntax, Part 6",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses the relations between heads and their complements in different languages.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ruzcPdSyn8o/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ruzcPdSyn8o/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ruzcPdSyn8o/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/ruzcPdSyn8o/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/ruzcPdSyn8o/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 13,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ruzcPdSyn8o"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "PsjNnZIVf3_sIF42JSWyBSMY-MU",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai41MzJCQjBCNDIyRkJDN0VD",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 17: Syntax, Part 7, and Semantics, Part 1",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video concludes the discussion of syntax and begins the examination of semantics.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Di8e2opeGA0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Di8e2opeGA0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Di8e2opeGA0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Di8e2opeGA0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/Di8e2opeGA0/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 14,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Di8e2opeGA0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "UuUO1bPDK_Vu6Qlwk9_hIzSPbI4",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5EMEEwRUY5M0RDRTU3NDJC",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 18: Semantics, Part 2",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses different kinds of ambiguity relating to quantifiers.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/UXG4JImev-s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/UXG4JImev-s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/UXG4JImev-s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/UXG4JImev-s/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/UXG4JImev-s/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 15,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "UXG4JImev-s"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "MY5_VsQzIoI0ADNj2JTVVeU0rq8",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai45RTgxNDRBMzUwRjQ0MDhC",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 19: Semantics, Part 3",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses the semantics of quantifiers, including negative polarity items.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vWC6Q3Dv1ws/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vWC6Q3Dv1ws/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vWC6Q3Dv1ws/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/vWC6Q3Dv1ws/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/vWC6Q3Dv1ws/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 16,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "vWC6Q3Dv1ws"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "vEBNOqYaXYO4wVl1ShP29k8V5Zk",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai45ODRDNTg0QjA4NkFBNkQy",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 20: Semantics, Part 4",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses the semantics of pronouns, anaphora, and binding theory.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/VymHeBjublw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/VymHeBjublw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/VymHeBjublw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/VymHeBjublw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/VymHeBjublw/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 17,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "VymHeBjublw"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "bUH-Ib0005DrvShDEcdHajRih3g",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai41Mzk2QTAxMTkzNDk4MDhF",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 21: Semantics, Part 5",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses semantic interpretations of sentences, particularly ones featuring ellipsis. \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/msSCIvkjbHI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/msSCIvkjbHI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/msSCIvkjbHI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/msSCIvkjbHI/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/msSCIvkjbHI/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 18,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "msSCIvkjbHI"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "FJ__5E3TvP72FyKkcn1-JzZwKFQ",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4xMkVGQjNCMUM1N0RFNEUx",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 22: Dialects",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video discusses differences in how languages deal with negatives, and explains some of the grammatical constraints that apply in African American English.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6QRlpk8ZmPI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6QRlpk8ZmPI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6QRlpk8ZmPI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/6QRlpk8ZmPI/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/6QRlpk8ZmPI/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 19,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "6QRlpk8ZmPI"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Kyf-jRo1FxlVlzgtcvfkNCllJWM",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4wOTA3OTZBNzVEMTUzOTMy",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 23: Historical Linguistics",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video explains how semantic drift, recuttings, and sound changes over time cause languages to evolve and/or split into distinctly different languages.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/5itfLAwQol8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/5itfLAwQol8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/5itfLAwQol8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/5itfLAwQol8/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/5itfLAwQol8/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 20,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "5itfLAwQol8"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "rLEeh0QNLIZoN7UWXeA_tUOqmO8",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai5DQUNERDQ2NkIzRUQxNTY1",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 24: Endangered Languages",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video describes the efforts to revive the Wampanoag language, and the ways historical documents can be used to reconstruct the grammar of an extinct language.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/LOsNklq-dH8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/LOsNklq-dH8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/LOsNklq-dH8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/LOsNklq-dH8/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/LOsNklq-dH8/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 21,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "LOsNklq-dH8"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "7XhjRF9BzgOhT067kdrHwwIc7IA",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4zMDg5MkQ5MEVDMEM1NTg2",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 25: Language Acquisition",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video deals with how young children learn to understand and use language, as well as touching on the hypothesis that some aspects of grammar are innate.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/caLQIEeYpEk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/caLQIEeYpEk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/caLQIEeYpEk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/caLQIEeYpEk/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/caLQIEeYpEk/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 22,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "caLQIEeYpEk"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "VKiO2QtXf8etNMzkoyWJWbbCIMI",
+            "id": "UExVbDR1M2NOR1A2M0JaR05PcXJGMnFmX3l4T2p1RzM1ai4wMTcyMDhGQUE4NTIzM0Y5",
+            "snippet": {
+                "publishedAt": "2022-11-28T19:51:32Z",
+                "channelId": "UCEBb1b_L6zDS3xTUrIALZOw",
+                "title": "Lecture 26: Signed Languages",
+                "description": "MIT 24.900 Introduction to Linguistics, Spring 2022\nInstructor: Prof. Norvin W. Richards\n\nView the complete course: https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j\n\nThis video deals with the linguistic aspects of signed rather than spoken languages.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.\n\n\nSpeakers: Prof. Norvin W. Richards",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/12UWP2ZhUl0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/12UWP2ZhUl0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/12UWP2ZhUl0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/12UWP2ZhUl0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/12UWP2ZhUl0/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "MIT OpenCourseWare",
+                "playlistId": "PLUl4u3cNGP63BZGNOqrF2qf_yxOjuG35j",
+                "position": 23,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "12UWP2ZhUl0"
+                },
+                "videoOwnerChannelTitle": "MIT OpenCourseWare",
+                "videoOwnerChannelId": "UCEBb1b_L6zDS3xTUrIALZOw"
+            }
+        }
+    ]
