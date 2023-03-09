@@ -14,8 +14,18 @@ const Login = () => {
   const [response, setResponse] = useState("");
 
   //context
-  const { token, settoken, setIsLogged, isLogged, name, setName, role, setRole } =
-    useContext(LearningContext);
+  const {
+    token,
+    settoken,
+    setIsLogged,
+    isLogged,
+    name,
+    setName,
+    role,
+    setRole,
+    setUserId,
+    userId,
+  } = useContext(LearningContext);
 
   const LoginUser = (e) => {
     axios
@@ -26,11 +36,24 @@ const Login = () => {
       .then(function (response) {
         setResponse(response.data.message);
         setIsLogged(true);
+
+        //save user token
         settoken(response.data.token);
         localStorage.setItem("userToken", JSON.stringify(response.data.token));
 
-        setName(response.data.user.firstName)
-        console.log(response.data.user.firstName);
+        //save user name
+        setName(response.data.user.firstName);
+        localStorage.setItem(
+          "userName",
+          JSON.stringify(response.data.user.firstName)
+        );
+
+        //save user id
+        setUserId(response.data.user.userId);
+        localStorage.setItem(
+          "userId",
+          JSON.stringify(response.data.user._id)
+        );
       })
       .catch(function (error) {
         setResponse(error.response.data.message);

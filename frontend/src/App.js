@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Explore from "./components/Explore/Explore";
 import CourseInfo from "./components/CourseInfo/CourseInfo";
 
+
 export const LearningContext = createContext();
 
 function App() {
@@ -18,12 +19,35 @@ function App() {
   const [token, settoken] = useState(
     JSON.parse(localStorage.getItem("userToken")) || ""
   );
-  const [name, setName] = useState("");
-  const [role, setRole] = useState("")
+  const [name, setName] = useState(
+    JSON.parse(localStorage.getItem("userName")) || ""
+  );
+  const [userId, setUserId] = useState(
+    JSON.parse(localStorage.getItem("userId")) || ""
+  );
+
+  const [role, setRole] = useState("");
+  const [courses, setCourses] = useState([]);
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
 
   return (
     <LearningContext.Provider
-      value={{ token, settoken, setIsLogged, isLogged, name, setName, role, setRole}}
+      value={{
+        token,
+        settoken,
+        setIsLogged,
+        isLogged,
+        name,
+        setName,
+        role,
+        setRole,
+        courses,
+        setCourses,
+        setUserId,
+        userId,
+        enrolledCourses,
+        setEnrolledCourses,
+      }}
     >
       <div className="App">
         <header className="App-header">
@@ -37,7 +61,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/explore" element={<Explore />} />
-            <Route path="/coursedetail" element={<CourseInfo />} />
+            <Route path="/coursedetail/:id" element={<CourseInfo />} />
 
             <Route path="/register" element={<Register />} />
 
@@ -71,12 +95,15 @@ const Navigation = () => {
 };
 
 const DashboardNavigation = () => {
-  const { setIsLogged, settoken } = useContext(LearningContext);
+  const { setIsLogged, settoken, setName, setUserId } =
+    useContext(LearningContext);
 
   const Logout = () => {
     localStorage.setItem("userToken", JSON.stringify(null));
     settoken(null);
     setIsLogged(false);
+    setName("");
+    setUserId("");
   };
 
   return (
