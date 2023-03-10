@@ -26,7 +26,10 @@ function App() {
     JSON.parse(localStorage.getItem("userId")) || ""
   );
 
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState(
+    JSON.parse(localStorage.getItem("userRole")) || ""
+  );
+
   const [courses, setCourses] = useState([]);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
 

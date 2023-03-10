@@ -54,6 +54,8 @@ const Login = () => {
 
         //save user role
         setRole(response.data.user.role.role);
+        console.log(response.data.user.role.role);
+
         localStorage.setItem(
           "userRole",
           JSON.stringify(response.data.user.role.role)

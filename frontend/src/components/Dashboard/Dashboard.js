@@ -9,6 +9,29 @@ import Btn from "../Btn/Btn";
 
 import { LearningContext } from "../../App";
 const Dashboard = () => {
+  //context
+  const {
+    courses,
+    setCourses,
+    userId,
+    token,
+    name,
+    enrolledCourses,
+    setEnrolledCourses,
+    role,
+  } = useContext(LearningContext);
+
+  return (
+    <div>
+      {role == "student" && <StudentsDashboard />}
+      {role == "teacher" && <TeachersDashboard />}
+    </div>
+  );
+};
+
+//different dashboards for teachers and studens
+
+const StudentsDashboard = () => {
   //useNavigate hook to navigate programmatically
   const navigate = useNavigate();
 
@@ -97,14 +120,62 @@ const Dashboard = () => {
   );
 };
 
-//different dashboards for teachers and studens
+const TeachersDashboard = () => {
+  //useNavigate hook to navigate programmatically
+  const navigate = useNavigate();
 
-const StudentsDashboard = () =>{
+  //context
+  const {
+    courses,
+    setCourses,
+    userId,
+    token,
+    name,
+    enrolledCourses,
+    setEnrolledCourses,
+    role,
+  } = useContext(LearningContext);
 
-}
+  //state
+  const [createdCourses, setCreatedCourses] = useState([]);
 
-const TeachersDashboard = () =>{
-  
-}
+  //get created courses
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/courses/created/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setCreatedCourses(response.data);
+      })
+      .catch(function (error) {
+        console.log(error.response.data.message);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h2>Welcome Back {name}!</h2>
+      <div>
+        <h4>Created Courese</h4>
+        <div>
+          {createdCourses.map((element) => {
+            return (
+              <div>
+                <h6>{element.title}</h6>
+                <div>
+                  <Btn value="edit" />
+                  <Btn value="go to course" variant="success"/>
+                  <Btn value="delete" variant="danger"/>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
 export default Dashboard;
