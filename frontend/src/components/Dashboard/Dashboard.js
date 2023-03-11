@@ -2,12 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import Btn from "../Btn/Btn";
+import UploadCourse from "./UploadCourse";
+import { LearningContext } from "../../App";
 
 //the dashboard will change based on the user role
 //1-student: completed and in progress courses
 //2- teachers: your courses with tools to update or delete the course
 
-import { LearningContext } from "../../App";
 const Dashboard = () => {
   //context
   const {
@@ -159,16 +160,19 @@ const TeachersDashboard = () => {
     <div>
       <h2>Welcome Back {name}!</h2>
       <div>
+        <UploadCourse />
+      </div>
+      <div>
         <h4>Created Courese</h4>
         <div>
           {createdCourses.map((element) => {
             return (
-              <div>
+              <div key={element._id}>
                 <h6>{element.title}</h6>
                 <div>
                   <Btn value="edit" />
-                  <Btn value="go to course" variant="success"/>
-                  <Btn value="delete" variant="danger"/>
+                  <Btn value="go to course" variant="success" />
+                  <Btn value="delete" variant="danger" />
                 </div>
               </div>
             );
