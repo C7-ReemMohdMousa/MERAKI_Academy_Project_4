@@ -4,7 +4,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 import Btn from "../Btn/Btn";
 import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
-
+import DeleteCourse from "./DeleteCourse";
+import UpdateCourse from "./UpdateCourse";
 //the dashboard will change based on the user role
 //1-student: completed and in progress courses
 //2- teachers: your courses with tools to update or delete the course
@@ -75,7 +76,6 @@ const StudentsDashboard = () => {
   //cancel enrollment
   const cancelEnrollment = (e) => {
     let courseId = e.target.id;
-    console.log(courseId);
     axios
       .delete(`http://localhost:5000/enroll/${courseId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -135,10 +135,11 @@ const TeachersDashboard = () => {
     enrolledCourses,
     setEnrolledCourses,
     role,
+    createdCourses,
+    setCreatedCourses,
   } = useContext(LearningContext);
 
   //state
-  const [createdCourses, setCreatedCourses] = useState([]);
 
   //get created courses
 
@@ -170,9 +171,9 @@ const TeachersDashboard = () => {
               <div key={element._id}>
                 <h6>{element.title}</h6>
                 <div>
-                  <Btn value="edit" />
                   <Btn value="go to course" variant="success" />
-                  <Btn value="delete" variant="danger" />
+                  <UpdateCourse id={element._id} />
+                  <DeleteCourse id={element._id} />
                 </div>
               </div>
             );
