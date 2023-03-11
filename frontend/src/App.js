@@ -102,15 +102,16 @@ const Navigation = () => {
 };
 
 const DashboardNavigation = () => {
-  const { setIsLogged, settoken, setName, setUserId } =
+  const { setIsLogged, settoken, setName, setUserId, setRole } =
     useContext(LearningContext);
 
   const Logout = () => {
     localStorage.setItem("userToken", JSON.stringify(null));
     settoken(null);
     setIsLogged(false);
-    setName("");
-    setUserId("");
+    setName(null);
+    setUserId(null);
+    setRole(null);
   };
 
   return (

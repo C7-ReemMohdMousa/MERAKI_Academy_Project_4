@@ -2,10 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { UserContext } from "../../App";
 import { LearningContext } from "../../App";
+import { Navigate } from "react-router-dom";
 
 import Btn from "../Btn/Btn";
 import { Form, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useBootstrapMinBreakpoint } from "react-bootstrap/esm/ThemeProvider";
 
 const Register = () => {
   //context
@@ -21,6 +23,7 @@ const Register = () => {
 
   //variables
   let roleText;
+  let isRegisterd = false;
 
   const RegisterUser = (e) => {
     axios
@@ -34,6 +37,7 @@ const Register = () => {
       })
       .then(function (response) {
         setRespose(response.data.message);
+        isRegisterd = true;
       })
       .catch(function (error) {
         setRespose(error.response.data.message);
@@ -65,7 +69,6 @@ const Register = () => {
               type="text"
               placeholder="First Name"
               onChange={(e) => {
-                setFirstName(e.target.value);
                 console.log(e.target.value);
               }}
             />
@@ -114,42 +117,36 @@ const Register = () => {
             />
           </Form.Group>
 
-          <div className="form-check">
-            <input
-              className="form-check-input"
+          <Form.Group controlId="kindOfStand">
+            <Form.Check
+              value="design"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              value="student"
+              aria-label="radio 1"
+              label="Student"
+              name="role"
+              inline
               onChange={(e) => {
                 setRole("64060d4149b1402fedf92a91");
               }}
             />
-            <label className="form-check-label" htmlFor="flexRadioDefault1">
-              Student
-            </label>
-          </div>
-
-          <div className="form-check">
-            <input
-              className="form-check-input"
+            <Form.Check
+              value="food"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
-              value="teacher"
-              checked
+              aria-label="radio 2"
+              label="Teacher"
+              name="role"
+              inline
               onChange={(e) => {
-                setRole("64060f50382bf441f2e08e7d");
+                setRole("640cf5ae6308a0c0b07e5792");
               }}
             />
-            <label className="form-check-label" htmlFor="flexRadioDefault2">
-              Teacher
-            </label>
-          </div>
+          </Form.Group>
         </Form>
+        <br/>
         <Btn value="Register" variant="secondary" onClick={RegisterUser} />
       </Container>
       {respose}
+      {isRegisterd ? <Navigate to="/login" replace={true} /> : ""}
     </div>
   );
 };

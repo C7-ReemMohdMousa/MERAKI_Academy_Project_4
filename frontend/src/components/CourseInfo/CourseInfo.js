@@ -23,6 +23,9 @@ const CourseInfo = () => {
     setEnrolledCourses,
   } = useContext(LearningContext);
 
+  //state
+  const [isInstructor, setIsInstructor] = useState(false);
+
   //get the course
   const course = courses.filter((element) => {
     return element._id === id;
@@ -39,13 +42,14 @@ const CourseInfo = () => {
       )
       .then(function (response) {
         setEnrolledCourses(response.data);
-        setIsEnrolled(true)
+        setIsEnrolled(true);
       })
       .catch(function (error) {
         throw error;
       });
   };
 
+  //CHECK IF THE USER IS ALREADY ENROLLED THE COURSE
   useEffect(() => {
     axios
       .get(`http://localhost:5000/enroll/${id}/${userId}`)
@@ -65,6 +69,22 @@ const CourseInfo = () => {
     navigate(`/coursedashboard/${e.target.id}`);
   };
 
+  //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/courses/isinstructor/${id}/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        if (response.data) {
+          setIsInstructor(true);
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }, []);
+
   return (
     <div>
       {course.map((element) => {
@@ -73,7 +93,7 @@ const CourseInfo = () => {
             <h1>{element.title}</h1>
             <p>{element.description}</p>
 
-            {isEnrolled ? (
+            {isEnrolled || isInstructor ? (
               <Btn
                 value="go to course"
                 variant="success"

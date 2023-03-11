@@ -12,16 +12,7 @@ import UpdateCourse from "./UpdateCourse";
 
 const Dashboard = () => {
   //context
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    name,
-    enrolledCourses,
-    setEnrolledCourses,
-    role,
-  } = useContext(LearningContext);
+  const { role } = useContext(LearningContext);
 
   return (
     <div>
@@ -51,6 +42,7 @@ const StudentsDashboard = () => {
 
   //states
   const [userEnrolled, setUserEnrolled] = useState([]);
+  const [isFectched, setIsFectched] = useState(false);
 
   //get the in progress courses
 
@@ -61,10 +53,11 @@ const StudentsDashboard = () => {
       })
       .then(function (response) {
         setUserEnrolled(response.data);
+        setIsFectched(true);
         console.log(response.data);
       })
       .catch(function (error) {
-        console.log(error.response.data.message);
+        throw error
       });
   }, []);
 
@@ -94,29 +87,31 @@ const StudentsDashboard = () => {
 
   return (
     <div>
-      <h2>Welcome Back {name}!</h2>
-      <div className="dasboard-courses-container">
-        <h4>in progress courses</h4>
-        {console.log(userEnrolled)}
-        {userEnrolled.map((element) => {
-          return (
-            <div key={element.course._id}>
-              <h6>{element.course.title}</h6>
-              <Btn
-                value="go to course"
-                id={element.course._id}
-                onClick={goToCourse}
-              />
-              <Btn
-                value="cancel enrollment"
-                variant="danger"
-                id={element.course._id}
-                onClick={cancelEnrollment}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {isFectched ? <div>
+        <h2>Welcome Back {name}!</h2>
+        <div className="dasboard-courses-container">
+          <h4>in progress courses</h4>
+          {console.log(userEnrolled)}
+          {userEnrolled.map((element) => {
+            return (
+              <div key={element.course._id}>
+                <h6>{element.course.title}</h6>
+                <Btn
+                  value="go to course"
+                  id={element.course._id}
+                  onClick={goToCourse}
+                />
+                <Btn
+                  value="cancel enrollment"
+                  variant="danger"
+                  id={element.course._id}
+                  onClick={cancelEnrollment}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div> : ""}
     </div>
   );
 };
@@ -157,6 +152,8 @@ const TeachersDashboard = () => {
       });
   }, []);
 
+  const goToCourseDashboard = () => {};
+
   return (
     <div>
       <h2>Welcome Back {name}!</h2>
@@ -171,7 +168,13 @@ const TeachersDashboard = () => {
               <div key={element._id}>
                 <h6>{element.title}</h6>
                 <div>
-                  <Btn value="go to course" variant="success" />
+                  <Btn
+                    value="go to course"
+                    variant="success"
+                    onClick={() => {
+                      navigate(`/coursedashboard/${element._id}}`);
+                    }}
+                  />
                   <UpdateCourse id={element._id} />
                   <DeleteCourse id={element._id} />
                 </div>
