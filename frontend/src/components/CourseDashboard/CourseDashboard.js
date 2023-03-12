@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import axios from "axios";
-import { Media, Video } from "@vidstack/player-react";
-import Iframe from "react-iframe";
 import { Col, Row, ListGroup, Tab } from "react-bootstrap";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import UploadLecture from "./UploadLecture";
@@ -74,12 +72,12 @@ const CourseDashboard = () => {
       });
   }, []);
 
-  const changeIsCompleted = (e) => {
+  const changeIsCompleted = (lect) => {
     // console.log(e.target.v.id);
-    let lecID = e.target.v.id;
+    // let lecID = e.target.v.id;
     axios
       .put(
-        `http://localhost:5000/courses/${id}/${lecID}`,
+        `http://localhost:5000/courses/${id}/${lect}`,
         { isCompleted: "completed" },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -87,7 +85,6 @@ const CourseDashboard = () => {
       )
       .then(function (response) {
         console.log(response.data);
-        console.log(id);
       })
       .catch(function (error) {
         throw error;
@@ -182,7 +179,10 @@ const CourseDashboard = () => {
                           <YouTube
                             id={element._id}
                             videoId={element.videoURL}
-                            onEnd={changeIsCompleted}
+                            onEnd={() => {
+                              console.log(element._id);
+                              changeIsCompleted(element._id);
+                            }}
                           />
                         </div>
                       </Tab.Pane>

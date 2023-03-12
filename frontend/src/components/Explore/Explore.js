@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import { Card, Button } from "react-bootstrap";
+import Category from "./Category/Category";
 
 const Explore = () => {
   //useNavigate hook to navigate programmatically
@@ -45,13 +46,17 @@ const Explore = () => {
     navigate(`/coursedetail/${e.target.id}`);
   };
 
-
   return (
     <div>
+      <Category courses={courses} setCourses={setCourses} />
       {isFectched
         ? courses.map((element) => {
             return (
-              <Card style={{ width: "18rem" }} key={element._id} className= "courses-cards">
+              <Card
+                style={{ width: "18rem" }}
+                key={element._id}
+                className="courses-cards"
+              >
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Title>{element.title}</Card.Title>

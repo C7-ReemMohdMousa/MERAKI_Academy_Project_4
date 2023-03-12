@@ -14,6 +14,7 @@ const DeleteLecture = ({ lectureId, courseId }) => {
     setEnrolledCourses,
   } = useContext(LearningContext);
 
+
   //delete lecture
   const deleteMyLecture = () => {
     axios
