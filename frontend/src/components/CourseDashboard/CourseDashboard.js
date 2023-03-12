@@ -74,7 +74,9 @@ const CourseDashboard = () => {
       });
   }, []);
 
-  const changeIsCompleted = (lecID) => {
+  const changeIsCompleted = (e) => {
+    // console.log(e.target.v.id);
+    let lecID = e.target.v.id;
     axios
       .put(
         `http://localhost:5000/courses/${id}/${lecID}`,
@@ -85,11 +87,41 @@ const CourseDashboard = () => {
       )
       .then(function (response) {
         console.log(response.data);
+        console.log(id);
       })
       .catch(function (error) {
         throw error;
       });
   };
+
+  //check if the user completed the course, change the enrollment status
+  const isTheCourseCompleted = () => {
+    // console.log(course.lectures);
+    if (course.lectures) {
+      const CompletedLecturesArr = course.lectures.filter((element) => {
+        return element.isCompleted == "completed";
+      });
+
+      if (course.lectures.length === CompletedLecturesArr.length) {
+        axios
+          .put(
+            `http://localhost:5000/enroll/${id}`,
+            { status: "completed", completedAt: Date.now() },
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          )
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            throw error;
+          });
+      }
+    }
+  };
+
+  isTheCourseCompleted();
 
   return (
     <div>
@@ -148,8 +180,9 @@ const CourseDashboard = () => {
                           <p>{element.description}</p>
                           {/* <Iframe url={element.videoURL} allowFullScreen /> */}
                           <YouTube
-                            videoId="LOsNklq-dH8"
-                            onEnd={changeIsCompleted(element._id)}
+                            id={element._id}
+                            videoId={element.videoURL}
+                            onEnd={changeIsCompleted}
                           />
                         </div>
                       </Tab.Pane>
