@@ -1,0 +1,8 @@
+.lecture-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-check-none {
+  display: none;
+}

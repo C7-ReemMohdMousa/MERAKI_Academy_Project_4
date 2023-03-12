@@ -10,6 +10,9 @@ import { isDisabled } from "@testing-library/user-event/dist/utils";
 import UploadLecture from "./UploadLecture";
 import UpdateLecture from "./UpdateLecture";
 import DeleteLecture from "./DeleteLecture";
+import YouTube from "react-youtube";
+import { BsCheckCircleFill } from "react-icons/bs";
+import "./CourseDashboard.css";
 
 const CourseDashboard = () => {
   //params
@@ -53,7 +56,7 @@ const CourseDashboard = () => {
       .catch(function (error) {
         throw error;
       });
-  }, [course]);
+  }, []);
 
   //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
   useEffect(() => {
@@ -70,6 +73,23 @@ const CourseDashboard = () => {
         throw error;
       });
   }, []);
+
+  const changeIsCompleted = (lecID) => {
+    axios
+      .put(
+        `http://localhost:5000/courses/${id}/${lecID}`,
+        { isCompleted: "completed" },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  };
 
   return (
     <div>
@@ -96,7 +116,16 @@ const CourseDashboard = () => {
                   <Col sm={4}>
                     <ListGroup>
                       <ListGroup.Item action href={"#" + element._id}>
-                        {element.title}
+                        <div className="lecture-title">
+                          {element.title}
+                          <BsCheckCircleFill
+                            className={
+                              element.isCompleted == "completed"
+                                ? "display-check"
+                                : "display-check-none"
+                            }
+                          />
+                        </div>
                       </ListGroup.Item>
                     </ListGroup>
                   </Col>
@@ -117,7 +146,11 @@ const CourseDashboard = () => {
                             ""
                           )}
                           <p>{element.description}</p>
-                          <Iframe url={element.videoURL} />
+                          {/* <Iframe url={element.videoURL} allowFullScreen /> */}
+                          <YouTube
+                            videoId="LOsNklq-dH8"
+                            onEnd={changeIsCompleted(element._id)}
+                          />
                         </div>
                       </Tab.Pane>
                     </Tab.Content>
