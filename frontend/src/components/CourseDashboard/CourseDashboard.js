@@ -14,14 +14,15 @@ import DeleteLecture from "./DeleteLecture";
 const CourseDashboard = () => {
   //params
   const params = useParams();
-  const id = params.id;
-  // console.log(id);
+  const id = params.id; //courseID
 
   //state
   const [course, setCourse] = useState({});
   const [isFectched, setIsFectched] = useState(false);
   const [key, setKey] = useState("");
   const [lectureId, setLectureId] = useState("");
+  const [isInstructor, setIsInstructor] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   //context
   const {
@@ -31,7 +32,15 @@ const CourseDashboard = () => {
     token,
     enrolledCourses,
     setEnrolledCourses,
+    role,
   } = useContext(LearningContext);
+
+  //If Admin; activate the edit and the update buttons
+  useEffect(() => {
+    if (role == "admin") {
+      setIsAdmin(true);
+    }
+  }, []);
 
   //get the course
   useEffect(() => {
@@ -46,15 +55,35 @@ const CourseDashboard = () => {
       });
   }, [course]);
 
+  //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/courses/isinstructor/${id}/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        if (response.data) {
+          setIsInstructor(true);
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }, []);
+
   return (
     <div>
       {isFectched ? (
         <div>
           <h1>{course.title}</h1>
           <p>{course.description}</p>
-          <div>
-            <UploadLecture id={id} />
-          </div>
+          {isInstructor || isAdmin ? (
+            <div>
+              <UploadLecture id={id} />
+            </div>
+          ) : (
+            ""
+          )}
           {course.lectures.map((element) => {
             return (
               <Tab.Container
@@ -76,11 +105,17 @@ const CourseDashboard = () => {
                       <Tab.Pane eventKey={"#" + element._id}>
                         <div>
                           <h5>{element.title}</h5>
-                          <UpdateLecture id={element._id} />
-                          <DeleteLecture
-                            lectureId={element._id}
-                            courseId={id}
-                          />
+                          {isInstructor || isAdmin ? (
+                            <div>
+                              <UpdateLecture id={element._id} />
+                              <DeleteLecture
+                                lectureId={element._id}
+                                courseId={id}
+                              />
+                            </div>
+                          ) : (
+                            ""
+                          )}
                           <p>{element.description}</p>
                           <Iframe url={element.videoURL} />
                         </div>

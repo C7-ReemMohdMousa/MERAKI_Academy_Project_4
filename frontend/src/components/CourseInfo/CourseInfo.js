@@ -21,10 +21,19 @@ const CourseInfo = () => {
     token,
     enrolledCourses,
     setEnrolledCourses,
+    role,
   } = useContext(LearningContext);
 
   //state
   const [isInstructor, setIsInstructor] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  //If Admin; dectivate enroll button and activate go to course btn
+  useEffect(() => {
+    if (role == "admin") {
+      setIsAdmin(true);
+    }
+  }, []);
 
   //get the course
   const course = courses.filter((element) => {
@@ -95,7 +104,7 @@ const CourseInfo = () => {
             <h1>{element.title}</h1>
             <p>{element.description}</p>
 
-            {isEnrolled || isInstructor ? (
+            {isEnrolled || isInstructor || isAdmin ? (
               <Btn
                 value="go to course"
                 variant="success"

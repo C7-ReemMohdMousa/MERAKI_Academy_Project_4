@@ -40,7 +40,8 @@ const Register = () => {
         isRegisterd = true;
       })
       .catch(function (error) {
-        setRespose(error.response.data.message);
+        throw error.response.data;
+        // setRespose(error.response.data.message);
       });
   };
 
@@ -69,7 +70,7 @@ const Register = () => {
               type="text"
               placeholder="First Name"
               onChange={(e) => {
-                console.log(e.target.value);
+                setFirstName(e.target.value);
               }}
             />
           </Form.Group>
@@ -142,7 +143,7 @@ const Register = () => {
             />
           </Form.Group>
         </Form>
-        <br/>
+        <br />
         <Btn value="Register" variant="secondary" onClick={RegisterUser} />
       </Container>
       {respose}

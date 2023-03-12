@@ -18,6 +18,7 @@ const Dashboard = () => {
     <div>
       {role == "student" && <StudentsDashboard />}
       {role == "teacher" && <TeachersDashboard />}
+      {role == "admin" && <AdminDashboard />}
     </div>
   );
 };
@@ -192,4 +193,76 @@ const TeachersDashboard = () => {
     </div>
   );
 };
+
+const AdminDashboard = () => {
+  //useNavigate hook to navigate programmatically
+  const navigate = useNavigate();
+
+  //context
+  const {
+    courses,
+    setCourses,
+    userId,
+    token,
+    name,
+    enrolledCourses,
+    setEnrolledCourses,
+    role,
+    createdCourses,
+    setCreatedCourses,
+  } = useContext(LearningContext);
+
+  const goToCourse = (e) => {
+    //go to course dashboard
+    navigate(`/coursedashboard/${e.target.id}`);
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/courses`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setCourses(response.data.courses)
+      })
+      .catch(function (error) {
+        console.log(error.response.data.message);
+      });
+  }, []);
+
+  console.log(courses);
+
+  return (
+    <div>
+      <h2>Welcome Back {name}!</h2>
+      <div>
+        <UploadCourse />
+      </div>
+      <div>
+        <h4>All Courese</h4>
+        <div>
+          {courses.map((element) => {
+            return (
+              <div key={element._id}>
+                <h6>{element.title}</h6>
+                <div>
+                  <Btn
+                    id={element._id}
+                    value="go to course"
+                    variant="success"
+                    onClick={goToCourse}
+                  />
+                  <UpdateCourse id={element._id} />
+                  <DeleteCourse id={element._id} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default Dashboard;
