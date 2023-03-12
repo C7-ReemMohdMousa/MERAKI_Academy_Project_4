@@ -5,16 +5,23 @@ import Btn from "../Btn/Btn";
 import axios from "axios";
 import { Media, Video } from "@vidstack/player-react";
 import Iframe from "react-iframe";
+import { Col, Row, ListGroup, Tab } from "react-bootstrap";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
+import UploadLecture from "./UploadLecture";
+import UpdateLecture from "./UpdateLecture";
+import DeleteLecture from "./DeleteLecture";
 
 const CourseDashboard = () => {
   //params
   const params = useParams();
   const id = params.id;
-  console.log(id);
+  // console.log(id);
 
   //state
   const [course, setCourse] = useState({});
   const [isFectched, setIsFectched] = useState(false);
+  const [key, setKey] = useState("");
+  const [lectureId, setLectureId] = useState("");
 
   //context
   const {
@@ -28,21 +35,16 @@ const CourseDashboard = () => {
 
   //get the course
   useEffect(() => {
-    console.log("enterd");
     axios
       .get(`http://localhost:5000/courses/${id}`)
       .then(function (response) {
-        console.log("enterd");
         setCourse(response.data);
         setIsFectched(true);
-        console.log(response.data);
       })
       .catch(function (error) {
         throw error;
       });
-  }, []);
-
-  console.log(course);
+  }, [course]);
 
   return (
     <div>
@@ -50,18 +52,48 @@ const CourseDashboard = () => {
         <div>
           <h1>{course.title}</h1>
           <p>{course.description}</p>
+          <div>
+            <UploadLecture id={id} />
+          </div>
           {course.lectures.map((element) => {
             return (
-              <div>
-                <h5>{element.title}</h5>
-                <p>{element.description}</p>
-                <Iframe url={element.videoURL} />
-              </div>
+              <Tab.Container
+                id="list-group-tabs-example"
+                activeKey={key}
+                onSelect={(k) => setKey(k)}
+                key={element._id}
+              >
+                <Row>
+                  <Col sm={4}>
+                    <ListGroup>
+                      <ListGroup.Item action href={"#" + element._id}>
+                        {element.title}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                  <Col sm={8}>
+                    <Tab.Content>
+                      <Tab.Pane eventKey={"#" + element._id}>
+                        <div>
+                          <h5>{element.title}</h5>
+                          <UpdateLecture id={element._id} />
+                          <DeleteLecture
+                            lectureId={element._id}
+                            courseId={id}
+                          />
+                          <p>{element.description}</p>
+                          <Iframe url={element.videoURL} />
+                        </div>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Col>
+                </Row>
+              </Tab.Container>
             );
           })}
         </div>
       ) : (
-        <div></div>
+        "No data"
       )}
     </div>
   );

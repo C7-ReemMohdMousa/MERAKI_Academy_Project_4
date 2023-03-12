@@ -67,6 +67,7 @@ const CourseInfo = () => {
   const goToCourse = (e) => {
     //go to course dashboard
     navigate(`/coursedashboard/${e.target.id}`);
+    console.log(e.target.id);
   };
 
   //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
@@ -88,6 +89,7 @@ const CourseInfo = () => {
   return (
     <div>
       {course.map((element) => {
+        console.log(element._id);
         return (
           <div key={element._id}>
             <h1>{element.title}</h1>
