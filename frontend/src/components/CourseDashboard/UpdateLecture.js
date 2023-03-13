@@ -6,16 +6,7 @@ import { LearningContext } from "../../App";
 
 const UpdateLecture = ({ id }) => {
   //contect
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    name,
-    enrolledCourses,
-    setEnrolledCourses,
-    role,
-  } = useContext(LearningContext);
+  const { token, lectures, setLectures, course } = useContext(LearningContext);
 
   //modal state
   const [show, setShow] = useState(false);
@@ -23,37 +14,22 @@ const UpdateLecture = ({ id }) => {
   //input state
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [level, setLevel] = useState("");
+  const [videoCode, setVideoCode] = useState("");
   const [response, setResponse] = useState("");
   const [hideSaveBtn, setHideSaveBtn] = useState(false);
-  const [videoId, setVideoId] = useState("");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  //to get the categoryID
-  const getCategory = (e) => {
-    let categoryName = e.target.value;
-    console.log(categoryName);
-
-    axios
-      .get(`http://localhost:5000/courses/category/${categoryName}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then(function (response) {
-        setCategory(response.data.categoryId);
-      })
-      .catch(function (error) {
-        throw error;
-      });
+  const handleShow = () => {
+    setShow(true);
+    setHideSaveBtn(false);
+    setResponse("");
   };
 
   const saveTheEditedCourse = () => {
     axios
       .put(
-        `http://localhost:5000/courses/${id}`,
-        { title, description, category, level },
+        `http://localhost:5000/courses/${course._id}/${id}`,
+        { title, description, videoURL: videoCode },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -63,10 +39,19 @@ const UpdateLecture = ({ id }) => {
         if (response.data.message) {
           setResponse(response.data.message);
         } else {
-          setTitle("");
-          setDescription("");
           setHideSaveBtn(true);
           setResponse("Course Updated!");
+          const newLecturesArr = lectures.map((element) => {
+            if (element._id === id) {
+              element.title = title;
+              element.description = description;
+              element.videoURL = videoCode;
+              return element;
+            } else {
+              return element;
+            }
+          });
+          setLectures(newLecturesArr);
         }
       })
       .catch(function (error) {
@@ -122,7 +107,7 @@ const UpdateLecture = ({ id }) => {
                 rows={1}
                 placeholder="ex: ZK3O402wf1c"
                 onChange={(e) => {
-                  setVideoId(e.target.value);
+                  setVideoCode(e.target.value);
                 }}
               />
             </Form.Group>

@@ -28,8 +28,14 @@ const UploadCourse = () => {
   const [response, setResponse] = useState("");
   const [hideSaveBtn, setHideSaveBtn] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setHideSaveBtn(false);
+    setResponse("");
+    setShow(true);
+  };
 
   //to get the categoryID
   const getCategory = (e) => {
@@ -61,9 +67,8 @@ const UploadCourse = () => {
         console.log(response.data);
         if (response.data.message) {
           setResponse(response.data.message);
+          console.log(response.data.message);
         } else {
-          setTitle("");
-          setDescription("");
           setHideSaveBtn(true);
           setResponse("Course Created!");
         }

@@ -33,6 +33,9 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [createdCourses, setCreatedCourses] = useState([]);
+  const [filterdCourses, setFilterdCourses] = useState([]);
+  const [course, setCourse] = useState({});
+  const [lectures, setLectures] = useState([]);
 
   return (
     <LearningContext.Provider
@@ -53,6 +56,12 @@ function App() {
         setEnrolledCourses,
         createdCourses,
         setCreatedCourses,
+        filterdCourses,
+        setFilterdCourses,
+        course,
+        setCourse,
+        lectures,
+        setLectures,
       }}
     >
       <div className="App">

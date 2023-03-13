@@ -4,7 +4,7 @@ import axios from "axios";
 import { LearningContext } from "../../App";
 
 const DeleteCourse = ({ id }) => {
-  //contect
+  //contect 
   const {
     courses,
     setCourses,

@@ -6,16 +6,8 @@ import { LearningContext } from "../../App";
 
 const UploadLecture = ({ id }) => {
   //contect
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    name,
-    enrolledCourses,
-    setEnrolledCourses,
-    role,
-  } = useContext(LearningContext);
+  const { token, course, setCourse, lectures, setLectures } =
+    useContext(LearningContext);
 
   //modal state
   const [show, setShow] = useState(false);
@@ -27,8 +19,14 @@ const UploadLecture = ({ id }) => {
   const [response, setResponse] = useState("");
   const [hideSaveBtn, setHideSaveBtn] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+    setHideSaveBtn(false);
+    setResponse("");
+  };
 
   const saveTheUploadedLecture = () => {
     axios
@@ -44,10 +42,10 @@ const UploadLecture = ({ id }) => {
         if (response.data.message) {
           setResponse(response.data.message);
         } else {
-          setTitle("");
-          setDescription("");
           setHideSaveBtn(true);
           setResponse("Lecture Created!");
+          let newLecture = response.data;
+          setLectures([...lectures, newLecture]);
         }
       })
       .catch(function (error) {

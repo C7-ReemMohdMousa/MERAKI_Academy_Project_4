@@ -18,7 +18,6 @@ const CourseDashboard = () => {
   const id = params.id; //courseID
 
   //state
-  const [course, setCourse] = useState({});
   const [isFectched, setIsFectched] = useState(false);
   const [key, setKey] = useState("");
   const [lectureId, setLectureId] = useState("");
@@ -26,15 +25,8 @@ const CourseDashboard = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   //context
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    enrolledCourses,
-    setEnrolledCourses,
-    role,
-  } = useContext(LearningContext);
+  const { userId, token, role, course, setCourse, lectures, setLectures } =
+    useContext(LearningContext);
 
   //If Admin; activate the edit and the update buttons
   useEffect(() => {
@@ -48,6 +40,7 @@ const CourseDashboard = () => {
     axios
       .get(`http://localhost:5000/courses/${id}`)
       .then(function (response) {
+        setLectures(response.data.lectures)
         setCourse(response.data);
         setIsFectched(true);
       })
@@ -133,7 +126,7 @@ const CourseDashboard = () => {
           ) : (
             ""
           )}
-          {course.lectures.map((element) => {
+          {lectures.map((element) => {
             return (
               <Tab.Container
                 id="list-group-tabs-example"

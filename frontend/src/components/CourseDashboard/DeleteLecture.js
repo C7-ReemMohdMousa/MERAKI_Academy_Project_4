@@ -4,16 +4,12 @@ import axios from "axios";
 import { LearningContext } from "../../App";
 
 const DeleteLecture = ({ lectureId, courseId }) => {
-  //context
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    enrolledCourses,
-    setEnrolledCourses,
-  } = useContext(LearningContext);
+  //
+  let newLectures;
 
+  //context
+  const { token, course, setCourse, lectures, setLectures } =
+    useContext(LearningContext);
 
   //delete lecture
   const deleteMyLecture = () => {
@@ -22,7 +18,10 @@ const DeleteLecture = ({ lectureId, courseId }) => {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
-        console.log(response.data);
+        const newLecturesArr = lectures.filter((element) => {
+          return element._id !== lectureId;
+        });
+        setLectures(newLecturesArr);
       })
       .catch(function (error) {
         throw error;
