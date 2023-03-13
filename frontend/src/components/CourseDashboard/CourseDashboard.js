@@ -40,7 +40,6 @@ const CourseDashboard = () => {
 
   //get the enrollment information of this course for this specefic user
   useEffect(() => {
-    console.log("pppppppppppppppppppppppp");
     axios
       .get(`http://localhost:5000/enroll/check/completed/lectures/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -49,7 +48,6 @@ const CourseDashboard = () => {
         console.log(response.data);
         setEnrollmentInfo(response.data);
         setIsEnrollData(true);
-        console.log("ccccccccccccccccccccccccc");
       })
       .catch(function (error) {
         throw error;
@@ -113,13 +111,8 @@ const CourseDashboard = () => {
 
   //check if the user completed the course, change the enrollment status
   const isTheCourseCompleted = () => {
-    // console.log(course.lectures);
-    if (course.lectures) {
-      const CompletedLecturesArr = course.lectures.filter((element) => {
-        return element.isCompleted == "completed";
-      });
-
-      if (course.lectures.length === CompletedLecturesArr.length) {
+    if (enrollmentInfo.length !== 0) {
+      if (course.lectures.length === enrollmentInfo[0].isCompleted.length) {
         axios
           .put(
             `http://localhost:5000/enroll/${id}`,
@@ -138,16 +131,7 @@ const CourseDashboard = () => {
     }
   };
 
-  const checkIfTheUserCompletedLecture = (lectId) => {};
-
-  console.log(enrollmentInfo);
-  console.log(isEnrollData);
-
-  console.log(isFectched);
-  console.log(course);
-
-  // checkIfTheUserCompletedLecture();
-  // isTheCourseCompleted();
+  isTheCourseCompleted();
 
   return (
     <div>
@@ -175,13 +159,13 @@ const CourseDashboard = () => {
                     <ListGroup>
                       <ListGroup.Item action href={"#" + element._id}>
                         <div className="lecture-title">{element.title}</div>
-                        {enrollmentInfo.length ? (
+                        {isEnrollData && enrollmentInfo.length ? (
                           enrollmentInfo[0].isCompleted.includes(
                             element._id
                           ) ? (
                             <BsCheckCircleFill className="display-check" />
                           ) : (
-                            ""
+                            <BsCheckCircleFill className="display-check-none " />
                           )
                         ) : (
                           ""
