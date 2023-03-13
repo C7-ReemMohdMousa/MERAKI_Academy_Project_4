@@ -4,7 +4,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import Btn from "../Btn/Btn";
 import { LearningContext } from "../../App";
 
-const UploadCourse = () => {
+const UploadCourse = ({ instructorId }) => {
   //contect
   const {
     courses,
@@ -15,6 +15,8 @@ const UploadCourse = () => {
     enrolledCourses,
     setEnrolledCourses,
     role,
+    createdCourses,
+    setCreatedCourses,
   } = useContext(LearningContext);
 
   //modal state
@@ -72,6 +74,11 @@ const UploadCourse = () => {
           setResponse("Course Created!");
           console.log(response.data);
           setCourses([...courses, response.data]);
+
+          if (role === "teacher") {
+            console.log("enterd");
+            setCreatedCourses([...createdCourses, response.data]);
+          }
         }
       })
       .catch(function (error) {

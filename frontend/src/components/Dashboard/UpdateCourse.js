@@ -15,6 +15,8 @@ const UpdateCourse = ({ id }) => {
     enrolledCourses,
     setEnrolledCourses,
     role,
+    createdCourses,
+    setCreatedCourses,
   } = useContext(LearningContext);
 
   //modal state
@@ -66,6 +68,34 @@ const UpdateCourse = ({ id }) => {
           setDescription("");
           setHideSaveBtn(true);
           setResponse("Course Updated!");
+
+          const updatedCourses = courses.map((element) => {
+            if (element._id === id) {
+              element.title = title;
+              element.description = description;
+              element.category = category;
+              element.level = level;
+              return element;
+            } else {
+              return element;
+            }
+          });
+          setCourses(updatedCourses);
+
+          if (role === "teacher") {
+            const updatedCourses = createdCourses.map((element) => {
+              if (element._id === id) {
+                element.title = title;
+                element.description = description;
+                element.category = category;
+                element.level = level;
+                return element;
+              } else {
+                return element;
+              }
+            });
+            setCreatedCourses(updatedCourses);
+          }
         }
       })
       .catch(function (error) {
