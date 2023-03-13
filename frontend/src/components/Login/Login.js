@@ -51,6 +51,7 @@ const Login = () => {
         //save user id
         setUserId(response.data.user._id);
         localStorage.setItem("userId", JSON.stringify(response.data.user._id));
+        console.log(response.data.user);
 
         //save user role
         setRole(response.data.user.role.role);

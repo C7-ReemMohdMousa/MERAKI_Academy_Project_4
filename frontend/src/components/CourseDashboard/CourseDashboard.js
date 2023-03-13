@@ -23,10 +23,38 @@ const CourseDashboard = () => {
   const [lectureId, setLectureId] = useState("");
   const [isInstructor, setIsInstructor] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isEnrollData, setIsEnrollData] = useState(false);
 
   //context
-  const { userId, token, role, course, setCourse, lectures, setLectures } =
-    useContext(LearningContext);
+  const {
+    userId,
+    token,
+    role,
+    course,
+    setCourse,
+    lectures,
+    setLectures,
+    enrollmentInfo,
+    setEnrollmentInfo,
+  } = useContext(LearningContext);
+
+  //get the enrollment information of this course for this specefic user
+  useEffect(() => {
+    console.log("pppppppppppppppppppppppp");
+    axios
+      .get(`http://localhost:5000/enroll/check/completed/lectures/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setEnrollmentInfo(response.data);
+        setIsEnrollData(true);
+        console.log("ccccccccccccccccccccccccc");
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  }, []);
 
   //If Admin; activate the edit and the update buttons
   useEffect(() => {
@@ -40,7 +68,7 @@ const CourseDashboard = () => {
     axios
       .get(`http://localhost:5000/courses/${id}`)
       .then(function (response) {
-        setLectures(response.data.lectures)
+        setLectures(response.data.lectures);
         setCourse(response.data);
         setIsFectched(true);
       })
@@ -65,13 +93,12 @@ const CourseDashboard = () => {
       });
   }, []);
 
-  const changeIsCompleted = (lect) => {
-    // console.log(e.target.v.id);
-    // let lecID = e.target.v.id;
+  const AddLectureToIsCompletedEnrollment = (lectId) => {
+    console.log("enterd");
     axios
       .put(
-        `http://localhost:5000/courses/${id}/${lect}`,
-        { isCompleted: "completed" },
+        `http://localhost:5000/enroll/complete/lecture/${id}/${lectId}`,
+        { isCompleted: lectId },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -111,7 +138,16 @@ const CourseDashboard = () => {
     }
   };
 
-  isTheCourseCompleted();
+  const checkIfTheUserCompletedLecture = (lectId) => {};
+
+  console.log(enrollmentInfo);
+  console.log(isEnrollData);
+
+  console.log(isFectched);
+  console.log(course);
+
+  // checkIfTheUserCompletedLecture();
+  // isTheCourseCompleted();
 
   return (
     <div>
@@ -138,22 +174,29 @@ const CourseDashboard = () => {
                   <Col sm={4}>
                     <ListGroup>
                       <ListGroup.Item action href={"#" + element._id}>
-                        <div className="lecture-title">
-                          {element.title}
-                          <BsCheckCircleFill
-                            className={
-                              element.isCompleted == "completed"
-                                ? "display-check"
-                                : "display-check-none"
-                            }
-                          />
-                        </div>
+                        <div className="lecture-title">{element.title}</div>
+                        {enrollmentInfo.length ? (
+                          enrollmentInfo[0].isCompleted.includes(
+                            element._id
+                          ) ? (
+                            <BsCheckCircleFill className="display-check" />
+                          ) : (
+                            ""
+                          )
+                        ) : (
+                          ""
+                        )}
                       </ListGroup.Item>
                     </ListGroup>
                   </Col>
                   <Col sm={8}>
                     <Tab.Content>
-                      <Tab.Pane eventKey={"#" + element._id}>
+                      <Tab.Pane
+                        eventKey={"#" + element._id}
+                        onEnter={() => {
+                          // checkIfTheUserCompletedLecture(element._id);
+                        }}
+                      >
                         <div>
                           <h5>{element.title}</h5>
                           {isInstructor || isAdmin ? (
@@ -174,7 +217,7 @@ const CourseDashboard = () => {
                             videoId={element.videoURL}
                             onEnd={() => {
                               console.log(element._id);
-                              changeIsCompleted(element._id);
+                              AddLectureToIsCompletedEnrollment(element._id);
                             }}
                           />
                         </div>

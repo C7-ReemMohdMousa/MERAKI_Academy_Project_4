@@ -13,7 +13,7 @@ import UpdateCourse from "./UpdateCourse";
 const Dashboard = () => {
   //context
   const { role } = useContext(LearningContext);
-
+  console.log(role);
   return (
     <div>
       {role == "student" && <StudentsDashboard />}
@@ -46,7 +46,6 @@ const StudentsDashboard = () => {
   const [isFectched, setIsFectched] = useState(false);
 
   //get the in progress courses
-
   useEffect(() => {
     axios
       .get(`http://localhost:5000/enroll/myinProgressCourses/${userId}`, {
@@ -68,8 +67,8 @@ const StudentsDashboard = () => {
   };
 
   //cancel enrollment
-  const cancelEnrollment = (e) => {
-    let courseId = e.target.id;
+  const cancelEnrollment = (courseId) => {
+    console.log(courseId);
     axios
       .delete(`http://localhost:5000/enroll/${courseId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -107,7 +106,9 @@ const StudentsDashboard = () => {
                     value="cancel enrollment"
                     variant="danger"
                     id={element.course._id}
-                    onClick={cancelEnrollment}
+                    onClick={() => {
+                      cancelEnrollment(element.course._id);
+                    }}
                   />
                 </div>
               );
@@ -199,18 +200,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   //context
-  const {
-    courses,
-    setCourses,
-    userId,
-    token,
-    name,
-    enrolledCourses,
-    setEnrolledCourses,
-    role,
-    createdCourses,
-    setCreatedCourses,
-  } = useContext(LearningContext);
+  const { courses, setCourses, token, name } = useContext(LearningContext);
 
   const goToCourse = (e) => {
     //go to course dashboard
@@ -219,19 +209,15 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(`http://localhost:5000/courses`)
       .then(function (response) {
         console.log(response.data);
-        setCourses(response.data.courses)
+        setCourses(response.data.courses);
       })
       .catch(function (error) {
         console.log(error.response.data.message);
       });
   }, []);
-
-  console.log(courses);
 
   return (
     <div>

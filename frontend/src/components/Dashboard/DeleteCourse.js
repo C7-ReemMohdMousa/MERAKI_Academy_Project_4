@@ -4,7 +4,7 @@ import axios from "axios";
 import { LearningContext } from "../../App";
 
 const DeleteCourse = ({ id }) => {
-  //contect 
+  //contect
   const {
     courses,
     setCourses,
@@ -21,11 +21,18 @@ const DeleteCourse = ({ id }) => {
       })
       .then(function (response) {
         console.log(response.data);
-        const newCoursesArr = createdCourses.filter((element) => {
+        const newInsturctorCoursesArr = createdCourses.filter((element) => {
           console.log(element);
           return element._id !== id;
         });
-        setCreatedCourses(newCoursesArr)
+        setCreatedCourses(newInsturctorCoursesArr);
+
+        const newAdminctorCoursesArr = courses.filter((element) => {
+          console.log(element);
+          return element._id !== id;
+        });
+        setCourses(newAdminctorCoursesArr);
+        console.log(newAdminctorCoursesArr);
       })
       .catch(function (error) {
         throw error;

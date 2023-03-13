@@ -67,16 +67,18 @@ const UploadCourse = () => {
         console.log(response.data);
         if (response.data.message) {
           setResponse(response.data.message);
-          console.log(response.data.message);
         } else {
           setHideSaveBtn(true);
           setResponse("Course Created!");
+          console.log(response.data);
+          setCourses([...courses, response.data]);
         }
       })
       .catch(function (error) {
         throw error;
       });
   };
+  console.log(courses);
 
   return (
     <div>

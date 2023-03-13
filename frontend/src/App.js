@@ -36,6 +36,7 @@ function App() {
   const [filterdCourses, setFilterdCourses] = useState([]);
   const [course, setCourse] = useState({});
   const [lectures, setLectures] = useState([]);
+  const [enrollmentInfo, setEnrollmentInfo] = useState("");
 
   return (
     <LearningContext.Provider
@@ -62,6 +63,8 @@ function App() {
         setCourse,
         lectures,
         setLectures,
+        enrollmentInfo,
+        setEnrollmentInfo,
       }}
     >
       <div className="App">
@@ -116,11 +119,8 @@ const DashboardNavigation = () => {
 
   const Logout = () => {
     localStorage.setItem("userToken", JSON.stringify(null));
-    settoken(null);
+    settoken("");
     setIsLogged(false);
-    setName(null);
-    setUserId(null);
-    setRole(null);
   };
 
   return (
