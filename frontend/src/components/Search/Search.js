@@ -1,11 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
-import { LearningContext } from "../../App";
-import { Card, Button } from "react-bootstrap";
-import Btn from "../Btn/Btn";
+import { LearningContext } from "../../../App";
+import Btn from "../../Btn/Btn";
 
-const Home = () => {
+const Search = () => {
   //context
   const {
     courses,
@@ -20,15 +19,9 @@ const Home = () => {
 
   setIsSearching(false);
 
-  const navigate = useNavigate();
-
-  const toCourseInfo = (e) => {
-    navigate(`/coursedetail/${e.target.id}`);
-  };
-
   return (
     <div>
-      {searchingResults.length !== 0 ? searchingResults.map((element) => {
+      {searchingResults.map((element) => {
         return (
           <Card
             style={{ width: "18rem" }}
@@ -49,9 +42,9 @@ const Home = () => {
             </Card.Body>
           </Card>
         );
-      }): ""}
+      })}
     </div>
   );
 };
 
-export default Home;
+export default Search;

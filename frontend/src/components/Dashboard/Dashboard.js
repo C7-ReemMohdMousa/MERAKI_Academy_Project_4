@@ -6,13 +6,15 @@ import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./UpdateCourse";
+import { Tab, Tabs, Card } from "react-bootstrap";
+import "./Dashboard.css";
+
 //the dashboard will change based on the user role
 //1-student: completed and in progress courses
 //2- teachers: your courses with tools to update or delete the course
 
 import StudentsDashboard from "./StudentsDashboard";
 import TeachersDashboard from "./TeachersDashboard";
-
 
 const Dashboard = () => {
   //context
@@ -53,32 +55,60 @@ const AdminDashboard = () => {
       });
   }, []);
 
+  console.log(courses);
+ 
   return (
     <div>
-      <h2>Welcome Back {name}!</h2>
       <div>
-        <UploadCourse />
-      </div>
-      <div>
-        <h4>All Courese</h4>
-        <div>
-          {courses.map((element) => {
-            return (
-              <div key={element._id}>
-                <h6>{element.title}</h6>
-                <div>
-                  <Btn
-                    id={element._id}
-                    value="go to course"
-                    variant="success"
-                    onClick={goToCourse}
-                  />
-                  <UpdateCourse id={element._id} />
-                  <DeleteCourse id={element._id} />
+        <div className="dashboard-welcome">
+          <h2>Welcome Back {name}!</h2>
+          <p>Fully Control Admin Dashboard</p>
+          <div>
+            <UploadCourse />
+          </div>
+        </div>
+        <div className="tabs">
+          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify>
+            <Tab eventKey="home" title="All Courese">
+              <div>
+                <div className="all-courses">
+                  {courses.map((element) => {
+                    return (
+                      <div key={element._id} className="all-courses-cards">
+                        <Card>
+                          <Card.Header>{element.category.category}</Card.Header>
+                          <Card.Body>
+                            <Card.Title>
+                              <div className="course-title">
+                                <h5>{element.title}</h5>
+                              </div>
+                            </Card.Title>
+                            <Card.Text>
+                              With supporting text below as a natural lead-in to
+                              additional content.
+                            </Card.Text>
+                            <div className="btns">
+                              <Btn
+                                id={element._id}
+                                value="Go to course"
+                                variant="success"
+                                onClick={goToCourse}
+                              />
+                              <UpdateCourse id={element._id} />
+                              <DeleteCourse id={element._id} />
+                            </div>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            );
-          })}
+            </Tab>
+            <Tab eventKey="profile" title="Add Category">
+              2
+            </Tab>
+          </Tabs>
         </div>
       </div>
     </div>

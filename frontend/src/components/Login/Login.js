@@ -6,6 +6,8 @@ import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import { Form, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import jwt_decode from "jwt-decode";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
   //states
@@ -68,6 +70,44 @@ const Login = () => {
       });
   };
 
+  const handleGoogleSignIn = (credentialResponse) => {
+    console.log(credentialResponse);
+    let userInfo = jwt_decode(credentialResponse.credential);
+    console.log(userInfo.email);
+    let isEmailUnique = false;
+
+    //check if the user exsisted in the data base
+    axios
+      .post("http://localhost:5000/users/login/google/user", {
+        email: userInfo.email,
+      })
+      .then(function (response) {
+        if(response.data.success){
+          isEmailUnique = true;
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      // if(isEmailUnique){
+      //   axios
+      // .post("http://localhost:5000/users/login", {
+      //   email,
+      //   password,
+      // })
+      // .then(function (response) {
+    
+      // })
+      // .catch(function (error) {
+        
+      // });
+
+      // }
+
+    //if not register him as a new user
+  };
+
   return (
     <div>
       <Container>
@@ -95,7 +135,15 @@ const Login = () => {
         </Form>
         <Btn value="Login" variant="secondary" onClick={LoginUser} />
       </Container>
-
+      <GoogleLogin
+        onSuccess={(credentialResponse) => {
+          handleGoogleSignIn(credentialResponse);
+        }}
+        onError={() => {
+          //pop-up error
+          console.log("Login Failed");
+        }}
+      />
       {isLogged ? <Navigate to="/dashboard" replace={true} /> : response}
     </div>
   );

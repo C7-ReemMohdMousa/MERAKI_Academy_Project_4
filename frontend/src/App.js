@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { createContext, useState, useContext } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { nav, Nav } from "react-bootstrap";
 
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
@@ -10,6 +9,13 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Explore from "./components/Explore/Explore";
 import CourseInfo from "./components/CourseInfo/CourseInfo";
 import CourseDashboard from "./components/CourseDashboard/CourseDashboard";
+
+import axios from "axios";
+import Search from "antd/es/transfer/search";
+import DashboardNavigation from "./components/NavBar/DashboardNavigation";
+import { nav, Nav } from "react-bootstrap";
+import Navigation from "./components/NavBar/Navigation";
+
 
 export const LearningContext = createContext();
 
@@ -38,6 +44,8 @@ function App() {
   const [lectures, setLectures] = useState([]);
   const [enrollmentInfo, setEnrollmentInfo] = useState("");
   const [completedCourses, setCompletedCourses] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchingResults, setSearchingResults] = useState([]);
 
   return (
     <LearningContext.Provider
@@ -68,6 +76,10 @@ function App() {
         setEnrollmentInfo,
         completedCourses,
         setCompletedCourses,
+        isSearching,
+        setIsSearching,
+        searchingResults,
+        setSearchingResults,
       }}
     >
       <div className="App">
@@ -76,6 +88,8 @@ function App() {
         </header>
 
         {token ? <DashboardNavigation /> : <Navigation />}
+
+        {isSearching ? <Search /> : ""}
 
         {
           <Routes>
@@ -87,6 +101,8 @@ function App() {
 
             <Route path="/register" element={<Register />} />
 
+            <Route path="/search" element={<Search />} />
+
             <Route path="/login" element={<Login />} />
           </Routes>
         }
@@ -95,58 +111,6 @@ function App() {
   );
 }
 
-const Navigation = () => {
-  return (
-    <div>
-      <Nav style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
-        <Nav.Item>
-          <Nav.Link href="/"> Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/explore"> Explore</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/register"> Register</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login"> Login</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </div>
-  );
-};
 
-const DashboardNavigation = () => {
-  const { setIsLogged, settoken, setName, setUserId, setRole } =
-    useContext(LearningContext);
-
-  const Logout = () => {
-    localStorage.setItem("userToken", JSON.stringify(null));
-    settoken("");
-    setIsLogged(false);
-  };
-
-  return (
-    <div>
-      <Nav style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
-        <Nav.Item>
-          <Nav.Link href="/"> Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/explore"> Explore</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/dashboard"> Dashboard</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login" onClick={Logout}>
-            {" "}
-            Logout
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </div>
-  );
-};
 
 export default App;

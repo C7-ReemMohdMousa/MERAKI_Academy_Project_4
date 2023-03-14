@@ -1,0 +1,33 @@
+.all-courses-cards {
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center; */
+  /* align-items: center; */
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-top: 1rem;
+}
+
+.tabs{
+  margin-top: 7rem;
+}
+
+.btns {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.all-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* margin-left: 5rem; */
+}
+
+.dashboard-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}

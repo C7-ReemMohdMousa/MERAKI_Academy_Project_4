@@ -6,6 +6,7 @@ import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./UpdateCourse";
+import { Tab, Tabs, Card } from "react-bootstrap";
 
 const StudentsDashboard = () => {
   //useNavigate hook to navigate programmatically
@@ -84,12 +85,120 @@ const StudentsDashboard = () => {
         console.log(error.response.data.message);
       });
   };
+  // console.log(enrolledCourses);
+  console.log(completedCourses);
 
   return (
     <div>
-      {isFectched ? (
+      <h2>Welcome Back {name}!</h2>
+
+      <div>
+        <div className="tabs">
+          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify>
+            <Tab eventKey="home" title="In Progress Courses">
+              <div>
+                <div className="all-courses">
+                  {isFectched
+                    ? userEnrolled.map((element) => {
+                        return (
+                          <div
+                            key={element.course._id}
+                            className="all-courses-cards"
+                          >
+                            <Card>
+                              <Card.Header>
+                                {element.course.category.category}
+                              </Card.Header>
+                              <Card.Body>
+                                <Card.Title>
+                                  <div className="course-title">
+                                    <h5>{element.course.title}</h5>
+                                  </div>
+                                </Card.Title>
+                                <Card.Text>
+                                  With supporting text below as a natural
+                                  lead-in to additional content.
+                                </Card.Text>
+                                <div className="btns">
+                                  <Btn
+                                    value="go to course"
+                                    id={element.course._id}
+                                    onClick={() => {
+                                      goToCourse(element.course._id);
+                                    }}
+                                  />
+                                  <Btn
+                                    value="cancel enrollment"
+                                    variant="danger"
+                                    id={element.course._id}
+                                    onClick={() => {
+                                      cancelEnrollment(element.course._id);
+                                    }}
+                                  />
+                                </div>
+                              </Card.Body>
+                            </Card>
+                          </div>
+                        );
+                      })
+                    : ""}
+                </div>
+              </div>
+            </Tab>
+            <Tab eventKey="profile" title="Completed Courses">
+              <div className="all-courses">
+                {isFectched
+                  ? completedCourses.map((element) => {
+                      return (
+                        <div
+                          key={element.course._id}
+                          className="all-courses-cards"
+                        >
+                          <Card>
+                            <Card.Header>
+                              {element.course.category.category}
+                            </Card.Header>
+                            <Card.Body>
+                              <Card.Title>
+                                <div className="course-title">
+                                  <h5>{element.course.title}</h5>
+                                </div>
+                              </Card.Title>
+                              <Card.Text>
+                                With supporting text below as a natural lead-in
+                                to additional content.
+                              </Card.Text>
+                              <div className="btns">
+                                <Btn
+                                  value="go to course"
+                                  id={element.course._id}
+                                  onClick={() => {
+                                    goToCourse(element.course._id);
+                                  }}
+                                />
+                                <Btn
+                                  value="cancel enrollment"
+                                  variant="danger"
+                                  id={element.course._id}
+                                  onClick={() => {
+                                    cancelEnrollment(element.course._id);
+                                  }}
+                                />
+                              </div>
+                            </Card.Body>
+                          </Card>
+                        </div>
+                      );
+                    })
+                  : ""}
+              </div>
+            </Tab>
+          </Tabs>
+        </div>
+      </div>
+
+      {/* {isFectched ? (
         <div>
-          <h2>Welcome Back {name}!</h2>
           <div className="dasboard-courses-container">
             <h4>in progress courses</h4>
             {console.log(userEnrolled)}
@@ -141,7 +250,7 @@ const StudentsDashboard = () => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 };

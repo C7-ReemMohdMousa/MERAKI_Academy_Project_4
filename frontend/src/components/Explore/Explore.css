@@ -1,10 +1,28 @@
-.courses-cards{
+.explore-page{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 
 }
+
+.explore-courses{
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    
+}
+
+.filter{
+    width: 30rem;
+}
+
+.courses-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+
+}
+
