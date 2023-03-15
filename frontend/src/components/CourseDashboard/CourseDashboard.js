@@ -172,7 +172,7 @@ const CourseDashboard = () => {
                         onClick={() => {
                           setLectureId(element._id);
                         }}
-                        action
+                        action className="tab-title"
                       >
                         {element.title}
                         {isEnrollData && enrollmentInfo.length ? (

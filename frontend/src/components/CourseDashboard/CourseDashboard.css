@@ -1,4 +1,4 @@
-.lecture-title {
+.tab-title {
   display: flex;
   justify-content: space-between;
 }
@@ -6,7 +6,6 @@
 .display-check-none {
   display: none;
 }
-
 
 .course-dashboard{
   display: flex;
@@ -20,9 +19,6 @@
   width: 25rem;
 }
 
-.gf{
-  display: table-cell;
-}
 
 .season_tabs {
   position: relative;   
