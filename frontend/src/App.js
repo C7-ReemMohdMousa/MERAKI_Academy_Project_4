@@ -46,6 +46,7 @@ function App() {
   const [isSearching, setIsSearching] = useState(false);
   const [searchingResults, setSearchingResults] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [isFiltering, setIsFiltering] = useState(false);
 
   return (
     <LearningContext.Provider
@@ -82,6 +83,8 @@ function App() {
         setSearchingResults,
         categories,
         setCategories,
+        isFiltering,
+        setIsFiltering,
       }}
     >
       <div className="App">

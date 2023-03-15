@@ -17,6 +17,8 @@ const Category = () => {
     setSearchingResults,
     categories,
     setCategories,
+    isFiltering,
+    setIsFiltering,
   } = useContext(LearningContext);
 
   //states
@@ -42,6 +44,8 @@ const Category = () => {
     console.log(e.target.checked);
 
     if (e.target.checked) {
+      setIsFiltering(true);
+
       axios
         .get(`http://localhost:5000/courses/categoryid/${categoryId}`)
         .then((response) => {
@@ -52,6 +56,7 @@ const Category = () => {
           throw error;
         });
     } else {
+      setIsFiltering(false);
       console.log(filterdCourses);
       const filteredCoursesAfterUnCheck = filterdCourses.filter((element) => {
         return element.category !== categoryId;
@@ -73,7 +78,10 @@ const Category = () => {
 
   const filterByLevel = (levelValue, e) => {
     console.log(levelValue);
-    if (e.target.checked) {
+
+    if (e.target.checked && searchingResults.length === 0) {
+    setIsFiltering(true);
+
       axios
         .get(
           `http://localhost:5000/courses/all/courses/bylevel/?level=${levelValue}`
@@ -93,23 +101,20 @@ const Category = () => {
         .catch((error) => {
           throw error;
         });
+    }
 
-      // if (filterdCourses.length !== 0) {
-      //   const filterByLevelArr = filterdCourses.filter((element) => {
-      //     return element.level === levelValue;
-      //   });
-      //   setFilterdCourses(filterByLevelArr);
-      // }
-      // //*
-      // else {
-      //   const filterByLevelArr = courses.filter((element) => {
-      //     return element.level === levelValue;
-      //   });
-      //   setFilterdCourses(filterByLevelArr);
-      // }
+    if (searchingResults.length !== 0) {
+      const filteredSearch = searchingResults.filter((element) => {
+        return element.level == levelValue;
+      });
+      console.log(filteredSearch);
+
+      setFilterdCourses(filteredSearch);
     }
 
     if (e.target.checked === false) {
+    setIsFiltering(false);
+
       console.log(filterdCourses);
       const filteredCoursesAfterUnCheck = filterdCourses.filter((element) => {
         return element.level !== levelValue;

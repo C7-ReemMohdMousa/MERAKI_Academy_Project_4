@@ -113,8 +113,6 @@ const CourseDashboard = () => {
   //check if the user completed the course, change the enrollment status
   const isTheCourseCompleted = () => {
     if (enrollmentInfo.length !== 0) {
-      console.log(course.lectures.length);
-      console.log(enrollmentInfo[0].isCompleted.length);
 
       if (course.lectures.length === enrollmentInfo[0].isCompleted.length) {
         axios

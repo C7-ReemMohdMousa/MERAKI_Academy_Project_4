@@ -7,9 +7,10 @@ import Search from "antd/es/transfer/search";
 import { AudioOutlined } from "@ant-design/icons";
 import { Input, Space } from "antd";
 
-
 import { nav, Nav } from "react-bootstrap";
 const Navigation = () => {
+  const navigate = useNavigate();
+
   const { Search } = Input;
 
   const { isSearching, setIsSearching, searchingResults, setSearchingResults } =
@@ -24,8 +25,18 @@ const Navigation = () => {
     />
   );
 
-  const onSearch = (value: string) => {
-    console.log(value);
+  const onSearch = (value) => {
+    axios
+      .get(`http://localhost:5000/courses/search/results/${value}`)
+      .then((response) => {
+        console.log(response.data);
+        setIsSearching(true);
+        setSearchingResults(response.data);
+        navigate(`/explore`);
+      })
+      .catch((error) => {
+        throw error;
+      });
   };
 
   return (

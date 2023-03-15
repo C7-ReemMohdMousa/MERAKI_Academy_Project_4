@@ -75,7 +75,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div>
+    <div> 
       <div>
         <div className="dashboard-welcome">
           <h2>Welcome Back {name}!</h2>

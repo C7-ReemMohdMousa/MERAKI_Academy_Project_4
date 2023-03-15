@@ -85,8 +85,6 @@ const StudentsDashboard = () => {
         console.log(error.response.data.message);
       });
   };
-  // console.log(enrolledCourses);
-  console.log(completedCourses);
 
   return (
     <div>
@@ -177,12 +175,9 @@ const StudentsDashboard = () => {
                                   }}
                                 />
                                 <Btn
-                                  value="cancel enrollment"
-                                  variant="danger"
+                                  value="generate a certificate"
+                                  variant="success"
                                   id={element.course._id}
-                                  onClick={() => {
-                                    cancelEnrollment(element.course._id);
-                                  }}
                                 />
                               </div>
                             </Card.Body>

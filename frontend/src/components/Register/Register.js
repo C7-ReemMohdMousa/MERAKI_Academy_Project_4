@@ -20,10 +20,10 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [respose, setRespose] = useState("");
+  const [isRegisterd, setIsRegisterd] = useState(false);
 
   //variables
   let roleText;
-  let isRegisterd = false;
 
   const RegisterUser = (e) => {
     axios
@@ -37,7 +37,7 @@ const Register = () => {
       })
       .then(function (response) {
         setRespose(response.data.message);
-        isRegisterd = true;
+        setIsRegisterd(true);
       })
       .catch(function (error) {
         throw error.response.data;
