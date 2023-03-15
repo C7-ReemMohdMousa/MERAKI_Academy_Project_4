@@ -8,13 +8,14 @@
 }
 
 
-
-.vertical-tabs .react-tabs__tab {
-  display: block;
-  margin-bottom: 10px;
+.course-dashboard{
+  display: flex;
 }
 
-.vertical-tabs .react-tabs__tab--selected {
-  border-left: 3px solid blue;
-  margin-left: -3px;
+.lecture-tabs{
+  margin-top: 2rem;
+}
+
+.tabs-of-each-lecture{
+  width: 25rem;
 }

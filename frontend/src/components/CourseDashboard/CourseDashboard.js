@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import axios from "axios";
-import { Col, Row, ListGroup, Tab, Nav } from "react-bootstrap";
+import { Col, Row, ListGroup, Tab, Nav, ListGroupItem } from "react-bootstrap";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import UploadLecture from "./UploadLecture";
 import UpdateLecture from "./UpdateLecture";
@@ -113,7 +113,6 @@ const CourseDashboard = () => {
   //check if the user completed the course, change the enrollment status
   const isTheCourseCompleted = () => {
     if (enrollmentInfo.length !== 0) {
-
       if (course.lectures.length === enrollmentInfo[0].isCompleted.length) {
         axios
           .put(
@@ -135,83 +134,119 @@ const CourseDashboard = () => {
 
   isTheCourseCompleted();
 
+  const showContent = (e) => {
+    console.log(e);
+    let contenet = document.getElementById(e);
+    console.log(contenet);
+    contenet.style.display = "block";
+  };
+
   return (
-    <div>
-      {isFectched ? (
-        <div>
-          <h1>{course.title}</h1>
-          <p>{course.description}</p>
-          {isInstructor || isAdmin ? (
-            <div>
-              <UploadLecture id={id} />
+    // <div>
+    //   {isFectched ? (
+    //     <div>
+    //       <h1>{course.title}</h1>
+    //       <p>{course.description}</p>
+    //       {isInstructor || isAdmin ? (
+    //         <div>
+    //           <UploadLecture id={id} />
+    //         </div>
+    //       ) : (
+    //         ""
+    //       )}
+    //       {lectures.map((element) => {
+    //         return (
+    //           <Tab.Container
+    //             activeKey={key}
+    //             onSelect={(k) => setKey(k)}
+    //             key={element._id}
+    //           >
+    //             <Row>
+    //               <Col sm={4}>
+    //                 <ListGroup>
+    //                   <ListGroup.Item action href={"#" + element._id}>
+    //                     <div className="lecture-title">{element.title}</div>
+    //                     {isEnrollData && enrollmentInfo.length ? (
+    //                       enrollmentInfo[0].isCompleted.includes(
+    //                         element._id
+    //                       ) ? (
+    //                         <BsCheckCircleFill className="display-check" />
+    //                       ) : (
+    //                         <BsCheckCircleFill className="display-check-none " />
+    //                       )
+    //                     ) : (
+    //                       ""
+    //                     )}
+    //                   </ListGroup.Item>
+    //                 </ListGroup>
+    //               </Col>
+    //               <Col sm={8}>
+    //                 <Tab.Content>
+    //                   <Tab.Pane eventKey={"#" + element._id}>
+    //                     <div className="lecture-content">
+    //                       <h5>{element.title}</h5>
+    //                       {isInstructor || isAdmin ? (
+    //                         <div>
+    //                           <UpdateLecture id={element._id} />
+    //                           <DeleteLecture
+    //                             lectureId={element._id}
+    //                             courseId={id}
+    //                           />
+    //                         </div>
+    //                       ) : (
+    //                         ""
+    //                       )}
+    //                       <p>{element.description}</p>
+    //                       {/* <Iframe url={element.videoURL} allowFullScreen /> */}
+    //                       <YouTube
+    //                         id={element._id}
+    //                         videoId={element.videoURL}
+    //                         onEnd={() => {
+    //                           console.log(element._id);
+    //                           AddLectureToIsCompletedEnrollment(element._id);
+    //                         }}
+    //                       />
+    //                     </div>
+    //                   </Tab.Pane>
+    //                 </Tab.Content>
+    //               </Col>
+    //             </Row>
+    //           </Tab.Container>
+    //         );
+    //       })}
+    //     </div>
+    //   ) : (
+    //     "No data"
+    //   )}
+    // </div>
+
+    <div className="lecture-tabs">
+      {lectures.map((element) => {
+        return (
+          <div className="course-dashboard">
+            <div className="tabs-of-each-lecture">
+              <ListGroup>
+                <ListGroupItem
+                  onClick={() => {
+                    setLectureId(element._id);
+                  }}
+                  action
+                >
+                  Link 1
+                </ListGroupItem>
+              </ListGroup>
             </div>
-          ) : (
-            ""
-          )}
-          {lectures.map((element) => {
-            return (
-              <Tab.Container
-                activeKey={key}
-                onSelect={(k) => setKey(k)}
-                key={element._id}
-              >
-                <Row>
-                  <Col sm={4}>
-                    <ListGroup>
-                      <ListGroup.Item action href={"#" + element._id}>
-                        <div className="lecture-title">{element.title}</div>
-                        {isEnrollData && enrollmentInfo.length ? (
-                          enrollmentInfo[0].isCompleted.includes(
-                            element._id
-                          ) ? (
-                            <BsCheckCircleFill className="display-check" />
-                          ) : (
-                            <BsCheckCircleFill className="display-check-none " />
-                          )
-                        ) : (
-                          ""
-                        )}
-                      </ListGroup.Item>
-                    </ListGroup>
-                  </Col>
-                  <Col sm={8}>
-                    <Tab.Content>
-                      <Tab.Pane eventKey={"#" + element._id}>
-                        <div className="lecture-content">
-                          <h5>{element.title}</h5>
-                          {isInstructor || isAdmin ? (
-                            <div>
-                              <UpdateLecture id={element._id} />
-                              <DeleteLecture
-                                lectureId={element._id}
-                                courseId={id}
-                              />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          <p>{element.description}</p>
-                          {/* <Iframe url={element.videoURL} allowFullScreen /> */}
-                          <YouTube
-                            id={element._id}
-                            videoId={element.videoURL}
-                            onEnd={() => {
-                              console.log(element._id);
-                              AddLectureToIsCompletedEnrollment(element._id);
-                            }}
-                          />
-                        </div>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Col>
-                </Row>
-              </Tab.Container>
-            );
-          })}
-        </div>
-      ) : (
-        "No data"
-      )}
+
+            {lectureId === element._id ? (
+              <div>
+                <div>{element.title}</div>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
