@@ -6,7 +6,7 @@ import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./UpdateCourse";
-import { Tab, Tabs, Card } from "react-bootstrap";
+import { Tab, Tabs, Card, Form } from "react-bootstrap";
 import "./Dashboard.css";
 
 //the dashboard will change based on the user role
@@ -36,7 +36,11 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   //context
-  const { courses, setCourses, token, name } = useContext(LearningContext);
+  const { courses, setCourses, token, name, categories, setCategories } =
+    useContext(LearningContext);
+
+  //
+  const [newCategory, setNewCategory] = useState("");
 
   const goToCourse = (e) => {
     //go to course dashboard
@@ -56,7 +60,20 @@ const AdminDashboard = () => {
   }, []);
 
   console.log(courses);
- 
+
+  const createNewCategory = () => {
+    axios
+      .post(`http://localhost:5000/courses/create/category`, {
+        category: newCategory,
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  };
+
   return (
     <div>
       <div>
@@ -106,7 +123,31 @@ const AdminDashboard = () => {
               </div>
             </Tab>
             <Tab eventKey="profile" title="Add Category">
-              2
+              <div className="create-category">
+                <h5>Here You Can Add a New Category:</h5>
+                <Form>
+                  {/* <Form.Label> Here You Can Add a New Category:</Form.Label> */}
+                  <Form.Group className="mb-3" id="category-input">
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter a New Category"
+                      onChange={(e) => {
+                        setNewCategory(e.target.value);
+                      }}
+                    />
+                  </Form.Group>
+                  <div className="create-category-btn">
+                    <Btn
+                      variant="primary"
+                      type="submit"
+                      value="Submit"
+                      onClick={(e) => {
+                        createNewCategory(e);
+                      }}
+                    />
+                  </div>
+                </Form>
+              </div>
             </Tab>
           </Tabs>
         </div>

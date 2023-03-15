@@ -16,7 +16,6 @@ import DashboardNavigation from "./components/NavBar/DashboardNavigation";
 import { nav, Nav } from "react-bootstrap";
 import Navigation from "./components/NavBar/Navigation";
 
-
 export const LearningContext = createContext();
 
 function App() {
@@ -46,6 +45,7 @@ function App() {
   const [completedCourses, setCompletedCourses] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchingResults, setSearchingResults] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   return (
     <LearningContext.Provider
@@ -80,6 +80,8 @@ function App() {
         setIsSearching,
         searchingResults,
         setSearchingResults,
+        categories,
+        setCategories,
       }}
     >
       <div className="App">
@@ -110,7 +112,5 @@ function App() {
     </LearningContext.Provider>
   );
 }
-
-
 
 export default App;

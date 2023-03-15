@@ -8,13 +8,21 @@ import { logDOM } from "@testing-library/react";
 
 const Category = () => {
   //context
-  const { courses, setCourses, filterdCourses, setFilterdCourses } =
-    useContext(LearningContext);
+  const {
+    courses,
+    setCourses,
+    filterdCourses,
+    setFilterdCourses,
+    searchingResults,
+    setSearchingResults,
+    categories,
+    setCategories,
+  } = useContext(LearningContext);
 
   //states
-  const [categories, setCategories] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
   const [categoryID, setCategoryID] = useState("");
+  let testArrForSearch = [];
 
   useEffect(() => {
     axios
@@ -34,7 +42,6 @@ const Category = () => {
     console.log(e.target.checked);
 
     if (e.target.checked) {
-      console.log(filterdCourses);
       axios
         .get(`http://localhost:5000/courses/categoryid/${categoryId}`)
         .then((response) => {
@@ -53,39 +60,15 @@ const Category = () => {
       setFilterdCourses(filteredCoursesAfterUnCheck);
     }
 
-    //get the courses by category
-    // const getCoursesByCategory = (categoryId, e) => {
-    //   if (e.target.checked) {
-    //     axios
-    //       .get(`http://localhost:5000/courses/categoryid/${categoryId}`)
-    //       .then((response) => {
-    //         setFilterdCourses([...filterdCourses, response.data].flat());
-    //       })
-    //       .catch((error) => {
-    //         throw error;
-    //       });
+    if (searchingResults.length !== 0) {
+      const filteredSearch = searchingResults.filter((element) => {
+        console.log(element.category._id);
+        console.log(categoryId);
 
-    //     let categoryValue = e.target.value;
-    //     console.log(courses);
-
-    //     if (filterdCourses.length !== 0) {
-    //       const filterByLevelArr = filterdCourses.filter((element) => {
-    //         return element.category.category === categoryValue;
-    //       });
-    //       setFilterdCourses(filterByLevelArr);
-    //     } else {
-    //       const filterByLevelArr = courses.filter((element) => {
-    //         return element.category.category === categoryValue;
-    //       });
-    //       setFilterdCourses(filterByLevelArr);
-    //     }
-    //   } else {
-    //     const filteredCoursesAfterUnCheck = filterdCourses.filter((element) => {
-    //       return element.category !== categoryId;
-    //     });
-
-    //     setFilterdCourses(filteredCoursesAfterUnCheck);
-    //   }
+        return element.category._id == categoryId;
+      });
+      console.log(filteredSearch);
+    }
   };
 
   const filterByLevel = (levelValue, e) => {

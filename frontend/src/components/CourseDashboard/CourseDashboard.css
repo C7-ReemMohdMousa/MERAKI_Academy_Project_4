@@ -6,3 +6,15 @@
 .display-check-none {
   display: none;
 }
+
+
+
+.vertical-tabs .react-tabs__tab {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.vertical-tabs .react-tabs__tab--selected {
+  border-left: 3px solid blue;
+  margin-left: -3px;
+}

@@ -8,14 +8,21 @@ import { Card, Button } from "react-bootstrap";
 import Category from "./Category/Category";
 import Search from "antd/es/transfer/search";
 
-
 const Explore = () => {
   //useNavigate hook to navigate programmatically
   const navigate = useNavigate();
 
   //context
-  const { courses, setCourses, filterdCourses, setFilterdCourses, isSearching } =
-    useContext(LearningContext);
+  const {
+    courses,
+    setCourses,
+    filterdCourses,
+    setFilterdCourses,
+    isSearching,
+    setIsSearching,
+    searchingResults,
+    setSearchingResults,
+  } = useContext(LearningContext);
 
   //states
   const [isFectched, setIsFectched] = useState(false);
@@ -58,7 +65,7 @@ const Explore = () => {
       </div>
       <div className="explore-courses">
         {isFectched
-          ? filterdCourses.length !== 0
+          ? filterdCourses.length !== 0 
             ? filterdCourses.map((element) => {
                 return (
                   <Card
@@ -81,7 +88,7 @@ const Explore = () => {
                   </Card>
                 );
               })
-            : courses.map((element) => {
+            : searchingResults.length !== 0 ? <SearchResultsCom/> : courses.map((element) => {
                 return (
                   <Card
                     style={{ width: "18rem" }}
@@ -105,8 +112,55 @@ const Explore = () => {
               })
           : "No data"}
       </div>
+    </div>
+  );
+};
 
-      
+const SearchResultsCom = () => {
+  const navigate = useNavigate();
+
+  //context
+  const {
+    courses,
+    setCourses,
+    filterdCourses,
+    setFilterdCourses,
+    isSearching,
+    setIsSearching,
+    searchingResults,
+    setSearchingResults,
+  } = useContext(LearningContext);
+
+  const toCourseInfo = (e) => {
+    navigate(`/coursedetail/${e.target.id}`);
+  };
+
+  return (
+    <div>
+      {searchingResults.length !== 0
+        ? searchingResults.map((element) => {
+            return (
+              <Card
+                style={{ width: "18rem" }}
+                key={element._id}
+                className="courses-cards"
+              >
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>{element.title}</Card.Title>
+                  <Card.Text>{element.description}</Card.Text>
+                  <Btn
+                    value="View Course Details"
+                    variant="primary"
+                    id={element._id}
+                    title={element.title}
+                    onClick={toCourseInfo}
+                  />
+                </Card.Body>
+              </Card>
+            );
+          })
+        : ""}
     </div>
   );
 };

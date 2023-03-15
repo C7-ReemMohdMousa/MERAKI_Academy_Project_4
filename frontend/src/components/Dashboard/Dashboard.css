@@ -8,9 +8,13 @@
   margin-top: 1rem;
 }
 
-.tabs{
+.tabs {
   margin-top: 7rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
 }
+
 
 .btns {
   display: flex;
@@ -30,4 +34,22 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+}
+
+#category-input {
+  width: 30rem;
+}
+
+.create-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.create-category-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

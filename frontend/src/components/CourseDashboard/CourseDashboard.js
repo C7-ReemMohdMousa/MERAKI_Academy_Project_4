@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import axios from "axios";
-import { Col, Row, ListGroup, Tab } from "react-bootstrap";
+import { Col, Row, ListGroup, Tab, Nav } from "react-bootstrap";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import UploadLecture from "./UploadLecture";
 import UpdateLecture from "./UpdateLecture";
@@ -11,6 +11,7 @@ import DeleteLecture from "./DeleteLecture";
 import YouTube from "react-youtube";
 import { BsCheckCircleFill } from "react-icons/bs";
 import "./CourseDashboard.css";
+import { Tabs, TabList, TabPanel } from "react-tabs";
 
 const CourseDashboard = () => {
   //params
@@ -152,7 +153,6 @@ const CourseDashboard = () => {
           {lectures.map((element) => {
             return (
               <Tab.Container
-                id="list-group-tabs-example"
                 activeKey={key}
                 onSelect={(k) => setKey(k)}
                 key={element._id}
@@ -178,13 +178,8 @@ const CourseDashboard = () => {
                   </Col>
                   <Col sm={8}>
                     <Tab.Content>
-                      <Tab.Pane
-                        eventKey={"#" + element._id}
-                        onEnter={() => {
-                          // checkIfTheUserCompletedLecture(element._id);
-                        }}
-                      >
-                        <div>
+                      <Tab.Pane eventKey={"#" + element._id}>
+                        <div className="lecture-content">
                           <h5>{element.title}</h5>
                           {isInstructor || isAdmin ? (
                             <div>

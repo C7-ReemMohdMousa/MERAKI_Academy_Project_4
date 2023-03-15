@@ -9,6 +9,8 @@ import Search from "antd/es/transfer/search";
 import { nav, Nav } from "react-bootstrap";
 
 const DashboardNavigation = () => {
+  const navigate = useNavigate();
+
   const {
     setIsLogged,
     settoken,
@@ -25,6 +27,9 @@ const DashboardNavigation = () => {
     localStorage.setItem("userToken", JSON.stringify(null));
     settoken("");
     setIsLogged(false);
+    // setRole("");
+    // setUserId("");
+    // setName("");
   };
 
   const { Search } = Input;
@@ -39,13 +44,13 @@ const DashboardNavigation = () => {
   // );
 
   const onSearch = (value) => {
-    console.log(value);
     axios
       .get(`http://localhost:5000/courses/search/results/${value}`)
       .then((response) => {
         console.log(response.data);
         setIsSearching(true);
         setSearchingResults(response.data);
+        navigate(`/explore`);
       })
       .catch((error) => {
         throw error;

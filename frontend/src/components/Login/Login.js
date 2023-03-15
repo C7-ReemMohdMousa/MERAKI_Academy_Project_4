@@ -14,6 +14,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState("");
+  let isRegisterd = false;
 
   //context
   const {
@@ -73,39 +74,56 @@ const Login = () => {
   const handleGoogleSignIn = (credentialResponse) => {
     console.log(credentialResponse);
     let userInfo = jwt_decode(credentialResponse.credential);
-    console.log(userInfo.email);
-    let isEmailUnique = false;
 
     //check if the user exsisted in the data base
     axios
-      .post("http://localhost:5000/users/login/google/user", {
+      .post("http://localhost:5000/users/login/check/google/user", {
+        firstName: userInfo.given_name,
+        lastName: userInfo.family_name,
         email: userInfo.email,
       })
       .then(function (response) {
-        if(response.data.success){
-          isEmailUnique = true;
+        console.log(response.data);
+
+        //if the user loggin in correctly, save his data in the local storage
+        if (response.data.success) {
+          setIsLogged(true);
+
+          //save user token
+          settoken(response.data.token);
+          localStorage.setItem(
+            "userToken",
+            JSON.stringify(response.data.token)
+          );
+
+          //save user name
+          setName(response.data.user.firstName);
+          localStorage.setItem(
+            "userName",
+            JSON.stringify(response.data.user.firstName)
+          );
+
+          //save user id
+          setUserId(response.data.user._id);
+          localStorage.setItem(
+            "userId",
+            JSON.stringify(response.data.user._id)
+          );
+          console.log(response.data.user);
+
+          //save user role
+          setRole(response.data.user.role.role);
+          console.log(response.data.user.role.role);
+
+          localStorage.setItem(
+            "userRole",
+            JSON.stringify(response.data.user.role.role)
+          );
         }
       })
       .catch(function (error) {
         console.log(error);
       });
-
-      // if(isEmailUnique){
-      //   axios
-      // .post("http://localhost:5000/users/login", {
-      //   email,
-      //   password,
-      // })
-      // .then(function (response) {
-    
-      // })
-      // .catch(function (error) {
-        
-      // });
-
-      // }
-
-    //if not register him as a new user
   };
 
   return (
