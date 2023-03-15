@@ -1,7 +1,7 @@
 const enrollmentModel = require("../models/enrollmentSchema");
 
 const usersModel = require("../models/usersSchema");
-
+const lecturesModel = require("../models/lecturesSchema");
 //enroll to the course
 
 //middleware to check if the user is enrolled
@@ -41,6 +41,14 @@ const courseEnrollment = (req, res) => {
         },
         { $push: { enrolledCourses: results.course } }
       );
+
+      await lecturesModel.updateOne(
+        {
+          course: course,
+        },
+        { $push: { users: { $push: { user: req.token.userId } } } }
+      );
+
       res.json(results);
     })
     .catch((err) => {
@@ -84,6 +92,68 @@ const updateEnrollment = (req, res) => {
     });
 };
 
+const AddCompleteLecturesToEnrollment = (req, res) => {
+  const courseId = req.params.courseId;
+  const lectureId = req.params.lectureId;
+
+  enrollmentModel
+    .updateOne(
+      { user: req.token.userId },
+      { $push: { isCompleted: lectureId } },
+      { new: true }
+    )
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+//middleware to check if the user is enrolled
+const AddCompletedLectureOnce = (req, res, next) => {
+  const courseId = req.params.courseId;
+  const lectureId = req.params.lectureId;
+
+  enrollmentModel
+    .find({
+      user: req.token.userId,
+      course: courseId,
+      isCompleted: { $in: [lectureId] },
+    })
+    .then((results) => {
+      if (results.length === 0) {
+        next();
+      } else {
+        res.json("the user already completed the lecture");
+      }
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+//get the enrollment informations
+const getEnrollmentInformations = (req, res) => {
+  const lectureId = req.params.lectureId;
+  const courseId = req.params.courseId;
+
+  enrollmentModel
+    .find({
+      user: req.token.userId,
+      course: courseId,
+    })
+    .populate("course")
+    .then((results) => {
+      res.json(results);
+      console.log(results);
+      console.log(req.token.userId);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 //*get courses by status
 //1- completed courses
 const completedCourses = (req, res) => {
@@ -91,6 +161,7 @@ const completedCourses = (req, res) => {
 
   enrollmentModel
     .find({ status: "completed", user: userId })
+    .populate("course")
     .then((results) => {
       res.json(results);
     })
@@ -154,4 +225,7 @@ module.exports = {
   completedCourses,
   inProgressCourses,
   checkIfUserEnrolled,
+  AddCompleteLecturesToEnrollment,
+  getEnrollmentInformations,
+  AddCompletedLectureOnce,
 };

@@ -35,6 +35,11 @@ const createRole = (req, res) => {
       "upload_lecture",
       "delete_lecture",
       "update_lecture",
+      "enroll_course",
+      "cancel_enrollment",
+      "update_enrollment",
+      "get_completed_course",
+      "get_in progress_courses",
     ];
   }
 
@@ -43,7 +48,7 @@ const createRole = (req, res) => {
     permissions = [
       "enroll_course",
       "cancel_enrollment",
-      "update_enrollment ",
+      "update_enrollment",
       "get_completed_course",
       "get_in progress_courses",
     ];
@@ -58,6 +63,11 @@ const createRole = (req, res) => {
       "upload_lecture",
       "delete_lecture",
       "update_lecture",
+      "enroll_course",
+      "cancel_enrollment",
+      "update_enrollment",
+      "get_completed_course",
+      "get_in progress_courses",
     ];
   }
 

@@ -27,6 +27,13 @@ const enrollmentSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+
+  isCompleted: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Lecture",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Enrollment", enrollmentSchema);

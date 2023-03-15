@@ -8,6 +8,9 @@ const {
   inProgressCourses,
   enrollOnce,
   checkIfUserEnrolled,
+  AddCompleteLecturesToEnrollment,
+  getEnrollmentInformations,
+  AddCompletedLectureOnce,
 } = require("../controllers/enrollment");
 
 const { authentication } = require("../middleware/authentication");
@@ -48,6 +51,19 @@ enrollmentRouter.get(
   inProgressCourses
 );
 
+enrollmentRouter.put(
+  "/complete/lecture/:courseId/:lectureId",
+  authentication,
+  AddCompletedLectureOnce,
+  AddCompleteLecturesToEnrollment
+);
+
 enrollmentRouter.get("/:courseId/:userId", checkIfUserEnrolled);
+
+enrollmentRouter.get(
+  "/check/completed/lectures/:courseId",
+  authentication,
+  getEnrollmentInformations
+);
 
 module.exports = enrollmentRouter;

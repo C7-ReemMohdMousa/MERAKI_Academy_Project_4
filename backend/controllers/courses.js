@@ -67,12 +67,32 @@ const createCategory = (req, res) => {
     });
 };
 
+//get category
+const getCategoryId = (req, res) => {
+  const category = req.params.categoryName;
+
+  categoryModel
+    .findOne({ category })
+    .then((results) => {
+      res.status(200).json({
+        success: true,
+        categoryId: results._id,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
+
 //upload course
 const uploadCourse = (req, res) => {
-  const { title, description, instructor, category, level } = req.body;
+  const { title, description, category, level } = req.body;
 
-  console.log(req);
-
+  const instructor = req.token.userId;
   const newCourse = new coursesModel({
     title,
     description,
@@ -101,7 +121,11 @@ const uploadCourse = (req, res) => {
 
 //upload lecture and save it to the lectures array
 const uploadLectures = (req, res) => {
-  const { course, title, description, videoURL } = req.body;
+  const { title, description, videoId } = req.body;
+
+  const courseId = req.params.courseId;
+  const course = courseId;
+  const videoURL = videoId;
 
   const newLecture = new lecturesModel({
     course,
@@ -120,7 +144,7 @@ const uploadLectures = (req, res) => {
         },
         { $push: { lectures: results } }
       );
-      res.json("uploaded");
+      res.json(results);
     })
     .catch((err) => {
       res.json(err);
@@ -143,13 +167,19 @@ const deleteCourseById = (req, res) => {
     .deleteMany({ course: id })
     .then((results) => {})
     .catch((err) => {});
+
+  usersModel
+    .updateMany({ $pull: { enrolldCourses: { $in: [id] } } })
+    .then((results) => {})
+    .catch((err) => {});
 };
 
 //update course informations
 const updateCourseById = (req, res) => {
   const id = req.params.courseId;
 
-  const { title, description, instructor, category, level } = req.body;
+  const { title, description, category, level } = req.body;
+  const instructor = req.token.userId;
 
   coursesModel
     .findByIdAndUpdate(
@@ -176,7 +206,8 @@ const updateLecture = (req, res) => {
   const courseId = req.params.courseId;
   const lectureId = req.params.lectureId;
 
-  const { course, title, description, videoURL } = req.body;
+  const { title, description, videoURL } = req.body;
+  const course = courseId;
 
   lecturesModel
     .findByIdAndUpdate(
@@ -231,19 +262,84 @@ const getCoursesByCategory = (req, res) => {
     });
 };
 
-// const searchByCourseName = (req, res) => {
-//   const search = req.params.search;
-//   console.log(search);
+//show courses by level
+const getCoursesByLevel = (req, res) => {
+  const level = req.query.level;
+  // const category = req.query.category
 
-//   coursesModel
-//     .find({ title: search })
-//     .then((results) => {
-//       res.json(results);
-//     })
-//     .catch((err) => {
-//       res.json(err);
-//     });
-// };
+  coursesModel
+    .find({ level })
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const getAllCategories = (req, res) => {
+  categoryModel
+    .find({})
+    .then((results) => {
+      console.log(results);
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const searchByCourseName = (req, res) => {
+  const searchText = req.params.search;
+
+  coursesModel
+    .find({ title: { $regex: searchText, $options: "i" } })
+    .populate("category")
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const getCoursesByInstructor = (req, res) => {
+  const userId = req.params.userId;
+
+  coursesModel
+    .find({ instructor: userId })
+    .populate("lectures")
+    .populate("category")
+    .exec()
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const checkIfTheUserIsTheInstructor = (req, res) => {
+  const userId = req.params.userId;
+  const courseId = req.params.courseId;
+
+  coursesModel
+    .find({ _id: courseId, instructor: userId })
+    .then((results) => {
+      if (results.length === 0) {
+        res.json(false);
+      } else {
+        res.json(true);
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 
 module.exports = {
   getAllCourses,
@@ -256,4 +352,10 @@ module.exports = {
   deleteLecture,
   getCoursesByCategory,
   getCourseById,
+  getCoursesByInstructor,
+  getCategoryId,
+  checkIfTheUserIsTheInstructor,
+  getAllCategories,
+  getCoursesByLevel,
+  searchByCourseName,
 };

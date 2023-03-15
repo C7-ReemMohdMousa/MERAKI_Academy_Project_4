@@ -11,6 +11,11 @@ const {
   getCoursesByCategory,
   getCourseById,
   searchByCourseName,
+  getCoursesByInstructor,
+  getCategoryId,
+  checkIfTheUserIsTheInstructor,
+  getAllCategories,
+  getCoursesByLevel,
 } = require("../controllers/courses");
 const { authentication } = require("../middleware/authentication");
 
@@ -20,9 +25,26 @@ const { authorization } = require("../middleware/authorization");
 const courseRouter = express.Router();
 
 courseRouter.get("/", getAllCourses);
-// courseRouter.get("/:search", searchByCourseName);
 
+courseRouter.get("/search/results/:search", searchByCourseName);
 courseRouter.get("/:courseId", getCourseById);
+
+courseRouter.get("/all/categories", getAllCategories);
+
+//get courses by level
+courseRouter.get("/all/courses/bylevel/", getCoursesByLevel);
+
+courseRouter.get("/created/:userId", authentication, getCoursesByInstructor);
+
+//get category id
+courseRouter.get("/category/:categoryName", getCategoryId);
+
+//check if the user is the instructor
+courseRouter.get(
+  "/isinstructor/:courseId/:userId",
+  authentication,
+  checkIfTheUserIsTheInstructor
+);
 
 courseRouter.delete(
   "/:courseId",
@@ -45,16 +67,14 @@ courseRouter.post(
 
 //category api
 courseRouter.post(
-  "/category",
-  authentication,
-  authorization("create_category"),
+  "/create/category",
   createCategory
 );
-courseRouter.get("/:categoryId", getCoursesByCategory);
+courseRouter.get("/categoryid/:categoryId", getCoursesByCategory);
 
 //lectures api
 courseRouter.post(
-  "/lectures",
+  "/:courseId/lectures",
   authentication,
   authorization("upload_lecture"),
   uploadLectures
@@ -72,5 +92,6 @@ courseRouter.delete(
   authorization("delete_lecture"),
   deleteLecture
 );
+
 
 module.exports = courseRouter;
