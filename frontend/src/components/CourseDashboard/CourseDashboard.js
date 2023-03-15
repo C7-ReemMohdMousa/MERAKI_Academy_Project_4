@@ -25,6 +25,8 @@ const CourseDashboard = () => {
   const [isInstructor, setIsInstructor] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEnrollData, setIsEnrollData] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [completedLectures, setCompletedLectures] = useState([]);
 
   //context
   const {
@@ -104,16 +106,27 @@ const CourseDashboard = () => {
       )
       .then(function (response) {
         console.log(response.data);
+        setCompletedLectures([...completedLectures, lectId]);
       })
       .catch(function (error) {
         throw error;
       });
+
+    // enrollmentInfo[0].isCompleted.includes(lectId);
   };
 
   //check if the user completed the course, change the enrollment status
   const isTheCourseCompleted = () => {
+    console.log("enterd");
+
     if (enrollmentInfo.length !== 0) {
+      console.log("enterd2");
+
       if (course.lectures.length === enrollmentInfo[0].isCompleted.length) {
+        console.log("enterd3");
+        console.log(enrollmentInfo[0].isCompleted.length);
+        console.log(course.lectures.length);
+
         axios
           .put(
             `http://localhost:5000/enroll/${id}`,
@@ -134,16 +147,9 @@ const CourseDashboard = () => {
 
   isTheCourseCompleted();
 
-  const showContent = (e) => {
-    console.log(e);
-    let contenet = document.getElementById(e);
-    console.log(contenet);
-    contenet.style.display = "block";
-  };
-
   return (
     <div>
-      {isFectched ? (
+      {isFectched && enrollmentInfo ? (
         <div>
           <div>
             <h1>{course.title}</h1>
@@ -159,7 +165,7 @@ const CourseDashboard = () => {
           <div className="season_tabs">
             {lectures.map((element) => {
               return (
-                <div className="course-dashboard">
+                <div className="course-dashboard" key={element._id}>
                   <div className="season_tab">
                     <ListGroup>
                       <ListGroupItem
@@ -170,9 +176,8 @@ const CourseDashboard = () => {
                       >
                         {element.title}
                         {isEnrollData && enrollmentInfo.length ? (
-                          enrollmentInfo[0].isCompleted.includes(
-                            element._id
-                          ) ? (
+                          enrollmentInfo[0].isCompleted.includes(element._id) ||
+                          completedLectures.includes(element._id) ? (
                             <BsCheckCircleFill className="display-check" />
                           ) : (
                             <BsCheckCircleFill className="display-check-none " />

@@ -26,7 +26,7 @@
 
 .season_tabs {
   position: relative;   
-  min-height: 360px; /* This part sucks */
+  min-height: 360px; 
   clear: both;
   margin: 25px 0;
 }
