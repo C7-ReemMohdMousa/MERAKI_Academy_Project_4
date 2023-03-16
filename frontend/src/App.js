@@ -15,6 +15,7 @@ import Search from "antd/es/transfer/search";
 import DashboardNavigation from "./components/NavBar/DashboardNavigation";
 import { nav, Nav } from "react-bootstrap";
 import Navigation from "./components/NavBar/Navigation";
+import Footer from "./components/Footer/Footer";
 
 export const LearningContext = createContext();
 
@@ -88,13 +89,9 @@ function App() {
       }}
     >
       <div className="App">
-        <header className="App-header">
-          <h1></h1>
-        </header>
+       
 
         {token ? <DashboardNavigation /> : <Navigation />}
-
-        {isSearching ? <Search /> : ""}
 
         {
           <Routes>
@@ -111,6 +108,8 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         }
+
+        <Footer />
       </div>
     </LearningContext.Provider>
   );

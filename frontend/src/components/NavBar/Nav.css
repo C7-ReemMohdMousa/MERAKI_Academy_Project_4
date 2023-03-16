@@ -1,0 +1,17 @@
+.nav {
+  background-color: white;
+  height: 3rem;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  /* margin-left: 0.5rem; */
+  border-bottom: 0.25rem solid #0d6efd;
+  /* margin-top: 0.2rem; */
+  /* font-size: large;
+    font-weight: bold; */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

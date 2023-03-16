@@ -5,8 +5,9 @@ import { LearningContext } from "../../App";
 import Btn from "../Btn/Btn";
 import { Input, Space } from "antd";
 import Search from "antd/es/transfer/search";
-
 import { nav, Nav } from "react-bootstrap";
+
+import "./Nav.css";
 
 const DashboardNavigation = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const DashboardNavigation = () => {
   //       fontSize: 16,
   //       color: "#1890ff",
   //     }}
-  //   /> 
+  //   />
   // );
 
   const onSearch = (value) => {
@@ -59,31 +60,66 @@ const DashboardNavigation = () => {
 
   return (
     <div>
-      <Nav style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
-        <Space direction="vertical">
-          <Search
-            placeholder="input search text"
-            allowClear
-            enterButton="Search"
-            size="large"
-            onSearch={onSearch}
-          />
-        </Space>
-        <Nav.Item>
-          <Nav.Link href="/"> Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/explore"> Explore</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/dashboard"> Dashboard</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login" onClick={Logout}>
-            {" "}
-            Logout
-          </Nav.Link>
-        </Nav.Item>
+      <Nav
+        style={{
+          display: "flex",
+          gap: "1rem",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+        className="sticky"
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            marginTop: ".2rem",
+          }}
+        >
+          <Nav.Item>
+            <h2>
+              Curious<span style={{ color: "#0d6efd" }}>Learner</span>
+            </h2>
+          </Nav.Item>
+          <div>
+            <Space direction="vertical">
+              <Search
+                placeholder="search here.."
+                allowClear
+                enterButton="Search"
+                size="medium"
+                onSearch={onSearch}
+              />
+            </Space>
+          </div>
+
+          <Nav.Item>
+            <Nav.Link href="/explore"> Explore</Nav.Link>
+          </Nav.Item>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Nav.Item>
+            <Nav.Link href="/"> Home</Nav.Link>
+          </Nav.Item>
+
+          <Nav.Item>
+            <Nav.Link href="/dashboard"> Dashboard</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/login" onClick={Logout}>
+              {" "}
+              Logout
+            </Nav.Link>
+          </Nav.Item>
+        </div>
       </Nav>
     </div>
   );

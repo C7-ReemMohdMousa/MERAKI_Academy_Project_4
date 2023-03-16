@@ -8,6 +8,9 @@ import { AudioOutlined } from "@ant-design/icons";
 import { Input, Space } from "antd";
 
 import { nav, Nav } from "react-bootstrap";
+
+import "./Nav.css"
+
 const Navigation = () => {
   const navigate = useNavigate();
 
@@ -41,7 +44,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <Nav style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
+      <Nav style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
         <Space direction="vertical">
           <Search
             placeholder="input search text"
