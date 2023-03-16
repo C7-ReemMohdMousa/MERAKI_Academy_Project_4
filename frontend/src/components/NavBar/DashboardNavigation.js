@@ -59,7 +59,8 @@ const DashboardNavigation = () => {
   };
 
   return (
-    <div>
+    <div className="sticky-top">
+      {/* className="sticky" */}
       <Nav
         style={{
           display: "flex",
@@ -67,7 +68,6 @@ const DashboardNavigation = () => {
           justifyContent: "space-between",
           alignItems: "center",
         }}
-        className="sticky"
       >
         <div
           style={{

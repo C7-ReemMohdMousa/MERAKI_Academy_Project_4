@@ -1,28 +1,38 @@
-.explore-page{
-    display: flex;
-    margin-top: 5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-
+.explore-all-page {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin-top: 3rem;
 }
 
-.explore-courses{
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    
+.explore-page {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
-.filter{
-    width: 30rem;
+.explore-courses {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+} 
+
+.filter {
+  width: 30rem;
 }
 
-.courses-cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 0 auto;
-
+.courses-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
 }
 
+
+.courses-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

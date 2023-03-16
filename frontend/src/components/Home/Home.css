@@ -1,10 +1,9 @@
 .hero {
-  height: 35.7rem;
+  height: 39.7rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* justify-content: space-between; */
-
 }
 
 .hero-content {
@@ -32,8 +31,7 @@
 
 .unis-imgs {
   width: 94.9rem;
-  border-bottom: 0.12rem solid #0d6efd;
-
+  /* border-top: 0.12rem solid #0d6efd; */
 }
 
 /* -------------------------------------- */
@@ -70,9 +68,9 @@
   align-items: center;
   padding: 3rem 2rem;
   width: 25rem;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 5%;
-  border: 0.001rem rgb(182, 179, 179) solid;
+  /* border: 0.001rem rgb(182, 179, 179) solid; */
 }
 
 .bio-heading {
@@ -92,15 +90,14 @@
 
 /* ------------------------------------------ */
 
-.our-story{
+.our-story {
   /* height: 30rem; */
   padding: 3rem 2rem;
   display: grid;
   gap: 3rem;
-  
 }
 
-.all-unis{
+.all-unis {
   border-radius: 10%;
 }
 
@@ -110,7 +107,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  background-color: white;
+  /* background-color: white; */
   padding: 3rem 2rem;
   border-bottom: 0.25rem solid #0d6efd;
 }

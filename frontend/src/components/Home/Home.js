@@ -7,8 +7,9 @@ import Btn from "../Btn/Btn";
 import "./Home.css";
 
 //images
-import Unis from "../images/Unis.jpg";
+import Unis from "../images/Unis.png";
 import hermone from "../images/hermone.jpg";
+import ourStory from "../images/our-story.png";
 
 const Home = () => {
   //context
@@ -64,7 +65,6 @@ const Home = () => {
 
       <div>
         <div className="our-story">
-        
           <div className="our-story-content">
             <div>
               <div>
@@ -76,18 +76,19 @@ const Home = () => {
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Suscipit distinctio mollitia nisi illo officiis incidunt
                 laudantium dicta tempora! Neque totam fuga aperiam ab dolores
-                eaque suscipit rerum voluptatem architecto! Eveniet.
-
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Suscipit distinctio mollitia nisi illo officiis incidunt
-                laudantium dicta tempora! Neque totam fuga aperiam ab dolores
-                eaque suscipit rerum voluptatem architecto! Eveniet.
+                eaque suscipit rerum voluptatem architecto! Eveniet. Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+                distinctio mollitia nisi illo officiis incidunt laudantium dicta
+                tempora! Neque totam fuga aperiam ab dolores eaque suscipit
+                rerum voluptatem architecto! Eveniet.
               </p>
             </div>
             <div id="achivment">
               <img
                 // src="https://images.ctfassets.net/00atxywtfxvd/4vOWgNjy4KExR8msqHnJEP/bb1557d60e8a29f6a5f09148f700bff5/partner-logos.png"
-                src="https://business.edx.org/hubfs/B2B-partner-logos-V6.png"
+                // src="https://business.edx.org/hubfs/B2B-partner-logos-V6.png"
+                // src="https://images.ctfassets.net/00atxywtfxvd/3JTfOpbc60Z57eLxWRtCZe/f6da896e4f7c4a5b6fa7fd8d33d89586/Coursera_Our_Story_Assets.jpeg"
+                src={ourStory}
                 className="all-unis"
               />
             </div>

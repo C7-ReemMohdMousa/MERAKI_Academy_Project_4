@@ -148,10 +148,10 @@ const CourseDashboard = () => {
   isTheCourseCompleted();
 
   return (
-    <div>
+    <div className="course-dashboard-page">
       {isFectched && enrollmentInfo ? (
         <div>
-          <div>
+          <div className="course-detalis-dash">
             <h1>{course.title}</h1>
             <p>{course.description}</p>
             {isInstructor || isAdmin ? (
@@ -163,7 +163,7 @@ const CourseDashboard = () => {
             )}
           </div>
           <div className="season_tabs">
-            {lectures.map((element) => {
+            {lectures.map((element, index) => {
               return (
                 <div className="course-dashboard" key={element._id}>
                   <div className="season_tab">
@@ -172,9 +172,10 @@ const CourseDashboard = () => {
                         onClick={() => {
                           setLectureId(element._id);
                         }}
-                        action className="tab-title"
+                        action
+                        className="tab-title"
                       >
-                        {element.title}
+                        Lecture {index + 1}: {element.title}
                         {isEnrollData && enrollmentInfo.length ? (
                           enrollmentInfo[0].isCompleted.includes(element._id) ||
                           completedLectures.includes(element._id) ? (
@@ -190,31 +191,47 @@ const CourseDashboard = () => {
                   </div>
 
                   {lectureId === element._id ? (
-                    <div>
+                    <div> 
                       <div>
                         <div className="season_content">
-                          <div>
-                            <h5>{element.title}</h5>
-                            {isInstructor || isAdmin ? (
-                              <div>
-                                <UpdateLecture id={element._id} />
-                                <DeleteLecture
-                                  lectureId={element._id}
-                                  courseId={id}
-                                />
+                          <div className="lecture-content">
+                              <h5>
+                                Lecture {index + 1}: {element.title}
+                              </h5>
+                              {isInstructor || isAdmin ? (
+                                <div className="update-delete-btns">
+                                  <UpdateLecture id={element._id} />
+                                  <DeleteLecture
+                                    lectureId={element._id}
+                                    courseId={id}
+                                  />
+                                </div>
+                              ) : (
+                                ""
+                              )}
+                              <div className="video-container">
+                                <YouTube
+                                    id={element._id}
+                                    videoId={element.videoURL}
+                                    onEnd={() => {
+                                      console.log(element._id);
+                                      AddLectureToIsCompletedEnrollment(
+                                        element._id
+                                      );
+                                    }}
+                                  />
                               </div>
-                            ) : (
-                              ""
-                            )}
-                            <p>{element.description}</p>
-                            <YouTube
-                              id={element._id}
-                              videoId={element.videoURL}
-                              onEnd={() => {
-                                console.log(element._id);
-                                AddLectureToIsCompletedEnrollment(element._id);
-                              }}
-                            />
+                              <div className="lecture-description">
+                                <p>
+                                  {element.description}
+                                  Lorem ipsum, dolor sit amet consectetur
+                                  adipisicing elit. Suscipit distinctio mollitia
+                                  nisi illo officiis incidunt laudantium dicta
+                                  tempora! Neque totam fuga aperiam ab dolores
+                                  eaque suscipit rerum voluptatem architecto!
+                                  Eveniet.
+                                </p>
+                              </div>
                           </div>
                         </div>
                       </div>

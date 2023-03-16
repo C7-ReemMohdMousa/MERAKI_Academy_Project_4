@@ -1,3 +1,13 @@
+.course-dashboard-page {
+  display: flex;
+  flex-direction: column;
+  height: 110vh;
+}
+
+.course-detalis-dash {
+  margin-top: 2rem;
+}
+
 .tab-title {
   display: flex;
   justify-content: space-between;
@@ -7,64 +17,86 @@
   display: none;
 }
 
-.course-dashboard{
-  display: flex;
-}
-
-.lecture-tabs{
+.lecture-tabs {
   margin-top: 2rem;
 }
 
-.tabs-of-each-lecture{
-  width: 25rem;
+.tabs-of-each-lecture {
+  width: 25rem; 
 }
 
+.update-delete-btns {
+  display: flex;
+}
+
+/* -----------video---------------------------- */
+.video-container {
+  height: 25rem;
+  width: 40rem;
+}
+
+iframe {
+  height: 25rem;
+  width: 40rem;
+}
+
+/* ----------------------------------------------- */
 
 .season_tabs {
-  position: relative;   
-  min-height: 360px; 
+  position: relative;
+  min-height: 360px;
   clear: both;
   margin: 25px 0;
 }
 .season_tab {
-  float: left;  
+  float: left;
   clear: both;
   width: 286px;
 }
 .season_tab label {
-    background: #eee;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-left: -1px;
-    font-size: 21px;
-    vertical-align: middle;
-    position: relative;
-    left: 1px;
-    width: 264px;
-    height: 68px;
-    display: table-cell;
+  background: #eee;
+  padding: 0.7rem;
+  border: 0.01rem solid #ccc;
+  margin-left: -0.06rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  position: relative;
+  left: 0.01rem;
+  width: 16.5rem;
+  height: 4.25rem;
+  display: table-cell;
 }
-.season_tab [type=radio] {
-  display: none;   
+.season_tab [type="radio"] {
+  display: none;
 }
+
+.lecture-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .season_content {
   position: absolute;
   top: 0;
-  left: 286px;
+  left: 18rem;
   background: white;
   right: 0;
   bottom: 0;
-  padding: 20px;
-  border: 1px solid #ccc;
- }
-.season_content span {
-  animation: 0.5s ease-out 0s 1 slideInFromTop; 
+  padding: 1.2rem;
+  border: 0.01rem solid #ccc;
+  width: auto;
+  height: 80vh;
 }
-[type=radio]:checked ~ label {
+.season_content span {
+  animation: 0.5s ease-out 0s 1 slideInFromTop;
+}
+[type="radio"]:checked ~ label {
   background: white;
   border-bottom: 2px solid #8bc34a;
   z-index: 2;
 }
-[type=radio]:checked ~ label ~ .season_content {
+[type="radio"]:checked ~ label ~ .season_content {
   z-index: 1;
 }
