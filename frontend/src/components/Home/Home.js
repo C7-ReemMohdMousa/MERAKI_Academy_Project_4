@@ -13,28 +13,21 @@ import ourStory from "../images/our-story.png";
 
 const Home = () => {
   //context
-  const {
-    courses,
-    setCourses,
-    filterdCourses,
-    setFilterdCourses,
-    isSearching,
-    setIsSearching,
-    searchingResults,
-    setSearchingResults,
-  } = useContext(LearningContext);
+  const { setIsSearching, token } = useContext(LearningContext);
 
   setIsSearching(false);
 
   const navigate = useNavigate();
 
-  const toCourseInfo = (e) => {
-    navigate(`/coursedetail/${e.target.id}`);
-  };
 
   const goToRegister = () => {
     navigate(`/register`);
   };
+
+  const goToExplore = ()=>{
+    navigate(`/explore`);
+
+  }
 
   return (
     <div>
@@ -47,9 +40,15 @@ const Home = () => {
             tempora! Neque totam fuga aperiam ab dolores eaque suscipit rerum
             voluptatem architecto! Eveniet.
           </p>
-          <div className="join-now-btn">
-            <Btn value="Join Now for Free!" onClick={goToRegister} />
-          </div>
+          {token ? (
+            <div className="join-now-btn">
+              <Btn value="Explore The Coureses" onClick={goToExplore} />
+            </div>
+          ) : (
+            <div className="join-now-btn">
+              <Btn value="Join Now for Free!" onClick={goToRegister} />
+            </div>
+          )}
         </div>
         <div className="hero-img-div">
           <img

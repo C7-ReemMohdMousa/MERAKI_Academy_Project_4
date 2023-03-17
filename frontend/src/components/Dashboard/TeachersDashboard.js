@@ -104,6 +104,8 @@ const TeachersDashboard = () => {
     navigate(`/coursedashboard/${courseID}`);
   };
 
+  console.log(createdCourses);
+
   return (
     <div>
       <div className="dashboard-welcome">
@@ -133,10 +135,7 @@ const TeachersDashboard = () => {
                                     <h5>{element.title}</h5>
                                   </div>
                                 </Card.Title>
-                                <Card.Text>
-                                  With supporting text below as a natural
-                                  lead-in to additional content.
-                                </Card.Text>
+                                <Card.Text>{element.thumbnail}</Card.Text>
                                 <div className="btns">
                                   <Btn
                                     id={element._id}
@@ -229,10 +228,7 @@ const TeachersDashboard = () => {
                                   <h5>{element.course.title}</h5>
                                 </div>
                               </Card.Title>
-                              <Card.Text>
-                                With supporting text below as a natural lead-in
-                                to additional content.
-                              </Card.Text>
+                              <Card.Text>{element.thumbnail}</Card.Text>
                               <div className="btns">
                                 <Btn
                                   value="go to course"

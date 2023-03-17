@@ -131,11 +131,7 @@ const CourseInfo = () => {
                     <Rating name="read-only" value={4} readOnly />
                     <p>
                       {element.description}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Suscipit distinctio mollitia nisi illo officiis incidunt
-                      laudantium dicta tempora! Neque totam fuga aperiam ab
-                      dolores eaque suscipit rerum voluptatem architecto!
-                      Eveniet.
+                      
                     </p>
                     {isEnrolled || isInstructor || isAdmin ? (
                       <Btn
@@ -155,7 +151,7 @@ const CourseInfo = () => {
                   </div>
                 </div>
 
-                <div>
+                <div className="course-info-tabs">
                   <Tabs
                     id="controlled-tab-example"
                     activeKey={key}
@@ -164,11 +160,6 @@ const CourseInfo = () => {
                   >
                     <Tab eventKey="About" title="About">
                       {element.description}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Suscipit distinctio mollitia nisi illo officiis incidunt
-                      laudantium dicta tempora! Neque totam fuga aperiam ab
-                      dolores eaque suscipit rerum voluptatem architecto!
-                      Eveniet.
                     </Tab>
                     <Tab eventKey="Instructor" title="Instructor">
                       2

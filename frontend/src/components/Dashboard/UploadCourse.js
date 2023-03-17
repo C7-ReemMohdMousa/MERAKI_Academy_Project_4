@@ -29,6 +29,7 @@ const UploadCourse = ({ instructorId }) => {
   const [level, setLevel] = useState("");
   const [response, setResponse] = useState("");
   const [hideSaveBtn, setHideSaveBtn] = useState(false);
+  const [thumbnail, setThumbnail] = useState("");
 
   const handleClose = () => {
     setShow(false);
@@ -60,7 +61,7 @@ const UploadCourse = ({ instructorId }) => {
     axios
       .post(
         `http://localhost:5000/courses`,
-        { title, description, category, level },
+        { title, description, category, level, thumbnail },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -115,6 +116,21 @@ const UploadCourse = ({ instructorId }) => {
                 }}
               />
             </Form.Group>
+
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Thumbnail</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                onChange={(e) => {
+                  setThumbnail(e.target.value);
+                }}
+              />
+            </Form.Group>
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
@@ -139,8 +155,9 @@ const UploadCourse = ({ instructorId }) => {
               >
                 <option>Category</option>
                 <option value="Engineering">Engineering</option>
-                <option value="Litreture">Litreture</option>
-                <option value="IT">IT & Data Analysis</option>
+                <option value="Science">Science</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="IT & Data Analysis">IT & Data Analysis</option>
               </Form.Select>
             </Form.Group>
 
@@ -157,7 +174,7 @@ const UploadCourse = ({ instructorId }) => {
               >
                 <option>Level</option>
                 <option value="Beginner">Beginner</option>
-                <option value="Intermidate">Intermidate</option>
+                <option value="Intermediate">Intermediate</option>
                 <option value="Advance">Advance</option>
               </Form.Select>
             </Form.Group>

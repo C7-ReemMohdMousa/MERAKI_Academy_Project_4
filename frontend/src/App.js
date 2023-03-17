@@ -17,6 +17,9 @@ import { nav, Nav } from "react-bootstrap";
 import Navigation from "./components/NavBar/Navigation";
 import Footer from "./components/Footer/Footer";
 
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDocument from "./components/MyDocument";
+
 export const LearningContext = createContext();
 
 function App() {
@@ -48,6 +51,8 @@ function App() {
   const [searchingResults, setSearchingResults] = useState([]);
   const [categories, setCategories] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
+
+
 
   return (
     <LearningContext.Provider
@@ -89,10 +94,7 @@ function App() {
       }}
     >
       <div className="App">
-       
-
         {token ? <DashboardNavigation /> : <Navigation />}
-
         {
           <Routes>
             <Route path="/" element={<Home />} />
@@ -109,6 +111,19 @@ function App() {
           </Routes>
         }
 
+      
+
+        {/* <PDFDownloadLink document={<MyDocument />} filename="FORM">
+          {({  blob, url, loading, error  }) =>
+            loading ? (
+              <button>Loading Document...</button>
+            ) : (
+              <button>Download</button>
+            )
+          }
+        </PDFDownloadLink> */}
+
+ 
         <Footer />
       </div>
     </LearningContext.Provider>

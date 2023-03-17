@@ -29,9 +29,15 @@ const UpdateCourse = ({ id }) => {
   const [level, setLevel] = useState("");
   const [response, setResponse] = useState("");
   const [hideSaveBtn, setHideSaveBtn] = useState(false);
+  const [image, setImage] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setHideSaveBtn(false);
+    setResponse("");
+    setShow(true);
+  };
 
   //to get the categoryID
   const getCategory = (e) => {
@@ -54,7 +60,7 @@ const UpdateCourse = ({ id }) => {
     axios
       .put(
         `http://localhost:5000/courses/${id}`,
-        { title, description, category, level },
+        { title, description, category, level, image, thumbnail },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -127,6 +133,21 @@ const UpdateCourse = ({ id }) => {
                 }}
               />
             </Form.Group>
+
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Thumbnail</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                onChange={(e) => {
+                  setThumbnail(e.target.value);
+                }}
+              />
+            </Form.Group>
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
@@ -141,6 +162,24 @@ const UpdateCourse = ({ id }) => {
               />
             </Form.Group>
 
+            {role === "admin" ? (
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  onChange={(e) => {
+                    setImage(e.target.value);
+                  }}
+                />
+              </Form.Group>
+            ) : (
+              ""
+            )}
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
@@ -151,8 +190,9 @@ const UpdateCourse = ({ id }) => {
               >
                 <option>Category</option>
                 <option value="Engineering">Engineering</option>
-                <option value="Litreture">Litreture</option>
-                <option value="IT">IT & Data Analysis</option>
+                <option value="Science">Science</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="IT & Data Analysis">IT & Data Analysis</option>
               </Form.Select>
             </Form.Group>
 

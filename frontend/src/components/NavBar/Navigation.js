@@ -9,7 +9,7 @@ import { Input, Space } from "antd";
 
 import { nav, Nav } from "react-bootstrap";
 
-import "./Nav.css"
+import "./Nav.css";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -43,30 +43,64 @@ const Navigation = () => {
   };
 
   return (
-    <div>
-      <Nav style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
-        <Space direction="vertical">
-          <Search
-            placeholder="input search text"
-            allowClear
-            enterButton="Search"
-            size="large"
-            onSearch={onSearch}
-          />
-        </Space>
+    <div className="sticky-top">
+      {/* className="sticky" */}
+      <Nav
+        style={{
+          display: "flex",
+          gap: "1rem",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            marginTop: ".2rem",
+          }}
+        >
+          <Nav.Item>
+            <h2>
+              Curious<span style={{ color: "#0d6efd" }}>Learner</span>
+            </h2>
+          </Nav.Item>
+          <div>
+            <Space direction="vertical">
+              <Search
+                placeholder="search here.."
+                allowClear
+                enterButton="Search"
+                size="medium"
+                onSearch={onSearch}
+              />
+            </Space>
+          </div>
 
-        <Nav.Item>
-          <Nav.Link href="/"> Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/explore"> Explore</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/register"> Register</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login"> Login</Nav.Link>
-        </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/explore"> Explore</Nav.Link>
+          </Nav.Item>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Nav.Item>
+            <Nav.Link href="/"> Home</Nav.Link>
+          </Nav.Item>
+
+          <Nav.Item>
+            <Nav.Link href="/login"> Login</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/register">Register</Nav.Link>
+          </Nav.Item>
+        </div>
       </Nav>
     </div>
   );

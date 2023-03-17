@@ -191,47 +191,39 @@ const CourseDashboard = () => {
                   </div>
 
                   {lectureId === element._id ? (
-                    <div> 
+                    <div>
                       <div>
                         <div className="season_content">
                           <div className="lecture-content">
-                              <h5>
-                                Lecture {index + 1}: {element.title}
-                              </h5>
-                              {isInstructor || isAdmin ? (
-                                <div className="update-delete-btns">
-                                  <UpdateLecture id={element._id} />
-                                  <DeleteLecture
-                                    lectureId={element._id}
-                                    courseId={id}
-                                  />
-                                </div>
-                              ) : (
-                                ""
-                              )}
-                              <div className="video-container">
-                                <YouTube
-                                    id={element._id}
-                                    videoId={element.videoURL}
-                                    onEnd={() => {
-                                      console.log(element._id);
-                                      AddLectureToIsCompletedEnrollment(
-                                        element._id
-                                      );
-                                    }}
-                                  />
+                            <h5>
+                              Lecture {index + 1}: {element.title}
+                            </h5>
+                            {isInstructor || isAdmin ? (
+                              <div className="update-delete-btns">
+                                <UpdateLecture id={element._id} />
+                                <DeleteLecture
+                                  lectureId={element._id}
+                                  courseId={id}
+                                />
                               </div>
-                              <div className="lecture-description">
-                                <p>
-                                  {element.description}
-                                  Lorem ipsum, dolor sit amet consectetur
-                                  adipisicing elit. Suscipit distinctio mollitia
-                                  nisi illo officiis incidunt laudantium dicta
-                                  tempora! Neque totam fuga aperiam ab dolores
-                                  eaque suscipit rerum voluptatem architecto!
-                                  Eveniet.
-                                </p>
-                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <div className="video-container">
+                              <YouTube
+                                id={element._id}
+                                videoId={element.videoURL}
+                                onEnd={() => {
+                                  console.log(element._id);
+                                  AddLectureToIsCompletedEnrollment(
+                                    element._id
+                                  );
+                                }}
+                              />
+                            </div>
+                            <div className="lecture-description">
+                              <p>{element.description}</p>
+                            </div>
                           </div>
                         </div>
                       </div>

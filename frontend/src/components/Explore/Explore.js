@@ -59,8 +59,8 @@ const Explore = () => {
     navigate(`/coursedetail/${e.target.id}`);
   };
 
-  console.log(isSearching);
- 
+  console.log(courses);
+
   return (
     <div className="explore-all-page">
       <div className="courses-header">
@@ -80,10 +80,10 @@ const Explore = () => {
                     key={element._id}
                     className="courses-cards"
                   >
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img variant="top" src={element.image} />
                     <Card.Body>
                       <Card.Title>{element.title}</Card.Title>
-                      <Card.Text>{element.description}</Card.Text>
+                      <Card.Text>{element.thumbnail}</Card.Text>
                       <Btn
                         value="View Course Details"
                         variant="primary"
@@ -105,10 +105,10 @@ const Explore = () => {
                     key={element._id}
                     className="courses-cards"
                   >
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img className="cardImage" variant="top" src={element.image} />
                     <Card.Body>
                       <Card.Title>{element.title}</Card.Title>
-                      <Card.Text>{element.description}</Card.Text>
+                      <Card.Text>{element.thumbnail}</Card.Text>
                       <Btn
                         value="View Course Details"
                         variant="primary"
@@ -161,10 +161,10 @@ const SearchResultsCom = () => {
                 key={element._id}
                 className="courses-cards"
               >
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={element.image} />
                 <Card.Body>
                   <Card.Title>{element.title}</Card.Title>
-                  <Card.Text>{element.description}</Card.Text>
+                  <Card.Text>{element.thumbnail}</Card.Text>
                   <Btn
                     value="View Course Details"
                     variant="primary"
