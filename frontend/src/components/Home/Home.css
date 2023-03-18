@@ -1,5 +1,5 @@
 .hero {
-  height: 39.7rem;
+  height: 40.5rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -109,7 +109,6 @@
   gap: 1rem;
   /* background-color: white; */
   padding: 3rem 2rem;
-  border-bottom: 0.25rem solid #0d6efd;
 }
 
 #achivment {

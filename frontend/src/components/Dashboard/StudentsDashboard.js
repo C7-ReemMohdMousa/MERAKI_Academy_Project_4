@@ -96,13 +96,22 @@ const StudentsDashboard = () => {
   return (
     <div>
       <div className="dashboard-welcome">
-        <h2 style={{color: "#0d6efd"}}>Welcome Back {name}!</h2>
-        <p>How you doing today? ready for starting a new journey in knowlage</p>
+        <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
+        <p>
+          How you doing today? are you ready to start a new journey of learning?
+        </p>
+        <Btn value="Explore Courses" onClick={goToExplore} />
       </div>
 
       <div>
         <div className="tabs">
-          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify style={{fontWeight: "bold"}}>
+          <Tabs
+            defaultActiveKey="profile"
+            id="tabs"
+            className="mb-3"
+            justify
+            style={{ fontWeight: "bold" }}
+          >
             <Tab eventKey="home" title="In Progress Courses">
               <div>
                 <div className="all-courses">
@@ -152,7 +161,7 @@ const StudentsDashboard = () => {
                       })
                     ) : (
                       <div className="no-courses">
-                        <br/>
+                        <br />
                         <h5>
                           It looks like you have not enrolled in any courses
                           yet!
@@ -212,7 +221,7 @@ const StudentsDashboard = () => {
                     })
                   ) : (
                     <div className="no-courses">
-                      <br/>
+                      <br />
                       <h5>It looks like you have not completed a course</h5>
                       <p>Explore our available courses now!</p>
                       <Btn value="Explore Courses" onClick={goToExplore} />

@@ -18,6 +18,7 @@ import {
   MDBModalTitle,
   MDBModalBody,
   MDBModalFooter,
+  MDBSwitch,
 } from "mdb-react-ui-kit";
 
 //the dashboard will change based on the user role
@@ -47,13 +48,14 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   //context
-  const { courses, setCourses, token, name, categories, setCategories } =
+  const { courses, setCourses, token, name, categories, setCategories, role } =
     useContext(LearningContext);
 
   //
   const [newCategory, setNewCategory] = useState("");
   const [response, setResponse] = useState("");
   const [users, setUsers] = useState([]);
+  let status = "";
 
   //modal, change student to teacher
   const [basicModal, setBasicModal] = useState(false);
@@ -115,11 +117,23 @@ const AdminDashboard = () => {
       });
   };
 
+  const updateUserInfo = (userId) => {
+    console.log(status);
+    axios
+      .post(`http://localhost:5000/users/update/user/${userId}`, { status })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  };
+
   return (
     <div>
       <div>
         <div className="dashboard-welcome">
-          <h2>Welcome Back {name}!</h2>
+          <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
           <p>Fully Control Admin Dashboard</p>
           <div>
             <UploadCourse />
@@ -131,6 +145,7 @@ const AdminDashboard = () => {
             id="tabs"
             className="mb-3"
             justify
+            style={{ fontWeight: "bold" }}
           >
             <Tab eventKey="All Courses" title="All Courses">
               <div>
@@ -167,6 +182,7 @@ const AdminDashboard = () => {
             </Tab>
             <Tab eventKey="Add Category" title="Add Category">
               <div className="create-category">
+                <br />
                 <h5>Here You Can Add a New Category:</h5>
                 <Form>
                   {/* <Form.Label> Here You Can Add a New Category:</Form.Label> */}
@@ -205,6 +221,7 @@ const AdminDashboard = () => {
                       <th>Last Name</th>
                       <th>Email</th>
                       <th>Role</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -274,6 +291,34 @@ const AdminDashboard = () => {
                               </div>
                             ) : (
                               ""
+                            )}
+                          </td>
+                          <td>
+                            {element.role.role == "student" ||
+                            element.role.role == "teacher" ? (
+                              <MDBSwitch
+                                id="flexSwitchCheckChecked"
+                                defaultChecked={
+                                  element.status == "active" ? true : false
+                                }
+                                onClick={(e) => {
+                                  if (e.target.checked == false) {
+                                    // setStatus("blocked");
+                                    status = "blocked";
+                                    updateUserInfo(element._id);
+                                  } else if (e.target.checked == true) {
+                                    // setStatus("active");
+                                    status = "active";
+                                    updateUserInfo(element._id);
+                                  }
+                                }}
+                              />
+                            ) : (
+                              <MDBSwitch
+                                defaultChecked
+                                disabled
+                                id="flexSwitchCheckCheckedDisabled"
+                              />
                             )}
                           </td>
                         </tr>

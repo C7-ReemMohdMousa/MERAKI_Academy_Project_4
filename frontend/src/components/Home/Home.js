@@ -59,6 +59,9 @@ const Home = () => {
       </div>
 
       <div className="unis-imgs">
+        <div style={{display: "flex", justifyContent: "center"}}>
+        <h4>Our partners and collaborators</h4>
+        </div>
         <img src={Unis} className="unis-imgs" />
       </div>
 

@@ -48,6 +48,8 @@ const usersSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+
+  status: { type: String, default: "active" },
 });
 
 usersSchema.pre("save", async function () {

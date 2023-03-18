@@ -170,6 +170,8 @@ const CourseInfo = () => {
                     onSelect={(k) => setKey(k)}
                     className="mb-3"
                   >
+                    <br />
+
                     <Tab eventKey="About" title="About">
                       <br />
                       <div className="about-course">
@@ -197,6 +199,8 @@ const CourseInfo = () => {
                       {element.lectures.map((lecture, index) => {
                         return (
                           <div>
+                            <br />
+
                             <div>
                               <ul>
                                 <li>

@@ -98,24 +98,30 @@ const Explore = () => {
             ) : isSearching === false && isFiltering == false ? (
               courses.map((element) => {
                 return (
-                  <Card
-                    style={{ width: "18rem" }}
-                    key={element._id}
-                    className="courses-cards"
-                  >
-                    <Card.Img className="cardImage" variant="top" src={element.image} />
-                    <Card.Body>
-                      <Card.Title>{element.title}</Card.Title>
-                      <Card.Text>{element.thumbnail}</Card.Text>
-                      <Btn
-                        value="View Course Details"
-                        variant="primary"
-                        id={element._id}
-                        title={element.title}
-                        onClick={toCourseInfo}
+                  <div className="explore-courses">
+                    <Card
+                      className="courses-cards"
+                      style={{ width: "18rem" }}
+                      key={element._id}
+                    >
+                      <Card.Img
+                        className="cardImage"
+                        variant="top"
+                        src={element.image}
                       />
-                    </Card.Body>
-                  </Card>
+                      <Card.Body>
+                        <Card.Title>{element.title}</Card.Title>
+                        <Card.Text>{element.thumbnail}</Card.Text>
+                        <Btn
+                          value="View Course Details"
+                          variant="primary"
+                          id={element._id}
+                          title={element.title}
+                          onClick={toCourseInfo}
+                        />
+                      </Card.Body>
+                    </Card>
+                  </div>
                 );
               })
             ) : (
@@ -150,31 +156,35 @@ const SearchResultsCom = () => {
   };
 
   return (
-    <div>
-      {searchingResults.length !== 0
-        ? searchingResults.map((element) => {
-            return (
-              <Card
-                style={{ width: "18rem" }}
-                key={element._id}
-                className="courses-cards"
-              >
-                <Card.Img variant="top" src={element.image} />
-                <Card.Body>
-                  <Card.Title>{element.title}</Card.Title>
-                  <Card.Text>{element.thumbnail}</Card.Text>
-                  <Btn
-                    value="View Course Details"
-                    variant="primary"
-                    id={element._id}
-                    title={element.title}
-                    onClick={toCourseInfo}
-                  />
-                </Card.Body>
-              </Card>
-            );
-          })
-        : ""}
+    <div className="explore-all-page">
+      <div className="explore-page">
+        {searchingResults.length !== 0
+          ? searchingResults.map((element) => {
+              return (
+                <div className="explore-courses">
+                  <Card
+                    style={{ width: "18rem" }}
+                    key={element._id}
+                    className="courses-cards"
+                  >
+                    <Card.Img variant="top" src={element.image} />
+                    <Card.Body>
+                      <Card.Title>{element.title}</Card.Title>
+                      <Card.Text>{element.thumbnail}</Card.Text>
+                      <Btn
+                        value="View Course Details"
+                        variant="primary"
+                        id={element._id}
+                        title={element.title}
+                        onClick={toCourseInfo}
+                      />
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })
+          : ""}
+      </div>
     </div>
   );
 };

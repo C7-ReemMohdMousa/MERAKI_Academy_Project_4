@@ -46,7 +46,7 @@ const login = (req, res) => {
 
   //search the database to find the email
   usersModel
-    .findOne({ email })
+    .findOne({ email, status: "active" })
     .populate("role")
     .then((results) => {
       //if the email is not exsisted return an error msg
@@ -407,10 +407,14 @@ const getAllUsers = (req, res) => {
 
 const updateUserInfo = (req, res) => {
   const userId = req.params.userId;
-  const { image, description } = req.body;
+  const { image, description, status } = req.body;
 
   usersModel
-    .findByIdAndUpdate({ _id: userId }, { image, description }, { new: true })
+    .findByIdAndUpdate(
+      { _id: userId },
+      { image, description, status },
+      { new: true }
+    )
     .then((results) => {
       res.json(results);
     })
@@ -424,5 +428,5 @@ module.exports = {
   login,
   checkGoogleUser,
   getAllUsers,
-  updateUserInfo
+  updateUserInfo,
 };

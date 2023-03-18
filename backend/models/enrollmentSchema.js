@@ -34,6 +34,7 @@ const enrollmentSchema = new mongoose.Schema({
       ref: "Lecture",
     },
   ],
+  
 });
 
 module.exports = mongoose.model("Enrollment", enrollmentSchema);
