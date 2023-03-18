@@ -144,20 +144,24 @@ const CourseInfo = () => {
                       <p className="course-description">{element.thumbnail}</p>
                     </div>
                     <div>
-                      {isEnrolled || isInstructor || isAdmin ? (
-                        <Btn
-                          value="go to course"
-                          variant="success"
-                          id={element._id}
-                          onClick={goToCourse}
-                        />
+                      {token ? (
+                        isEnrolled || isInstructor || isAdmin ? (
+                          <Btn
+                            value="go to course"
+                            variant="success"
+                            id={element._id}
+                            onClick={goToCourse}
+                          />
+                        ) : (
+                          <Btn
+                            value="enroll now"
+                            onClick={enrollTheCourse}
+                            variant="primary"
+                            id={element._id}
+                          />
+                        )
                       ) : (
-                        <Btn
-                          value="enroll now"
-                          onClick={enrollTheCourse}
-                          variant="primary"
-                          id={element._id}
-                        />
+                        ""
                       )}
                     </div>
                   </div>

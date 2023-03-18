@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 110vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
 }
 
 .course-detalis-dash {

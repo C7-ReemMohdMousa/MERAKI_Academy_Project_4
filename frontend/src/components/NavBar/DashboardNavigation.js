@@ -6,6 +6,7 @@ import Btn from "../Btn/Btn";
 import { Input, Space } from "antd";
 import Search from "antd/es/transfer/search";
 import { nav, Nav } from "react-bootstrap";
+import logo from "../images/logo.png";
 
 import "./Nav.css";
 
@@ -58,6 +59,10 @@ const DashboardNavigation = () => {
       });
   };
 
+  const goToHome = () => {
+    navigate(`/`);
+  };
+
   return (
     <div className="sticky-top">
       {/* className="sticky" */}
@@ -78,7 +83,18 @@ const DashboardNavigation = () => {
         >
           <Nav.Item>
             <h2>
-              Curious<span style={{ color: "#0d6efd" }}>Learner</span>
+              {/* <img src={logo} style={{ width: "2rem", height: "2rem" }} /> */}
+              Curious
+              <span
+                style={{
+                  color: "#0d6efd",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+                onClick={goToHome}
+              >
+                Learner
+              </span>
             </h2>
           </Nav.Item>
           <div>

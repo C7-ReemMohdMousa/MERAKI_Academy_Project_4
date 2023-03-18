@@ -19,6 +19,7 @@ import {
   MDBCheckbox,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import logo from "../images/logo.png";
 
 const Register = () => {
   //context

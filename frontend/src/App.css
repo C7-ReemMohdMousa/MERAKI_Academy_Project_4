@@ -1,12 +1,9 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Satisfy&display=swap');
-
 .App {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-    /* font-family: roboto */
-    /* background-color: aliceblue; */
-    background-color: rgba(104, 97, 97, 0.05);
-    color: black;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  /* background-color: aliceblue; */
+  font-family: "PT Serif Caption";
+  background-color: rgba(104, 97, 97, 0.05);
+  color: black;
+}

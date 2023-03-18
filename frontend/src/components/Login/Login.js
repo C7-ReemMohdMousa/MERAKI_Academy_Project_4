@@ -17,6 +17,7 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
+import logo from "../images/logo.png";
 
 const Login = () => {
   //states

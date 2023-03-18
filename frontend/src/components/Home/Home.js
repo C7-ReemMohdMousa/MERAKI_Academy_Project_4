@@ -10,6 +10,10 @@ import "./Home.css";
 import Unis from "../images/Unis.png";
 import hermone from "../images/hermone.jpg";
 import ourStory from "../images/our-story.png";
+import logo from "../images/logo.png";
+import students from "../images/students.jpeg";
+import personal from "../images/1.jfif";
+import personal2 from "../images/2.jfif";
 
 const Home = () => {
   //context
@@ -19,15 +23,13 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-
   const goToRegister = () => {
     navigate(`/register`);
   };
 
-  const goToExplore = ()=>{
+  const goToExplore = () => {
     navigate(`/explore`);
-
-  }
+  };
 
   return (
     <div>
@@ -59,8 +61,8 @@ const Home = () => {
       </div>
 
       <div className="unis-imgs">
-        <div style={{display: "flex", justifyContent: "center"}}>
-        <h4>Our partners and collaborators</h4>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <h4>Our partners and collaborators</h4>
         </div>
         <img src={Unis} className="unis-imgs" />
       </div>
@@ -90,7 +92,7 @@ const Home = () => {
                 // src="https://images.ctfassets.net/00atxywtfxvd/4vOWgNjy4KExR8msqHnJEP/bb1557d60e8a29f6a5f09148f700bff5/partner-logos.png"
                 // src="https://business.edx.org/hubfs/B2B-partner-logos-V6.png"
                 // src="https://images.ctfassets.net/00atxywtfxvd/3JTfOpbc60Z57eLxWRtCZe/f6da896e4f7c4a5b6fa7fd8d33d89586/Coursera_Our_Story_Assets.jpeg"
-                src={ourStory}
+                src={students}
                 className="all-unis"
               />
             </div>
@@ -112,7 +114,7 @@ const Home = () => {
           <div className="student-card">
             <div className="bio-heading">
               <h3>Hermione Granger, UK</h3>
-              <img className="bio-img" src={hermone} />
+              <img className="bio-img" src={personal2} />
               <h5>Software Developer</h5>
             </div>
             <p>
@@ -138,7 +140,7 @@ const Home = () => {
           <div className="student-card">
             <div className="bio-heading">
               <h3>Hermione Granger</h3>
-              <img className="bio-img" src={hermone} />
+              <img className="bio-img" src={personal} />
               <h5>Software Developer</h5>
             </div>
             <p>

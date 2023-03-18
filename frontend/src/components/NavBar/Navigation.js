@@ -42,6 +42,10 @@ const Navigation = () => {
       });
   };
 
+  const goToHome = () => {
+    navigate(`/`);
+  };
+
   return (
     <div className="sticky-top">
       {/* className="sticky" */}
@@ -62,7 +66,17 @@ const Navigation = () => {
         >
           <Nav.Item>
             <h2>
-              Curious<span style={{ color: "#0d6efd" }}>Learner</span>
+              Curious
+              <span
+                style={{
+                  color: "#0d6efd",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+                onClick={goToHome}
+              >
+                Learner
+              </span>
             </h2>
           </Nav.Item>
           <div>

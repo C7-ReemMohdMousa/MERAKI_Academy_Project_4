@@ -91,12 +91,13 @@ const StudentsDashboard = () => {
       });
   };
 
-  console.log(userEnrolled);
 
   return (
     <div>
       <div className="dashboard-welcome">
-        <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
+        <h2 style={{ color: "#0d6efd", fontSize: "bold" }}>
+          Welcome Back {name}!
+        </h2>
         <p>
           How you doing today? are you ready to start a new journey of learning?
         </p>
