@@ -29,6 +29,11 @@
 
 Write about 1-2 paragraphs describing the purpose of your project.
 
+Curious Learner is a non profit organazation that provides a massive open online course (MOOC) platform, dedcated to help students from all over the world to get the knowlage they aspire from the most prestigous and high rated universties for free, such as MIT, Harvard, ..., etc.
+
+in Curious Learner you can register as a student or as a teacher. As a student you can explore the availabe courses, enroll to the ones you have liked for free, watch the lectures, and cancel the enrollment at any time. and as a teacher, you can create courses for your own and, edit them, and delete them, also as a teacher you can enroll to other teacher's courses and watch them as well.
+
+
 Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -37,7 +42,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Visual Studio Code follow this <a href=''>link</a> to install.
+- Visual Studio Code follow this <a href='https://code.visualstudio.com/download'>link</a> to install.
 - Git Bash follow this <a href=''>link</a> to install.
 - MongoDB follow this <a href=''>link</a> to install.
 - Node.js follow this <a href=''>link</a> to install.
