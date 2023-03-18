@@ -6,8 +6,19 @@ import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./UpdateCourse";
-import { Tab, Tabs, Card, Form } from "react-bootstrap";
+import { Tab, Tabs, Card, Form, Table } from "react-bootstrap";
 import "./Dashboard.css";
+import { BsPencilSquare } from "react-icons/bs";
+import {
+  MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+} from "mdb-react-ui-kit";
 
 //the dashboard will change based on the user role
 //1-student: completed and in progress courses
@@ -41,6 +52,12 @@ const AdminDashboard = () => {
 
   //
   const [newCategory, setNewCategory] = useState("");
+  const [response, setResponse] = useState("");
+  const [users, setUsers] = useState([]);
+
+  //modal, change student to teacher
+  const [basicModal, setBasicModal] = useState(false);
+  const toggleShow = () => setBasicModal(!basicModal);
 
   const goToCourse = (e) => {
     //go to course dashboard
@@ -59,7 +76,18 @@ const AdminDashboard = () => {
       });
   }, []);
 
-  console.log(courses);
+  //get users
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/users/all/users`)
+      .then(function (response) {
+        console.log(response.data);
+        setUsers(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  }, []);
 
   const createNewCategory = () => {
     axios
@@ -68,6 +96,19 @@ const AdminDashboard = () => {
       })
       .then(function (response) {
         console.log(response.data);
+        setResponse(`${response.data.category} is Added Successfully`);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  };
+
+  const changeToTeacher = (_id) => {
+    axios
+      .post(`http://localhost:5000/roles/change/role/${_id}`)
+      .then(function (response) {
+        console.log(response.data);
+        setResponse(`Role is updated Successfully`);
       })
       .catch(function (error) {
         throw error;
@@ -75,7 +116,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div> 
+    <div>
       <div>
         <div className="dashboard-welcome">
           <h2>Welcome Back {name}!</h2>
@@ -85,8 +126,13 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className="tabs">
-          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify>
-            <Tab eventKey="home" title="All Courese">
+          <Tabs
+            defaultActiveKey="All Courses"
+            id="tabs"
+            className="mb-3"
+            justify
+          >
+            <Tab eventKey="All Courses" title="All Courses">
               <div>
                 <div className="all-courses">
                   {courses.map((element) => {
@@ -100,10 +146,7 @@ const AdminDashboard = () => {
                                 <h5>{element.title}</h5>
                               </div>
                             </Card.Title>
-                            <Card.Text>
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </Card.Text>
+                            <Card.Text>{element.thumbnail}</Card.Text>
                             <div className="btns">
                               <Btn
                                 id={element._id}
@@ -122,7 +165,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
             </Tab>
-            <Tab eventKey="profile" title="Add Category">
+            <Tab eventKey="Add Category" title="Add Category">
               <div className="create-category">
                 <h5>Here You Can Add a New Category:</h5>
                 <Form>
@@ -146,7 +189,98 @@ const AdminDashboard = () => {
                       }}
                     />
                   </div>
+                  {response}
                 </Form>
+              </div>
+            </Tab>
+
+            <Tab eventKey="users" title="All Users">
+              <div className="users">
+                <Table striped>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>id</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((element, i) => {
+                      return (
+                        <tr key={element._id}>
+                          <td>{i + 1}</td>
+                          <td>{element._id}</td>
+
+                          <td>{element.firstName}</td>
+                          <td>{element.lastName}</td>
+                          <td>{element.email}</td>
+                          <td>
+                            {element.role.role + " "}
+                            {element.role.role == "student" ? (
+                              // <BsPencilSquare
+                              //   onClick={() => {
+                              //     changeToTeacher(element._id);
+                              //   }}
+                              // />
+                              <div>
+                                <BsPencilSquare
+                                  onClick={toggleShow}
+                                  style={{ cursor: "pointer" }}
+                                />
+
+                                <MDBModal
+                                  show={basicModal}
+                                  setShow={setBasicModal}
+                                  tabIndex="-1"
+                                >
+                                  <MDBModalDialog>
+                                    <MDBModalContent>
+                                      <MDBModalHeader>
+                                        <MDBModalTitle>
+                                          change role
+                                        </MDBModalTitle>
+                                        <MDBBtn
+                                          className="btn-close"
+                                          color="none"
+                                          onClick={toggleShow}
+                                        ></MDBBtn>
+                                      </MDBModalHeader>
+                                      <MDBModalBody>
+                                        Do you want to change this user role to
+                                        be a teacher?
+                                      </MDBModalBody>
+
+                                      <MDBModalFooter>
+                                        <MDBBtn
+                                          color="secondary"
+                                          onClick={toggleShow}
+                                        >
+                                          No
+                                        </MDBBtn>
+                                        <Btn
+                                          value="yes"
+                                          onClick={() => {
+                                            changeToTeacher(element._id);
+                                            toggleShow();
+                                          }}
+                                        />
+                                      </MDBModalFooter>
+                                    </MDBModalContent>
+                                  </MDBModalDialog>
+                                </MDBModal>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </Table>
               </div>
             </Tab>
           </Tabs>

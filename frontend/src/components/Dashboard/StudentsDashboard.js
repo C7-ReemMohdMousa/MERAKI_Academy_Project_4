@@ -67,6 +67,11 @@ const StudentsDashboard = () => {
     navigate(`/coursedashboard/${courseId}`);
   };
 
+  //go to explore
+  const goToExplore = (courseId) => {
+    navigate(`/explore`);
+  };
+
   //cancel enrollment
   const cancelEnrollment = (courseId) => {
     console.log(courseId);
@@ -86,18 +91,24 @@ const StudentsDashboard = () => {
       });
   };
 
+  console.log(userEnrolled);
+
   return (
     <div>
-      <h2>Welcome Back {name}!</h2>
+      <div className="dashboard-welcome">
+        <h2 style={{color: "#0d6efd"}}>Welcome Back {name}!</h2>
+        <p>How you doing today? ready for starting a new journey in knowlage</p>
+      </div>
 
       <div>
         <div className="tabs">
-          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify>
+          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify style={{fontWeight: "bold"}}>
             <Tab eventKey="home" title="In Progress Courses">
               <div>
                 <div className="all-courses">
-                  {isFectched
-                    ? userEnrolled.map((element) => {
+                  {isFectched ? (
+                    userEnrolled.length !== 0 ? (
+                      userEnrolled.map((element) => {
                         return (
                           <div
                             key={element.course._id}
@@ -139,14 +150,28 @@ const StudentsDashboard = () => {
                           </div>
                         );
                       })
-                    : ""}
+                    ) : (
+                      <div className="no-courses">
+                        <br/>
+                        <h5>
+                          It looks like you have not enrolled in any courses
+                          yet!
+                        </h5>
+                        <p>Explore our available courses now!</p>
+                        <Btn value="Explore Courses" onClick={goToExplore} />
+                      </div>
+                    )
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </Tab>
             <Tab eventKey="profile" title="Completed Courses">
               <div className="all-courses">
-                {isFectched
-                  ? completedCourses.map((element) => {
+                {isFectched ? (
+                  completedCourses.length !== 0 ? (
+                    completedCourses.map((element) => {
                       return (
                         <div
                           key={element.course._id}
@@ -185,7 +210,17 @@ const StudentsDashboard = () => {
                         </div>
                       );
                     })
-                  : ""}
+                  ) : (
+                    <div className="no-courses">
+                      <br/>
+                      <h5>It looks like you have not completed a course</h5>
+                      <p>Explore our available courses now!</p>
+                      <Btn value="Explore Courses" onClick={goToExplore} />
+                    </div>
+                  )
+                ) : (
+                  ""
+                )}
               </div>
             </Tab>
           </Tabs>

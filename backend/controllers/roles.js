@@ -1,4 +1,5 @@
 const rolesModel = require("../models/rolesSchema");
+const userModel = require("../models/usersSchema");
 
 const getRoles = (req, res) => {
   const roletype = req.params.role;
@@ -88,4 +89,19 @@ const createRole = (req, res) => {
     });
 };
 
-module.exports = { createRole, getRoles };
+const updateStudentToTeacher = (req, res) => {
+  const userId = req.params.userId;
+
+  const teacher = "640cf5ae6308a0c0b07e5792";
+
+  userModel
+    .findByIdAndUpdate({ _id: userId }, { role: teacher }, { new: true })
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+module.exports = { createRole, getRoles, updateStudentToTeacher };

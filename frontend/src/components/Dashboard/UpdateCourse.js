@@ -39,6 +39,27 @@ const UpdateCourse = ({ id }) => {
     setShow(true);
   };
 
+  //get the course
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/courses/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setTitle(response.data.title);
+        setDescription(response.data.description);
+        setThumbnail(response.data.thumbnail);
+        setImage(response.data.image);
+        setLevel(response.data.level);
+        setCategory(response.data.category);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  }, []);
+
   //to get the categoryID
   const getCategory = (e) => {
     let categoryName = e.target.value;
@@ -129,7 +150,9 @@ const UpdateCourse = ({ id }) => {
               <Form.Control
                 type="text"
                 onChange={(e) => {
-                  setTitle(e.target.value);
+                  if (e.target.value) {
+                    setTitle(e.target.value);
+                  }
                 }}
               />
             </Form.Group>
@@ -143,7 +166,9 @@ const UpdateCourse = ({ id }) => {
                 as="textarea"
                 rows={3}
                 onChange={(e) => {
-                  setThumbnail(e.target.value);
+                  if (e.target.value) {
+                    setThumbnail(e.target.value);
+                  }
                 }}
               />
             </Form.Group>
@@ -157,7 +182,9 @@ const UpdateCourse = ({ id }) => {
                 as="textarea"
                 rows={3}
                 onChange={(e) => {
-                  setDescription(e.target.value);
+                  if (e.target.value) {
+                    setDescription(e.target.value);
+                  }
                 }}
               />
             </Form.Group>
@@ -172,7 +199,9 @@ const UpdateCourse = ({ id }) => {
                   as="textarea"
                   rows={3}
                   onChange={(e) => {
-                    setImage(e.target.value);
+                    if (e.target.value) {
+                      setImage(e.target.value);
+                    }
                   }}
                 />
               </Form.Group>
@@ -203,13 +232,15 @@ const UpdateCourse = ({ id }) => {
               <Form.Select
                 aria-label="Default select example"
                 onChange={(e) => {
-                  setLevel(e.target.value);
-                  console.log(e.target.value);
+                  if (e.target.value) {
+                    console.log(e.target.value);
+                    setLevel(e.target.value);
+                  }
                 }}
               >
                 <option>Level</option>
                 <option value="Beginner">Beginner</option>
-                <option value="Intermidate">Intermidate</option>
+                <option value="Intermediate">Intermediate</option>
                 <option value="Advance">Advance</option>
               </Form.Select>
             </Form.Group>

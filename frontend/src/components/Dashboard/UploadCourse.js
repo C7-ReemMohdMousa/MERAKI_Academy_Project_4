@@ -86,7 +86,6 @@ const UploadCourse = ({ instructorId }) => {
         throw error;
       });
   };
-  console.log(courses);
 
   return (
     <div>

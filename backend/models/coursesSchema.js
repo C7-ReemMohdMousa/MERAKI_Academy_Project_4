@@ -5,6 +5,19 @@ const coursesSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  thumbnail: {
+    type: String,
+    required: true,
+  },
+
+  rating:{
+    type: Number
+  },
+
+  image:  {
+    type: String, 
+  },
   
   description: {
     type: String,

@@ -6,7 +6,8 @@ import UploadCourse from "./UploadCourse";
 import { LearningContext } from "../../App";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./UpdateCourse";
-import { Tab, Tabs, Card } from "react-bootstrap";
+import { Tab, Tabs, Card, Form } from "react-bootstrap";
+import { MDBFile } from "mdb-react-ui-kit";
 
 const TeachersDashboard = () => {
   //useNavigate hook to navigate programmatically
@@ -31,6 +32,9 @@ const TeachersDashboard = () => {
   //states
   const [userEnrolled, setUserEnrolled] = useState([]);
   const [isFectched, setIsFectched] = useState(false);
+  const [instructor, setInstructor] = useState({});
+  const [instructorImg, setInstructorImg] = useState("");
+  const [instructorDescription, setInstructorDescription] = useState("");
 
   //get the in progress courses
   useEffect(() => {
@@ -104,25 +108,68 @@ const TeachersDashboard = () => {
     navigate(`/coursedashboard/${courseID}`);
   };
 
-  console.log(createdCourses);
+  //go to explore
+  const goToExplore = () => {
+    navigate(`/explore`);
+  };
+
+  //get users to get the instructor image and info
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/users/all/users`)
+      .then(function (response) {
+        console.log(response.data);
+        const user = response.data.filter((element) => {
+          return element._id === userId;
+        });
+        setInstructor(user[0]);
+        setInstructorDescription(user[0].description);
+        setInstructorImg(user[0].image);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  }, []);
+
+  const updateUserInfo = () => {
+    axios
+      .post(`http://localhost:5000/users/update/user/${userId}`, {
+        image: instructorImg,
+        description: instructorDescription,
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setInstructor(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+      });
+  };
 
   return (
     <div>
       <div className="dashboard-welcome">
-        <h2>Welcome Back {name}!</h2>
-        <p>Teachers Dashboard</p>
+        <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
+        <p>Thank you for your time!</p>
         <div>
           <UploadCourse />
         </div>
       </div>
       <div>
         <div className="tabs">
-          <Tabs defaultActiveKey="profile" id="tabs" className="mb-3" justify>
+          <Tabs
+            defaultActiveKey="Created Courese"
+            id="tabs"
+            className="mb-3"
+            justify
+            style={{ fontWeight: "bold" }}
+          >
             <Tab eventKey="Created Courese" title="Created Courese">
               <div>
                 <div className="all-courses">
-                  {isFectched
-                    ? createdCourses.map((element) => {
+                  {isFectched ? (
+                    createdCourses.length !== 0 ? (
+                      createdCourses.map((element) => {
                         return (
                           <div key={element._id} className="all-courses-cards">
                             <Card>
@@ -153,7 +200,21 @@ const TeachersDashboard = () => {
                           </div>
                         );
                       })
-                    : ""}
+                    ) : (
+                      <div className="no-courses">
+                        <br />
+                        <h5>
+                          Hello {name}, you have no created any course yet
+                        </h5>
+                        <p>
+                          you can apload your first course by clicking on the
+                          "Upload a New Course!" button up there!
+                        </p>
+                      </div>
+                    )
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </Tab>
@@ -161,8 +222,9 @@ const TeachersDashboard = () => {
             <Tab eventKey="In Progress Courses" title="In Progress Courses">
               <div>
                 <div className="all-courses">
-                  {isFectched
-                    ? userEnrolled.map((element) => {
+                  {isFectched ? (
+                    userEnrolled.length !== 0 ? (
+                      userEnrolled.map((element) => {
                         console.log(element);
                         return (
                           <div
@@ -205,14 +267,28 @@ const TeachersDashboard = () => {
                           </div>
                         );
                       })
-                    : ""}
+                    ) : (
+                      <div className="no-courses">
+                        <br />
+                        <h5>
+                          It looks like you have not enrolled in any courses
+                          yet!
+                        </h5>
+                        <p>Explore our available courses now!</p>
+                        <Btn value="Explore Courses" onClick={goToExplore} />
+                      </div>
+                    )
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </Tab>
             <Tab eventKey="Completed Courses" title="Completed Courses">
               <div className="all-courses">
-                {isFectched
-                  ? completedCourses.map((element) => {
+                {isFectched ? (
+                  completedCourses.length !== 0 ? (
+                    completedCourses.map((element) => {
                       return (
                         <div
                           key={element.course._id}
@@ -249,7 +325,69 @@ const TeachersDashboard = () => {
                         </div>
                       );
                     })
-                  : ""}
+                  ) : (
+                    <div className="no-courses">
+                      <br />
+                      <h5>
+                        It looks like you have not completed any courses yet!
+                      </h5>
+                      <p>Explore our available courses now!</p>
+                      <Btn value="Explore Courses" onClick={goToExplore} />
+                    </div>
+                  )
+                ) : (
+                  ""
+                )}
+              </div>
+            </Tab>
+
+            <Tab eventKey="Edit your info!" title="Edit your info!">
+              <br />
+              <div className="instructor-info">
+                <div>
+                  <div>
+                    <img src={instructor.image} className="bio-img" />
+                  </div>
+                  <div className="bio-description">
+                    <br/>
+                    <p>{instructor.description} </p>
+                  </div>
+                </div>
+
+                <div>
+                  <Form>
+                    <br />
+                    <MDBFile
+                      label="Upload your picture"
+                      size="sm"
+                      id="formFileSm"
+                      onChange={(e) => {
+                        console.log(e.target.files);
+                        setInstructorImg(
+                          URL.createObjectURL(e.target.files[0])
+                        );
+                      }}
+                    />
+
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlTextarea1"
+                    >
+                      <Form.Label>Description</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={5}
+                        cols={50}
+                        onChange={(e) => {
+                          setInstructorDescription(e.target.value);
+                        }}
+                        placeholder="add some information about yourself!"
+                      />
+                    </Form.Group>
+                  </Form>
+                  <br />
+                  <Btn value="Save" onClick={updateUserInfo} />
+                </div>
               </div>
             </Tab>
           </Tabs>

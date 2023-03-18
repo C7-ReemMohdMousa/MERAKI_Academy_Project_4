@@ -198,6 +198,7 @@ const Login = () => {
                 setPassword(e.target.value);
               }}
             />
+            {isLogged ? <Navigate to="/dashboard" replace={true} /> : response}
 
             <div className="text-center text-md-start mt-4 pt-2">
               <Btn value="Login" onClick={LoginUser} />
@@ -238,7 +239,6 @@ const Login = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      {isLogged ? <Navigate to="/dashboard" replace={true} /> : response}
     </div>
   );
 };

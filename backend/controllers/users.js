@@ -79,8 +79,11 @@ const login = (req, res) => {
           });
         }
         //if not matched, throw error msg
-        if (err) {
-          throw new Error(err.message);
+        else {
+          res.status(403).json({
+            success: false,
+            message: `The email or the password is incorrect`,
+          });
         }
       });
     })
@@ -390,8 +393,36 @@ const checkGoogleUser = (req, res) => {
 //     });
 // };
 
+const getAllUsers = (req, res) => {
+  usersModel
+    .find({})
+    .populate("role")
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
+const updateUserInfo = (req, res) => {
+  const userId = req.params.userId;
+  const { image, description } = req.body;
+
+  usersModel
+    .findByIdAndUpdate({ _id: userId }, { image, description }, { new: true })
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 module.exports = {
   register,
   login,
   checkGoogleUser,
+  getAllUsers,
+  updateUserInfo
 };

@@ -41,6 +41,7 @@ const getCourseById = (req, res) => {
     .findOne({ _id: courseId })
     .populate("lectures")
     .populate("category")
+    .populate("instructor")
     .then((results) => {
       res.json(results);
     })
@@ -90,7 +91,7 @@ const getCategoryId = (req, res) => {
 
 //upload course
 const uploadCourse = (req, res) => {
-  const { title, description, category, level } = req.body;
+  const { title, description, category, level, thumbnail } = req.body;
 
   const instructor = req.token.userId;
   const newCourse = new coursesModel({
@@ -99,6 +100,7 @@ const uploadCourse = (req, res) => {
     instructor,
     category,
     level,
+    thumbnail,
   });
 
   newCourse
@@ -178,8 +180,8 @@ const deleteCourseById = (req, res) => {
 const updateCourseById = (req, res) => {
   const id = req.params.courseId;
 
-  const { title, description, category, level } = req.body;
-  const instructor = req.token.userId;
+  const { title, description, category, level, image, thumbnail, instructor } =
+    req.body;
 
   coursesModel
     .findByIdAndUpdate(
@@ -187,9 +189,11 @@ const updateCourseById = (req, res) => {
       {
         title,
         description,
-        instructor,
         category,
         level,
+        image,
+        thumbnail,
+        instructor,
       },
       { new: true }
     )
@@ -293,7 +297,9 @@ const searchByCourseName = (req, res) => {
   const searchText = req.params.search;
 
   coursesModel
-    .find({ title: { $regex: searchText, $options: "i" } })
+    .find({
+      title: { $regex: searchText, $options: "i" },
+    })
     .populate("category")
     .then((results) => {
       res.json(results);

@@ -1,8 +1,8 @@
 .course-info {
-  height: 80rem;
+  height: 55rem;
 }
 
-.course-detalis { 
+.course-detalis {
   height: 50rem;
   /* padding: 2rem; */
   display: flex;
@@ -16,9 +16,12 @@
   background: linear-gradient(
     90deg,
     rgba(222, 222, 222, 1) 0%,
-    rgba(114, 97, 186, 1) 37%,
+    rgb(180, 169, 228) 37%,
     rgba(80, 40, 126, 1) 100%
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .course-detalis-thumbnail {
@@ -28,6 +31,22 @@
   height: 20rem;
 }
 
-.course-info-tabs{
+.course-info-tabs {
   margin-left: 1rem;
+}
+
+.course-description {
+  width: 50rem;
+}
+
+.bio-img {
+  height: 12.5rem;
+  width: 12.5rem;
+  border-radius: 50%;
+}
+
+.instructor-tab{
+display: flex;
+flex-direction: column;
+gap: 1rem;
 }

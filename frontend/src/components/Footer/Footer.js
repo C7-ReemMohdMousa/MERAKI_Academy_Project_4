@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <div className="text-center p-4" style={{ backgroundColor: "white" }}>
-        © 2021 Copyright:
+        © 2023 Copyright: 
         <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+          CuriousLearner.com
         </a>
       </div>
     </MDBFooter>

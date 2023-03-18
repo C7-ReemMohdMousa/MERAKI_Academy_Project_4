@@ -80,11 +80,11 @@ const updateEnrollment = (req, res) => {
 
   enrollmentModel
     .updateOne(
-      { course: courseId },
-      { status, completedAt, progress },
-      { new: true }
+      { course: courseId, user: req.token.userId },
+      { status, completedAt, progress }
     )
     .then((results) => {
+      console.log("dfsdfasdfsdafsdfsadfsdf", results);
       res.json(results);
     })
     .catch((err) => {
@@ -176,7 +176,7 @@ const inProgressCourses = (req, res) => {
 
   enrollmentModel
     .find({ status: "in progress", user: userId })
-    .populate("course") //! keep it to decide what to show in frontend
+    .populate("course")
     .select("course -_id")
     .exec()
     .then((results) => {

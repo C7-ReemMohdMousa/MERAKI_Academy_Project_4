@@ -59,8 +59,6 @@ const Explore = () => {
     navigate(`/coursedetail/${e.target.id}`);
   };
 
-  console.log(courses);
-
   return (
     <div className="explore-all-page">
       <div className="courses-header">

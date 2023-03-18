@@ -38,6 +38,16 @@ const usersSchema = new mongoose.Schema({
       ref: "Course",
     },
   ],
+
+  image: {
+    type: String,
+    default:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7jXBf3yLBZo1hA88vD25iD9xkHBfF0thiQ&usqp=CAU",
+  },
+
+  description: {
+    type: String,
+  },
 });
 
 usersSchema.pre("save", async function () {

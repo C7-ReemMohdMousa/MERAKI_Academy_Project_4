@@ -127,27 +127,39 @@ const CourseInfo = () => {
                   {" "}
                   <div className="course-detalis-thumbnail">
                     <h1>{element.title}</h1>
-                    <h5>{element.category.category}</h5>
-                    <Rating name="read-only" value={4} readOnly />
-                    <p>
-                      {element.description}
-                      
-                    </p>
-                    {isEnrolled || isInstructor || isAdmin ? (
-                      <Btn
-                        value="go to course"
-                        variant="success"
-                        id={element._id}
-                        onClick={goToCourse}
-                      />
-                    ) : (
-                      <Btn
-                        value="enroll now"
-                        onClick={enrollTheCourse}
-                        variant="primary"
-                        id={element._id}
-                      />
-                    )}
+                    <div>
+                      <h3>
+                        {element.instructor.firstName +
+                          " " +
+                          element.instructor.lastName}
+                      </h3>
+                    </div>
+                    <div>
+                      <h5>{element.category.category}</h5>
+                    </div>
+                    <div>
+                      <Rating name="read-only" value={4} readOnly />
+                    </div>
+                    <div>
+                      <p className="course-description">{element.thumbnail}</p>
+                    </div>
+                    <div>
+                      {isEnrolled || isInstructor || isAdmin ? (
+                        <Btn
+                          value="go to course"
+                          variant="success"
+                          id={element._id}
+                          onClick={goToCourse}
+                        />
+                      ) : (
+                        <Btn
+                          value="enroll now"
+                          onClick={enrollTheCourse}
+                          variant="primary"
+                          id={element._id}
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -159,10 +171,27 @@ const CourseInfo = () => {
                     className="mb-3"
                   >
                     <Tab eventKey="About" title="About">
-                      {element.description}
+                      <br />
+                      <div className="about-course">
+                        <h3>{element.title}</h3>
+                        <p>{element.description}</p>
+                      </div>
                     </Tab>
                     <Tab eventKey="Instructor" title="Instructor">
-                      2
+                      <br />
+                      <div className="instructor-tab">
+                        <h2>
+                          Instructor Name:{" "}
+                          {element.instructor.firstName +
+                            " " +
+                            element.instructor.lastName}
+                        </h2>
+                        <img
+                          src={element.instructor.image}
+                          className="bio-img"
+                        />
+                        <p> {element.instructor.description}</p>
+                      </div>
                     </Tab>
                     <Tab eventKey="Syllabus" title="Syllabus">
                       {element.lectures.map((lecture, index) => {
@@ -171,7 +200,7 @@ const CourseInfo = () => {
                             <div>
                               <ul>
                                 <li>
-                                  <h6>
+                                  <h6 style={{ fontWeight: "bold" }}>
                                     Lecture {index + 1}: {lecture.title}
                                   </h6>
                                   <p>{element.description}</p>
