@@ -150,7 +150,10 @@ const TeachersDashboard = () => {
     <div>
       <div className="dashboard-welcome">
         <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
-        <p>Thank you for your time!</p>
+        <p>
+          Thank you for giving us your time and efforts, and always remember
+          knowledge shared is knowledge squared :)
+        </p>
         <div>
           <UploadCourse />
         </div>
@@ -349,7 +352,7 @@ const TeachersDashboard = () => {
                     <img src={instructor.image} className="bio-img" />
                   </div>
                   <div className="bio-description">
-                    <br/>
+                    <br />
                     <p>{instructor.description} </p>
                   </div>
                 </div>
