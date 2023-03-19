@@ -121,6 +121,8 @@ const CourseDashboard = () => {
 
     if (enrollmentInfo.length !== 0) {
       console.log("enterd2");
+      console.log(course.lectures.length);
+      console.log(enrollmentInfo[0].isCompleted.length);
 
       if (course.lectures.length === enrollmentInfo[0].isCompleted.length) {
         console.log("enterd3");

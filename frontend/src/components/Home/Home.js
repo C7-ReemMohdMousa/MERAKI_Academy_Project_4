@@ -13,7 +13,7 @@ import ourStory from "../images/our-story.png";
 import logo from "../images/logo.png";
 import students from "../images/students.jpeg";
 import personal from "../images/1.jfif";
-import personal2 from "../images/2.jfif";
+import personal2 from "../images/2.jpeg";
 
 const Home = () => {
   //context
