@@ -14,6 +14,7 @@ import logo from "../images/logo.png";
 import students from "../images/students.jpeg";
 import personal from "../images/1.jfif";
 import personal2 from "../images/2.jpeg";
+import personal3 from "../images/3.jfif";
 
 const Home = () => {
   //context
@@ -35,12 +36,15 @@ const Home = () => {
     <div>
       <div className="hero">
         <div className="hero-content">
-          <h1>Learn Without Limits</h1>
+          <h1 style={{ color: "#0d6efd", fontSize: "bold" }}>
+            Learn Without Limits
+          </h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
-            distinctio mollitia nisi illo officiis incidunt laudantium dicta
-            tempora! Neque totam fuga aperiam ab dolores eaque suscipit rerum
-            voluptatem architecto! Eveniet.
+            Curious Learner is a nonprofit organization that provides a massive
+            open online course (MOOC) platform, dedicated to helping students
+            from all over the world to get the knowledge they aspire to, from
+            the most prestigious and high-rated universities for free, such as
+            MIT, Harvard, ..., etc.
           </p>
           {token ? (
             <div className="join-now-btn">
@@ -113,7 +117,7 @@ const Home = () => {
         <div className="about-cards">
           <div className="student-card">
             <div className="bio-heading">
-              <h3>Hermione Granger, UK</h3>
+              <h3>Emily Brown</h3>
               <img className="bio-img" src={personal2} />
               <h5>Software Developer</h5>
             </div>
@@ -126,8 +130,8 @@ const Home = () => {
           </div>
           <div className="student-card">
             <div className="bio-heading">
-              <h3>Hermione Granger</h3>
-              <img className="bio-img" src={hermone} />
+              <h3>Carla Smith</h3>
+              <img className="bio-img" src={personal3} />
               <h5>Software Developer</h5>
             </div>
             <p>
@@ -139,7 +143,7 @@ const Home = () => {
           </div>
           <div className="student-card">
             <div className="bio-heading">
-              <h3>Hermione Granger</h3>
+              <h3>Jane Dou</h3>
               <img className="bio-img" src={personal} />
               <h5>Software Developer</h5>
             </div>

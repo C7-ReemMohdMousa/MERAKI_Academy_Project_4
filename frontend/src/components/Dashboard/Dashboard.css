@@ -27,6 +27,7 @@
 .all-courses {
   display: flex;
   flex-direction: column;
+  /* height: 20rem; */
   /* gap: 1.5rem; */
   /* margin-left: 5rem; */
 }
