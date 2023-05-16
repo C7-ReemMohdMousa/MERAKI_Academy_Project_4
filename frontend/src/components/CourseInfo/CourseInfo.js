@@ -46,7 +46,7 @@ const CourseInfo = () => {
   //get the course
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses//${id}`, {
+      .get(`https://curious-learner.onrender.com/courses//${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -62,7 +62,7 @@ const CourseInfo = () => {
   const enrollTheCourse = () => {
     axios
       .post(
-        `http://localhost:5000/enroll/enrollCourse/${id}`,
+        `https://curious-learner.onrender.com/enroll/enrollCourse/${id}`,
         { course: id, user: userId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -80,7 +80,7 @@ const CourseInfo = () => {
   //CHECK IF THE USER IS ALREADY ENROLLED THE COURSE
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/${id}/${userId}`)
+      .get(`https://curious-learner.onrender.com/enroll/${id}/${userId}`)
       .then((response) => {
         if (response.data.success) {
           setIsEnrolled(true);
@@ -101,9 +101,12 @@ const CourseInfo = () => {
   //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/isinstructor/${id}/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/courses/isinstructor/${id}/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then((response) => {
         if (response.data) {
           setIsInstructor(true);

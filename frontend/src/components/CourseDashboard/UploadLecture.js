@@ -31,7 +31,7 @@ const UploadLecture = ({ id }) => {
   const saveTheUploadedLecture = () => {
     axios
       .post(
-        `http://localhost:5000/courses/${id}/lectures`,
+        `https://curious-learner.onrender.com/courses/${id}/lectures`,
         { title, description, videoId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -52,7 +52,6 @@ const UploadLecture = ({ id }) => {
         throw error;
       });
   };
-
 
   return (
     <div>

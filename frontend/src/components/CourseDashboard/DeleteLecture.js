@@ -14,9 +14,12 @@ const DeleteLecture = ({ lectureId, courseId }) => {
   //delete lecture
   const deleteMyLecture = () => {
     axios
-      .delete(`http://localhost:5000/courses/${courseId}/${lectureId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .delete(
+        `https://curious-learner.onrender.com/courses/${courseId}/${lectureId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         const newLecturesArr = lectures.filter((element) => {
           return element._id !== lectureId;

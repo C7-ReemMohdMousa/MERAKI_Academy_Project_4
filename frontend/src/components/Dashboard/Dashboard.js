@@ -68,7 +68,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses`)
+      .get(`https://curious-learner.onrender.com/courses`)
       .then(function (response) {
         console.log(response.data);
         setCourses(response.data.courses);
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
   //get users
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/all/users`)
+      .get(`https://curious-learner.onrender.com/users/all/users`)
       .then(function (response) {
         console.log(response.data);
         setUsers(response.data);
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
 
   const createNewCategory = () => {
     axios
-      .post(`http://localhost:5000/courses/create/category`, {
+      .post(`https://curious-learner.onrender.com/courses/create/category`, {
         category: newCategory,
       })
       .then(function (response) {
@@ -107,7 +107,7 @@ const AdminDashboard = () => {
 
   const changeToTeacher = (_id) => {
     axios
-      .post(`http://localhost:5000/roles/change/role/${_id}`)
+      .post(`https://curious-learner.onrender.com/roles/change/role/${_id}`)
       .then(function (response) {
         console.log(response.data);
         setResponse(`Role is updated Successfully`);
@@ -120,7 +120,10 @@ const AdminDashboard = () => {
   const updateUserInfo = (userId) => {
     console.log(status);
     axios
-      .post(`http://localhost:5000/users/update/user/${userId}`, { status })
+      .post(
+        `https://curious-learner.onrender.com/users/update/user/${userId}`,
+        { status }
+      )
       .then(function (response) {
         console.log(response.data);
       })

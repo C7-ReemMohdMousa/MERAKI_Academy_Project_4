@@ -28,7 +28,7 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/all/categories`)
+      .get(`https://curious-learner.onrender.com/courses/all/categories`)
       .then((response) => {
         // console.log(response.data);
         setIsFetched(true);
@@ -47,7 +47,9 @@ const Category = () => {
       setIsFiltering(true);
 
       axios
-        .get(`http://localhost:5000/courses/categoryid/${categoryId}`)
+        .get(
+          `https://curious-learner.onrender.com/courses/categoryid/${categoryId}`
+        )
         .then((response) => {
           setFilterdCourses([...filterdCourses, response.data].flat());
           setCategoryID(categoryId);
@@ -80,11 +82,11 @@ const Category = () => {
     console.log(levelValue);
 
     if (e.target.checked && searchingResults.length === 0) {
-    setIsFiltering(true);
+      setIsFiltering(true);
 
       axios
         .get(
-          `http://localhost:5000/courses/all/courses/bylevel/?level=${levelValue}`
+          `https://curious-learner.onrender.com/courses/all/courses/bylevel/?level=${levelValue}`
         )
         .then((response) => {
           console.log(response.data);
@@ -113,7 +115,7 @@ const Category = () => {
     }
 
     if (e.target.checked === false) {
-    setIsFiltering(false);
+      setIsFiltering(false);
 
       console.log(filterdCourses);
       const filteredCoursesAfterUnCheck = filterdCourses.filter((element) => {

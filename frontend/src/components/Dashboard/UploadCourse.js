@@ -46,9 +46,12 @@ const UploadCourse = ({ instructorId }) => {
     console.log(categoryName);
 
     axios
-      .get(`http://localhost:5000/courses/category/${categoryName}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/courses/category/${categoryName}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setCategory(response.data.categoryId);
       })
@@ -60,7 +63,7 @@ const UploadCourse = ({ instructorId }) => {
   const saveTheUploadedCourse = () => {
     axios
       .post(
-        `http://localhost:5000/courses`,
+        `https://curious-learner.onrender.com/courses`,
         { title, description, category, level, thumbnail },
         {
           headers: { Authorization: `Bearer ${token}` },

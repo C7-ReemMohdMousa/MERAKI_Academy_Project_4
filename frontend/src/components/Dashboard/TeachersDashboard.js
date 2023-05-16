@@ -39,9 +39,12 @@ const TeachersDashboard = () => {
   //get the in progress courses
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/myinProgressCourses/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/enroll/myinProgressCourses/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setUserEnrolled(response.data);
         setIsFectched(true);
@@ -55,9 +58,12 @@ const TeachersDashboard = () => {
   //get the in progress courses
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/myCompletedCourses/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/enroll/myCompletedCourses/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setCompletedCourses(response.data);
         setIsFectched(true);
@@ -72,7 +78,7 @@ const TeachersDashboard = () => {
   const cancelEnrollment = (courseId) => {
     console.log(courseId);
     axios
-      .delete(`http://localhost:5000/enroll/${courseId}`, {
+      .delete(`https://curious-learner.onrender.com/enroll/${courseId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
@@ -90,7 +96,7 @@ const TeachersDashboard = () => {
   //get created courses
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/created/${userId}`, {
+      .get(`https://curious-learner.onrender.com/courses/created/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
@@ -116,7 +122,7 @@ const TeachersDashboard = () => {
   //get users to get the instructor image and info
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/all/users`)
+      .get(`https://curious-learner.onrender.com/users/all/users`)
       .then(function (response) {
         console.log(response.data);
         const user = response.data.filter((element) => {
@@ -133,10 +139,13 @@ const TeachersDashboard = () => {
 
   const updateUserInfo = () => {
     axios
-      .post(`http://localhost:5000/users/update/user/${userId}`, {
-        image: instructorImg,
-        description: instructorDescription,
-      })
+      .post(
+        `https://curious-learner.onrender.com/users/update/user/${userId}`,
+        {
+          image: instructorImg,
+          description: instructorDescription,
+        }
+      )
       .then(function (response) {
         console.log(response.data);
         setInstructor(response.data);

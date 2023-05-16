@@ -45,7 +45,7 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/courses")
+      .get("https://curious-learner.onrender.com/courses")
       .then(function (response) {
         setCourses(response.data.courses);
         setIsFectched(true);

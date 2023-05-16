@@ -40,7 +40,7 @@ const Register = () => {
 
   const RegisterUser = (e) => {
     axios
-      .post("http://localhost:5000/users/register", {
+      .post("https://curious-learner.onrender.com/users/register", {
         firstName,
         lastName,
         email,
@@ -62,7 +62,7 @@ const Register = () => {
   //   roleText = e.target.value;
   //   console.log(roleText);
   //   axios
-  //     .get(`http://localhost:5000/roles/${roleText}`)
+  //     .get(`https://curious-learner.onrender.com/roles/${roleText}`)
   //     .then(function (response) {
   //       setRole(response.role);
   //       console.log(response.role);
@@ -169,7 +169,8 @@ const Register = () => {
             <h1 className="my-5 display-3 fw-bold ls-tight px-3">
               Curious
               <span className="text-primary">Learner</span> <br />
-              <span className="text-primary">Learn </span><span>without Limits</span>
+              <span className="text-primary">Learn </span>
+              <span>without Limits</span>
             </h1>
 
             <p className="px-3" style={{ color: "hsl(217, 10%, 50.8%)" }}>

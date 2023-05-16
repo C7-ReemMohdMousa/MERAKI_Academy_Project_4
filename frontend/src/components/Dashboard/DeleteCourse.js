@@ -16,7 +16,7 @@ const DeleteCourse = ({ id }) => {
 
   const deleteMyCourse = () => {
     axios
-      .delete(`http://localhost:5000/courses/${id}`, {
+      .delete(`https://curious-learner.onrender.com/courses/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {

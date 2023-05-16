@@ -47,7 +47,9 @@ const DashboardNavigation = () => {
 
   const onSearch = (value) => {
     axios
-      .get(`http://localhost:5000/courses/search/results/${value}`)
+      .get(
+        `https://curious-learner.onrender.com/courses/search/results/${value}`
+      )
       .then((response) => {
         console.log(response.data);
         setIsSearching(true);

@@ -44,9 +44,12 @@ const CourseDashboard = () => {
   //get the enrollment information of this course for this specefic user
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/check/completed/lectures/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/enroll/check/completed/lectures/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         console.log(response.data);
         setEnrollmentInfo(response.data);
@@ -67,7 +70,7 @@ const CourseDashboard = () => {
   //get the course
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/${id}`)
+      .get(`https://curious-learner.onrender.com/courses/${id}`)
       .then(function (response) {
         setLectures(response.data.lectures);
         setCourse(response.data);
@@ -81,9 +84,12 @@ const CourseDashboard = () => {
   //CHECK IF THE USER IS THE INSTRUCTOR OF THE COURSE
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/isinstructor/${id}/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/courses/isinstructor/${id}/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then((response) => {
         if (response.data) {
           setIsInstructor(true);
@@ -98,7 +104,7 @@ const CourseDashboard = () => {
     console.log("enterd");
     axios
       .put(
-        `http://localhost:5000/enroll/complete/lecture/${id}/${lectId}`,
+        `https://curious-learner.onrender.com/enroll/complete/lecture/${id}/${lectId}`,
         { isCompleted: lectId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -131,7 +137,7 @@ const CourseDashboard = () => {
 
         axios
           .put(
-            `http://localhost:5000/enroll/${id}`,
+            `https://curious-learner.onrender.com/enroll/${id}`,
             { status: "completed", completedAt: Date.now() },
             {
               headers: { Authorization: `Bearer ${token}` },

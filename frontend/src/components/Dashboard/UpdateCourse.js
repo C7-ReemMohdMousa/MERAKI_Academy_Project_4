@@ -43,7 +43,7 @@ const UpdateCourse = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/courses/${id}`, {
+      .get(`https://curious-learner.onrender.com/courses/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
@@ -66,9 +66,12 @@ const UpdateCourse = ({ id }) => {
     console.log(categoryName);
 
     axios
-      .get(`http://localhost:5000/courses/category/${categoryName}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/courses/category/${categoryName}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setCategory(response.data.categoryId);
       })
@@ -80,7 +83,7 @@ const UpdateCourse = ({ id }) => {
   const saveTheEditedCourse = () => {
     axios
       .put(
-        `http://localhost:5000/courses/${id}`,
+        `https://curious-learner.onrender.com/courses/${id}`,
         { title, description, category, level, image, thumbnail },
         {
           headers: { Authorization: `Bearer ${token}` },

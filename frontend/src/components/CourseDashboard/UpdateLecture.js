@@ -28,7 +28,7 @@ const UpdateLecture = ({ id }) => {
   const saveTheEditedCourse = () => {
     axios
       .put(
-        `http://localhost:5000/courses/${course._id}/${id}`,
+        `https://curious-learner.onrender.com/courses/${course._id}/${id}`,
         { title, description, videoURL: videoCode },
         {
           headers: { Authorization: `Bearer ${token}` },

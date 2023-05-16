@@ -33,9 +33,12 @@ const StudentsDashboard = () => {
   //get the in progress courses
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/myinProgressCourses/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/enroll/myinProgressCourses/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setUserEnrolled(response.data);
         setIsFectched(true);
@@ -49,9 +52,12 @@ const StudentsDashboard = () => {
   //get the in progress courses
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/enroll/myCompletedCourses/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://curious-learner.onrender.com/enroll/myCompletedCourses/${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(function (response) {
         setCompletedCourses(response.data);
         setIsFectched(true);
@@ -76,7 +82,7 @@ const StudentsDashboard = () => {
   const cancelEnrollment = (courseId) => {
     console.log(courseId);
     axios
-      .delete(`http://localhost:5000/enroll/${courseId}`, {
+      .delete(`https://curious-learner.onrender.com/enroll/${courseId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
@@ -90,7 +96,6 @@ const StudentsDashboard = () => {
         console.log(error.response.data.message);
       });
   };
-
 
   return (
     <div>

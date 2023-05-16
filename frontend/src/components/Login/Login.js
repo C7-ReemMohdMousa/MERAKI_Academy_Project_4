@@ -45,7 +45,7 @@ const Login = () => {
 
   const LoginUser = (e) => {
     axios
-      .post("http://localhost:5000/users/login", {
+      .post("https://curious-learner.onrender.com/users/login", {
         email,
         password,
       })
@@ -91,11 +91,14 @@ const Login = () => {
 
     //check if the user exsisted in the data base
     axios
-      .post("http://localhost:5000/users/login/check/google/user", {
-        firstName: userInfo.given_name,
-        lastName: userInfo.family_name,
-        email: userInfo.email,
-      })
+      .post(
+        "https://curious-learner.onrender.com/users/login/check/google/user",
+        {
+          firstName: userInfo.given_name,
+          lastName: userInfo.family_name,
+          email: userInfo.email,
+        }
+      )
       .then(function (response) {
         console.log(response.data);
 
