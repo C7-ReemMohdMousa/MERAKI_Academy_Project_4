@@ -56,7 +56,7 @@ const UploadLecture = ({ id }) => {
   return (
     <div>
       <Btn
-        value="Upload a New Lecture!"
+        value="Upload a new lecture!"
         variant="primary"
         onClick={handleShow}
       />

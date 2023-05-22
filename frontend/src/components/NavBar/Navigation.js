@@ -72,7 +72,6 @@ const Navigation = () => {
               <span
                 style={{
                   color: "#0d6efd",
-                  fontWeight: "bold",
                   cursor: "pointer",
                 }}
                 onClick={goToHome}

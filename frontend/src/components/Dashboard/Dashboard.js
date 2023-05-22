@@ -33,7 +33,7 @@ const Dashboard = () => {
   const { role } = useContext(LearningContext);
   console.log(role);
   return (
-    <div>
+    <div className="dashboard">
       {role == "student" && <StudentsDashboard />}
       {role == "teacher" && <TeachersDashboard />}
       {role == "admin" && <AdminDashboard />}
@@ -136,21 +136,21 @@ const AdminDashboard = () => {
     <div>
       <div>
         <div className="dashboard-welcome">
-          <h2 style={{ color: "#0d6efd" }}>Welcome Back {name}!</h2>
-          <p>Fully Control Admin Dashboard</p>
+          <h2 style={{ color: "#0d6efd" }}>Welcome back {name}!</h2>
+          <p>Fully control admin Dashboard</p>
           <div>
             <UploadCourse />
           </div>
         </div>
         <div className="tabs">
           <Tabs
-            defaultActiveKey="All Courses"
+            defaultActiveKey="All courses"
             id="tabs"
             className="mb-3"
             justify
             style={{ fontWeight: "bold" }}
           >
-            <Tab eventKey="All Courses" title="All Courses">
+            <Tab eventKey="All courses" title="All courses">
               <div>
                 <div className="all-courses">
                   {courses?.map((element) => {
@@ -183,16 +183,16 @@ const AdminDashboard = () => {
                 </div>
               </div>
             </Tab>
-            <Tab eventKey="Add Category" title="Add Category">
+            <Tab eventKey="Add category" title="Add category">
               <div className="create-category">
                 <br />
-                <h5>Here You Can Add a New Category:</h5>
+                <h5>Here you can add a new category:</h5>
                 <Form>
                   {/* <Form.Label> Here You Can Add a New Category:</Form.Label> */}
                   <Form.Group className="mb-3" id="category-input">
                     <Form.Control
                       type="email"
-                      placeholder="Enter a New Category"
+                      placeholder="Enter a new category"
                       onChange={(e) => {
                         setNewCategory(e.target.value);
                       }}
@@ -208,12 +208,12 @@ const AdminDashboard = () => {
                       }}
                     />
                   </div>
-                  {response}
+                  <div className="add-category-response">{response}</div>
                 </Form>
               </div>
             </Tab>
 
-            <Tab eventKey="users" title="All Users">
+            <Tab eventKey="users" title="All users">
               <div className="users">
                 <Table striped>
                   <thead>

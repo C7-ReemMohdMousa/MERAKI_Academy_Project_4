@@ -238,7 +238,7 @@ const Register = () => {
                     name="role"
                     inline
                     onChange={(e) => {
-                      setRole("64060d4149b1402fedf92a91");
+                      setRole("646b9a16cc1c7fe784829ca6");
                     }}
                   />
                   <Form.Check
@@ -249,8 +249,7 @@ const Register = () => {
                     name="role"
                     inline
                     onChange={(e) => {
-                      setRole("640cf5ae6308a0c0b07e5792");
-                      console.log(role);
+                      setRole("646b9a4dcc1c7fe784829caa");
                     }}
                   />
                 </Form.Group>

@@ -48,7 +48,7 @@ const Home = () => {
           </p>
           {token ? (
             <div className="join-now-btn">
-              <Btn value="Explore The Courses" onClick={goToExplore} />
+              <Btn value="Explore the courses" onClick={goToExplore} />
             </div>
           ) : (
             <div className="join-now-btn">

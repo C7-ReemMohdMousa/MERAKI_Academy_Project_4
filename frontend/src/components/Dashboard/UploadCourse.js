@@ -93,7 +93,7 @@ const UploadCourse = ({ instructorId }) => {
   return (
     <div>
       <Btn
-        value="Upload a New Course!"
+        value="Upload a new course!"
         variant="primary"
         onClick={handleShow}
       />
@@ -105,7 +105,7 @@ const UploadCourse = ({ instructorId }) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Upload Course</Modal.Title>
+          <Modal.Title>Upload course</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
