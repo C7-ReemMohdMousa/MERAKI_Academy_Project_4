@@ -153,7 +153,7 @@ const AdminDashboard = () => {
             <Tab eventKey="All Courses" title="All Courses">
               <div>
                 <div className="all-courses">
-                  {courses.map((element) => {
+                  {courses?.map((element) => {
                     return (
                       <div key={element._id} className="all-courses-cards">
                         <Card>

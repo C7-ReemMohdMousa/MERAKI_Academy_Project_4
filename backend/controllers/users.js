@@ -204,7 +204,7 @@ const login = (req, res) => {
 const checkGoogleUser = (req, res) => {
   const { firstName, lastName, email } = req.body;
 
-  const role = "64060d4149b1402fedf92a91";
+  const role = "646b9a16cc1c7fe784829ca6";
   const password = "none";
 
   usersModel
