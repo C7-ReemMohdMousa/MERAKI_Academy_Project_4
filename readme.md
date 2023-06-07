@@ -31,9 +31,6 @@ Curious Learner is a nonprofit organization that provides a massive open online 
 
 in Curious Learner, you can register as a student or as a teacher. As a student, you can explore the available courses, enroll in the ones you have liked for free, watch the lectures, and cancel the enrollment at any time. and as a teacher, you can create courses on your own, edit them, and delete them, also as a teacher you can enroll in other teachers' courses and watch them as well.
 
-
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
-
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -75,19 +72,28 @@ Now app ready to use (HOME PAGE SCREEN SHOT)
 
 ## 🎈 Usage <a name="usage"></a>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+curious learners have 3 roles for a logged user; student, teacher, and admin.
 
-- You have to register to enroll or create courses.
+As a student, you can do the followings:
 - You can click on the **Explore** tab provided in the navigation bar to view the courses available.
 - You can click on the **View course Details** button to see the course information; about, instructor, and syllabus, then you can enroll in the course by clicking on the **enroll now** button.
 - Once you've enrolled in the course, it will appear in your dashboard in the  **in progress courses** tab, where you can click on the **go to course** button to start watching the lectures or cancel the enrollment by clicking on the **cancel enrollment** button.
 - Once you have completed watching the course's lectures, the course automatically will transfer to the completed courses tab.
 
 As a teacher you can use the website as a student to watch other instructor's courses, and:
--you can create courses by clicking on **upload a new course now!** button in the dashboard.
-- you can Edit course information and delete it as well.
-- once you have created the course, you can add your lecture by clicking on the **go to course** button to enter the course dashboard and upload lectures by clicking on **upload lecture** button.
-- on the course dashboard, you can update or edit lecture's information or delete them.
+- Create courses by clicking on **upload a new course now!** button in the dashboard.
+- Edit course information and delete it as well.
+- once you have created the course, you can add lectures by clicking on the **go to course** button to enter the course dashboard and upload lectures by clicking on **upload lecture** button.
+- Update or edit lecture's information or delete them.
+
+As an admin, you can do the followings:
+- Create courses by clicking on **upload a new course now!** button in the dashboard.
+- Edit course information and delete it as well.
+- once you have created the course, you can add lectures by clicking on the **go to course** button to enter the course dashboard and upload lectures by clicking on **upload lecture** button.
+- Update or edit lecture's information or delete them.
+- Add a new category.
+- Block users.
+- View user's information; name, id, role, ..etc.
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
