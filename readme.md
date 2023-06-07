@@ -68,8 +68,6 @@ npm run dev
 npm run start
 ```
 
-Now app ready to use (HOME PAGE SCREEN SHOT)
-
 ## 🎈 Usage <a name="usage"></a>
 
 curious learners have 3 roles for a logged user; student, teacher, and admin.
