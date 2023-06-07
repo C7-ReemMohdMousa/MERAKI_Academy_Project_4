@@ -7,13 +7,6 @@
 <h3 align="center"> Curious Learner
 </h3>
 
----
-
-<p align="center"> An awesome Project to describe README 
-    <br> 
-<a href=''>Demo</a>
-    <br> 
-</p>
 
 ## 📝 Table of Contents
 
